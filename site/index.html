@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ashish's Profile</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@100..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Anek+Odia:wght@100..800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet">
+</head>
+<body class="poppins-regular secondary-text">
+
+	<header class="d-lg-none secondary-bg">
+		<!-- TOP NAVBAR -->
+		<nav id="header-nav" class="navbar">
+			<div class="container-fluid">
+				<div class="icon-bar">
+					<!-- Burger Menu Button -->
+					<button class="navbar-toggler d-inline p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#header-offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+						<img src="images/navbar-toggler-icon.svg"></span>
+					</button>
+
+					<!-- Language Dropdown -->
+					<div class="dropdown d-inline p-2">
+			            <button class="btn dropdown-toggle" type="button" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			              <i class="bi bi-translate"></i>
+			            </button>
+			            <ul class="dropdown-menu accent">
+			              <li class="noto-sans-devanagari-regular">
+			              	<a class="dropdown-item" href="in-hi/index.html">
+			              		<img src="images/flags/in.svg" class="img-thumbnail">&nbsp;हिंदी
+			              	</a>
+			              </li>
+			              <li class="anek-odia-regular">
+			              	<a class="dropdown-item" href="in-od/index.html">
+			              		<img src="images/flags/in.svg" class="img-thumbnail">&nbsp;ଓଡ଼ିଆ
+			              	</a>
+			              </li>
+			              <li class="germania-one-regular">
+			              	<a class="dropdown-item" href="de/index.html">
+			              		<img src="images/flags/de.svg" class="img-thumbnail">&nbsp;Deutsch
+			              	</a>
+			              </li>
+			              <li>
+			              	<a class="dropdown-item active" href="#">
+			              		<img src="images/flags/us.svg" class="img-thumbnail">&nbsp;English
+			              	</a>
+			              </li>
+			            </ul>
+		          	</div>
+				</div>
+
+				<div id="section-indicator" class="d-flex justify-content-evenly align-items-center">
+					<span id="current-section">01</span>
+					<span class="divider gray-100"></span>
+					<span id="end-section">07</span>
+				</div>
+
+	
+				<!-- Hidden Sidebar -->
+				<div class="offcanvas offcanvas-start accent" tabindex="-1" id="header-offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+					<div class="offcanvas-header">
+						<div class="icon-bar">
+							<!-- Close Button -->
+							<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			          	</div>
+					</div>
+
+					<div class="offcanvas-body">
+						<ul id="nav-list" class="navbar-nav justify-content-end flex-grow-1 pe-3 poppins-regular">
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="#">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" aria-current="page" href="#services">Services</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" aria-current="page" href="#portfolio">Portfolio</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" aria-current="page" href="#experience">Experience</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" aria-current="page" href="#skills">Skills</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" aria-current="page" href="#contact">Contact</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" aria-current="page" href="#blog">Blog</a>
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		</nav>
+	</header>
+
+
+	<!-- SIDEBAR -->
+	<div id="sidebar" class="float-start position-fixed d-none d-lg-block secondary-bg">
+		<nav id="sidebar-nav" class="navbar">
+			<div class="container-fluid">
+				<div class="icon-bar">
+					<!-- Burger Menu Button -->
+					<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+						<img src="images/navbar-toggler-icon.svg"></span>
+					</button>
+
+					<!-- Language Dropdown -->
+					<div class="dropend">
+			            <button class="btn dropdown-toggle" type="button" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			              <i class="bi bi-translate"></i>
+			            </button>
+			            <ul class="dropdown-menu accent">
+			              <li class="noto-sans-devanagari-regular">
+			              	<a class="dropdown-item" href="in-hi/index.html">
+			              		<img src="images/flags/in.svg" class="img-thumbnail">&nbsp;हिंदी
+			              	</a>
+			              </li>
+			              <li class="anek-odia-regular">
+			              	<a class="dropdown-item" href="in-od/index.html">
+			              		<img src="images/flags/in.svg" class="img-thumbnail">&nbsp;ଓଡ଼ିଆ
+			              	</a>
+			              </li>
+			              <li class="germania-one-regular">
+			              	<a class="dropdown-item" href="de/index.html">
+			              		<img src="images/flags/de.svg" class="img-thumbnail">&nbsp;Deutsch
+			              	</a>
+			              </li>
+			              <li>
+			              	<a class="dropdown-item active" href="#">
+			              		<img src="images/flags/us.svg" class="img-thumbnail">&nbsp;English
+			              	</a>
+			              </li>
+			            </ul>
+		          	</div>
+				</div>
+
+	
+				<!-- Hidden Sidebar -->
+				<div class="offcanvas offcanvas-start accent" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+					<div class="offcanvas-header">
+						<div class="icon-bar">
+							<!-- Close Button -->
+							<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			          	</div>
+					</div>
+
+					<div class="offcanvas-body">
+						<ul id="nav-list" class="navbar-nav justify-content-end flex-grow-1 pe-3 poppins-regular">
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="#home">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" aria-current="page" href="#services">Services</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" aria-current="page" href="#portfolio">Portfolio</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" aria-current="page" href="#experience">Experience</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" aria-current="page" href="#skills">Skills</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" aria-current="page" href="#contact">Contact</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" aria-current="page" href="#blog">Blog</a>
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		</nav>
+
+
+		<!-- INFOBAR -->
+		<div id="infobar" class="d-none d-xl-block">
+
+			<div id="section-indicator" class="d-flex justify-content-evenly align-items-center" style="width: 142px">
+				<span id="current-section">01</span>
+				<span class="divider gray-100"></span>
+				<span id="end-section">07</span>
+			</div>
+
+			<div id="bio">
+				<ul id="bio-list" class="navbar-nav justify-content-end flex-grow-1 pe-3 poppins-regular">
+					<li class="bio-item">
+						<span class="bio-item-title poppins-medium">Name</span><br>
+						<span class="bio-item-description poppins-semibold">Ashish Brahma</span>
+					</li>
+					<li class="bio-item">
+						<span class="bio-item-title poppins-medium">Role</span><br>
+						<span class="bio-item-description poppins-semibold">Mobile Developer</span>
+					</li>
+					<li class="bio-item">
+						<span class="bio-item-title poppins-medium">Email</span><br>
+						<span class="bio-item-description poppins-semibold">ashish.brahma@outlook.com</span>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	
+	</div>
+	
+	<div id="main-content" class="container-fluid g-0 clearfix">
+
+		<section id="home" class="gray-100">
+		
+			<picture id="profile-picture" class="image-fluid">
+				<source media="(max-width:767px)" srcset="../images/profile_photo_393.svg">
+				<source media="(max-width:1439px)" srcset="../images/profile_photo_768.svg">
+				<img src='../images/profile_photo_1200.svg' alt="Profile Picture" style="width:auto;">
+			</picture>
+
+			<div id="about">
+				<h1 class="poppins-bold">Ashish Brahma</h1>
+
+				<p>A professional Mobile Application Developer experienced in building applications spanning across Real-Estate, Logistics, Energy, Media, Finance and Retail sectors. Recognised for planning, negotiation, integrity, initiative, proactivity, patience and adaptability.</p>
+			</div>
+
+			<div id="external-links" class="icon-bar">
+				<span class="social-icon" aria-label="External Links">
+					<a class="icon-link btn" href="https://linkedin.com/in/brahma-ashish">
+						<i class="bi bi-linkedin" aria-hidden="true"></i>
+					</a>
+				</span>
+				<span class="social-icon">
+					<a class="icon-link btn" href="https://x.com/b_ashish_3535">
+						<i class="bi bi-twitter-x"></i>
+					</a>
+				</span>
+				<span class="social-icon">
+					<a class="icon-link btn" href="https://github.com/ashish-brahma">
+						<i class="bi bi-github"></i>
+					</a>
+				</span>
+			</div>
+
+		</section>
+
+		<section id="services" class="secondary-bg-b50"></section>
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>
