@@ -13,99 +13,117 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Anek+Odia:wght@100..800&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
-<body class="poppins-regular secondary-text">
+<body class="poppins-regular">
 
-	<header class="d-lg-none secondary-bg">
+	<header>
 		<!-- TOP NAVBAR -->
-		<nav id="header-nav" class="navbar">
-			<div class="container-fluid">
-				<div class="icon-bar">
-					<!-- Burger Menu Button -->
-					<button class="navbar-toggler d-inline p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#header-offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-						<img src="images/navbar-toggler-icon.svg"></span>
-					</button>
+		<div id="topbar" class="position-fixed top-0 d-lg-none">
+			<nav id="header-nav" class="navbar">
+				<div class="container-fluid">
+					
+					<div class="icon-bar">
+						<!-- Burger Menu Button -->
+						<button class="navbar-toggler d-inline p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#header-offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+							<img src="images/navbar-toggler-icon.svg"></span>
+						</button>
 
-					<!-- Language Dropdown -->
-					<div class="dropdown d-inline p-2">
-			            <button class="btn dropdown-toggle" type="button" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-			              <i class="bi bi-translate"></i>
-			            </button>
-			            <ul class="dropdown-menu accent">
-			              <li class="noto-sans-devanagari-regular">
-			              	<a class="dropdown-item" href="in-hi/index.html">
-			              		<img src="images/flags/in.svg" class="img-thumbnail">&nbsp;हिंदी
-			              	</a>
-			              </li>
-			              <li class="anek-odia-regular">
-			              	<a class="dropdown-item" href="in-od/index.html">
-			              		<img src="images/flags/in.svg" class="img-thumbnail">&nbsp;ଓଡ଼ିଆ
-			              	</a>
-			              </li>
-			              <li class="germania-one-regular">
-			              	<a class="dropdown-item" href="de/index.html">
-			              		<img src="images/flags/de.svg" class="img-thumbnail">&nbsp;Deutsch
-			              	</a>
-			              </li>
-			              <li>
-			              	<a class="dropdown-item active" href="#">
-			              		<img src="images/flags/us.svg" class="img-thumbnail">&nbsp;English
-			              	</a>
-			              </li>
-			            </ul>
-		          	</div>
-				</div>
-
-				<div id="section-indicator" class="d-flex justify-content-evenly align-items-center">
-					<span id="current-section">01</span>
-					<span class="divider gray-100"></span>
-					<span id="end-section">07</span>
-				</div>
-
-	
-				<!-- Hidden Sidebar -->
-				<div class="offcanvas offcanvas-start accent" tabindex="-1" id="header-offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-					<div class="offcanvas-header">
-						<div class="icon-bar">
-							<!-- Close Button -->
-							<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+						<!-- Language Dropdown -->
+						<div class="dropdown d-inline p-2">
+				            <button class="btn dropdown-toggle" type="button" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				              <i class="bi bi-translate"></i>
+				            </button>
+				            <ul class="dropdown-menu accent">
+				              <li class="dropdown-item noto-sans-devanagari-regular">
+				              	<a class="nav-link" href="in-hi/index.html">
+				              		<span>
+				              			<img src="images/flags/in.svg" class="img-thumbnail">
+				              		</span>
+				              		हिंदी
+				              	</a>
+				              </li>
+				              <li class="dropdown-item anek-odia-regular">
+				              	<a class="nav-link" href="in-od/index.html">
+				              		<span>
+				              			<img src="images/flags/in.svg" class="img-thumbnail">
+				              		</span>
+				              		ଓଡ଼ିଆ
+				              	</a>
+				              </li>
+				              <li class="dropdown-item germania-one-regular">
+				              	<a class="nav-link" href="de/index.html">
+				              		<span>
+				              			<img src="images/flags/de.svg" class="img-thumbnail">
+				              		</span>
+				              		Deutsch
+				              	</a>
+				              </li>
+				              <li class="dropdown-item active">
+				              	<a class="nav-link" href="#">
+				              		<span>
+				              			<img src="images/flags/us.svg" class="img-thumbnail">
+				              		</span>
+				              		English
+				              	</a>
+				              </li>
+				            </ul>
 			          	</div>
 					</div>
 
-					<div class="offcanvas-body">
-						<ul id="nav-list" class="navbar-nav justify-content-end flex-grow-1 pe-3 poppins-regular">
-							<li class="nav-item">
-								<a class="nav-link active" aria-current="page" href="#">Home</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" aria-current="page" href="#services">Services</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" aria-current="page" href="#portfolio">Portfolio</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" aria-current="page" href="#experience">Experience</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" aria-current="page" href="#skills">Skills</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" aria-current="page" href="#contact">Contact</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" aria-current="page" href="#blog">Blog</a>
-							</li>
-						</ul>
+					<div id="section-indicator" class="d-flex justify-content-evenly align-items-center secondary-text">
+						<span id="current-section">01</span>
+						<span class="divider gray-100"></span>
+						<span id="end-section">07</span>
 					</div>
-					
+
+		
+					<!-- Hidden Sidebar -->
+					<div class="offcanvas offcanvas-start accent" tabindex="-1" id="header-offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+						<div class="offcanvas-header">
+							<div class="icon-bar">
+								<!-- Close Button -->
+								<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				          	</div>
+						</div>
+
+						<div class="offcanvas-body">
+							<ul id="nav-list" class="navbar-nav justify-content-end flex-grow-1 pe-3 poppins-regular">
+								<li class="nav-item" data-bs-dismiss="offcanvas">
+									<a class="nav-link" aria-current="page" href="#">Home</a>
+								</li>
+								<li class="nav-item" data-bs-dismiss="offcanvas">
+									<a class="nav-link" aria-current="page" href="#services">Services</a>
+								</li>
+								<li class="nav-item" data-bs-dismiss="offcanvas">
+									<a class="nav-link" aria-current="page" href="#portfolio">Portfolio</a>
+								</li>
+								<li class="nav-item" data-bs-dismiss="offcanvas">
+									<a class="nav-link" aria-current="page" href="#experience">Experience</a>
+								</li>
+								<li class="nav-item" data-bs-dismiss="offcanvas">
+									<a class="nav-link" aria-current="page" href="#skills">Skills</a>
+								</li>
+								<li class="nav-item" data-bs-dismiss="offcanvas">
+									<a class="nav-link" aria-current="page" href="#contact">Contact</a>
+								</li>
+								<li class="nav-item" data-bs-dismiss="offcanvas">
+									<a class="nav-link" aria-current="page" href="#blog">Blog</a>
+								</li>
+							</ul>
+						</div>
+						
+					</div>
+				
 				</div>
-			</div>
-		</nav>
+			</nav>
+		</div>
+	
 	</header>
 
 
 	<!-- SIDEBAR -->
-	<div id="sidebar" class="float-start position-fixed d-none d-lg-block secondary-bg">
+	<div id="sidebar" class="float-start position-fixed d-none d-lg-block">
 		<nav id="sidebar-nav" class="navbar">
 			<div class="container-fluid">
 				<div class="icon-bar">
@@ -120,24 +138,36 @@
 			              <i class="bi bi-translate"></i>
 			            </button>
 			            <ul class="dropdown-menu accent">
-			              <li class="noto-sans-devanagari-regular">
-			              	<a class="dropdown-item" href="in-hi/index.html">
-			              		<img src="images/flags/in.svg" class="img-thumbnail">&nbsp;हिंदी
+			              <li class="dropdown-item noto-sans-devanagari-regular">
+			              	<a class="nav-link" href="in-hi/index.html">
+			              		<span>
+			              			<img src="images/flags/in.svg" class="img-thumbnail">
+			              		</span>
+			              		हिंदी
 			              	</a>
 			              </li>
-			              <li class="anek-odia-regular">
-			              	<a class="dropdown-item" href="in-od/index.html">
-			              		<img src="images/flags/in.svg" class="img-thumbnail">&nbsp;ଓଡ଼ିଆ
+			              <li class="dropdown-item anek-odia-regular">
+			              	<a class="nav-link" href="in-od/index.html">
+			              		<span>
+			              			<img src="images/flags/in.svg" class="img-thumbnail">
+			              		</span>
+			              		ଓଡ଼ିଆ
 			              	</a>
 			              </li>
-			              <li class="germania-one-regular">
-			              	<a class="dropdown-item" href="de/index.html">
-			              		<img src="images/flags/de.svg" class="img-thumbnail">&nbsp;Deutsch
+			              <li class="dropdown-item germania-one-regular">
+			              	<a class="nav-link" href="de/index.html">
+			              		<span>
+			              			<img src="images/flags/de.svg" class="img-thumbnail">
+			              		</span>
+			              		Deutsch
 			              	</a>
 			              </li>
-			              <li>
-			              	<a class="dropdown-item active" href="#">
-			              		<img src="images/flags/us.svg" class="img-thumbnail">&nbsp;English
+			              <li class="dropdown-item active">
+			              	<a class="nav-link" href="#">
+			              		<span>
+			              			<img src="images/flags/us.svg" class="img-thumbnail">
+			              		</span>
+			              		English
 			              	</a>
 			              </li>
 			            </ul>
@@ -156,25 +186,25 @@
 
 					<div class="offcanvas-body">
 						<ul id="nav-list" class="navbar-nav justify-content-end flex-grow-1 pe-3 poppins-regular">
-							<li class="nav-item">
-								<a class="nav-link active" aria-current="page" href="#home">Home</a>
+							<li class="nav-item" data-bs-dismiss="offcanvas">
+								<a class="nav-link" aria-current="page" href="#home">Home</a>
 							</li>
-							<li class="nav-item">
+							<li class="nav-item" data-bs-dismiss="offcanvas">
 								<a class="nav-link" aria-current="page" href="#services">Services</a>
 							</li>
-							<li class="nav-item">
+							<li class="nav-item" data-bs-dismiss="offcanvas">
 								<a class="nav-link" aria-current="page" href="#portfolio">Portfolio</a>
 							</li>
-							<li class="nav-item">
+							<li class="nav-item" data-bs-dismiss="offcanvas">
 								<a class="nav-link" aria-current="page" href="#experience">Experience</a>
 							</li>
-							<li class="nav-item">
+							<li class="nav-item" data-bs-dismiss="offcanvas">
 								<a class="nav-link" aria-current="page" href="#skills">Skills</a>
 							</li>
-							<li class="nav-item">
+							<li class="nav-item" data-bs-dismiss="offcanvas">
 								<a class="nav-link" aria-current="page" href="#contact">Contact</a>
 							</li>
-							<li class="nav-item">
+							<li class="nav-item" data-bs-dismiss="offcanvas">
 								<a class="nav-link" aria-current="page" href="#blog">Blog</a>
 							</li>
 						</ul>
@@ -186,7 +216,7 @@
 
 
 		<!-- INFOBAR -->
-		<div id="infobar" class="d-none d-xl-block">
+		<div id="infobar" class="d-none d-xl-block secondary-text">
 
 			<div id="section-indicator" class="d-flex justify-content-evenly align-items-center" style="width: 142px">
 				<span id="current-section">01</span>
@@ -215,17 +245,17 @@
 	
 	</div>
 	
-	<div id="main-content" class="container-fluid g-0 clearfix">
+	<!-- TODO: Fix scroll target for header nav to work.-->
+	<div id="main-content" data-bs-spy="scroll" data-bs-target="#sidebar-nav #header-nav" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="container-fluid g-0">
 
-		<section id="home" class="gray-100">
-		
+		<section id="home" class="gray-100 clearfix">
 			<picture id="profile-picture" class="image-fluid">
 				<source media="(max-width:767px)" srcset="../images/profile_photo_393.svg">
-				<source media="(max-width:1439px)" srcset="../images/profile_photo_768.svg">
+				<source media="(max-width:1438px)" srcset="../images/profile_photo_768.svg">
 				<img src='../images/profile_photo_1200.svg' alt="Profile Picture" style="width:auto;">
 			</picture>
 
-			<div id="about">
+			<div id="about" class="container align-section-content secondary-text">
 				<h1 class="poppins-bold">Ashish Brahma</h1>
 
 				<p>A professional Mobile Application Developer experienced in building applications spanning across Real-Estate, Logistics, Energy, Media, Finance and Retail sectors. Recognised for planning, negotiation, integrity, initiative, proactivity, patience and adaptability.</p>
@@ -251,7 +281,73 @@
 
 		</section>
 
-		<section id="services" class="secondary-bg-b50"></section>
+		<section id="services" class="secondary-bg-b50 secondary-text-w25">
+
+			<div class="container align-section-content">
+				<div class="row align-items-start row-cols-1 row-cols-md-2 g-4">
+					
+					<div class="col">
+						<h2 class="poppins-bold secondary-headings-label">Services</h2>
+
+						<p>I provide a host of services ranging from design, development to marketing campaigns for launching your mobile app.</p>
+
+						<button id="download-btn" type="button" class="btn btn-outline-primary btn-lg"><span class="btn-label open-sans-regular">Download Resume<span></button>
+
+					</div>
+
+					<div id="card-grid" class="col">
+						<div class="card">
+						  <span><i class="bi bi-box"></i></span>
+						  <div class="card-body">
+						  	<h3 class="card-title poppins-bold secondary-headings-label">Design</h3>
+						    <p class="card-text">Beautiful Figma designs with pixel perfect components which deliver user-friendly interfaces.</p>
+						  </div>
+						</div>
+						
+						<div class="card">
+						  <span><i class="bi bi-command"></i></span>
+						  <div class="card-body">
+						  	<h3 class="card-title poppins-bold secondary-headings-label">Development</h3>
+						    <p class="card-text">Secured and performant apps powered by latest technologies from Apple for an elevated experience.</p>
+						  </div>
+						</div>
+					
+					</div>
+				
+				</div>
+			</div>
+			
+		</section>
+
+		<section id="portfolio" class="secondary-bg-b50">
+			<div class="align-section-content">
+				<h2 class="poppins-bold secondary-headings-label">Portfolio</h2>
+			</div>
+		</section>
+
+		<section id="experience" class="secondary-bg-b50">
+			<div class="align-section-content">
+				<h2 class="poppins-bold secondary-headings-label">Experience</h2>
+			</div>
+		</section>
+
+		<section id="skills" class="secondary-bg-b50">
+			<div class="align-section-content">
+				<h2 class="poppins-bold secondary-headings-label">Skills</h2>
+			</div>
+		</section>
+
+		<section id="contact" class="secondary-bg-b50">
+			<div class="align-section-content">
+				<h2 class="poppins-bold secondary-headings-label">Contact</h2>
+			</div>
+		</section>
+
+		<section id="blog" class="secondary-bg-b50">
+			<div class="align-section-content">
+				<h2 class="poppins-bold secondary-headings-label">Blog</h2>
+			</div>
+		</section>
 
 	</div>
 
