@@ -275,47 +275,45 @@ h1 {
 	color: #D97A21;
 }
 
-/* SERVICES */
+/* SERVICES AND PORTFOLIO */
 
-#services #card-grid {
+.col {
 	display: grid;
 	gap: 32px;
 }
 
-@media all and (max-width: 992px) {
-	#services .col {
-		display: grid;
-		gap: 32px;
-	}
-}
-
-.card {
-	position: static;
-	padding: 32px;
-}
-
-.card i {
-	padding: 16px;
-	font-size: 48px;
-	color: #D97A21;
-}
-
-#services button {
+#download-btn, #project-btn {
 	margin: 8px 12px 8px 12px;
 	padding: 24px 48px 24px 48px;
 	border-radius: 50px;
 	border: 2px solid #FC8E26;
 }
 
-#services button:hover {
+#download-btn:hover, #project-btn:hover {
 	background-color: #D97A21;
 	border: 2px solid #FC8E26;
+}
+
+#project-btn {
+	padding: 8px 16px 8px 16px;
+}
+
+.card {
+	position: static;
+}
+
+.card .service-icon{
+	padding: 16px 16px 0 24px;
+}
+
+.card i {
+	font-size: 48px;
+	color: #D97A21;
 }
 
 .btn-label {
 	color: #FFFFF6;
 }
-
 
 @media all and (min-width: 768px) {
 	#services button {
@@ -326,7 +324,7 @@ h1 {
 
 /* STYLES */
 
-.dropdown-item:hover, dropdown-item:focus, 
+.lang-dropdown .dropdown-item:hover, .lang-dropdown .dropdown-item:focus, 
 .nav-item a:hover, .nav-item a:focus, .active {
 	color: #FFFFF6 !important;
 	background-color: #A35C19 !important;
@@ -350,8 +348,17 @@ h1 {
 	background-color: #2F1B07;
 }
 
-#sidebar, #topbar, .card {
+#sidebar, #topbar, .card, #project-filter-menu {
 	background-color: #44260A;
+}
+
+#project-filter-menu .dropdown-item:hover {
+	color: #FFFFF6;
+	background-color: #D97A21;
+}
+
+#project-filter-menu .dropdown-item:active {
+	color: #A45C19 !important;
 }
 
 .secondary-headings-label {

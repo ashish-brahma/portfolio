@@ -30,7 +30,7 @@
 						</button>
 
 						<!-- Language Dropdown -->
-						<div class="dropdown d-inline p-2">
+						<div class="dropdown d-inline p-2 lang-dropdown">
 				            <button class="btn dropdown-toggle" type="button" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 				              <i class="bi bi-translate"></i>
 				            </button>
@@ -71,6 +71,8 @@
 			          	</div>
 					</div>
 
+
+					<!-- TODO: Fix section indicator to update current section using scrollspy. -->
 					<div id="section-indicator" class="d-flex justify-content-evenly align-items-center secondary-text">
 						<span id="current-section">01</span>
 						<span class="divider gray-100"></span>
@@ -133,7 +135,7 @@
 					</button>
 
 					<!-- Language Dropdown -->
-					<div class="dropend">
+					<div class="dropend lang-dropdown">
 			            <button class="btn dropdown-toggle" type="button" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 			              <i class="bi bi-translate"></i>
 			            </button>
@@ -218,6 +220,7 @@
 		<!-- INFOBAR -->
 		<div id="infobar" class="d-none d-xl-block secondary-text">
 
+			<!-- TODO: Fix section indicator to update current section using scrollspy. -->
 			<div id="section-indicator" class="d-flex justify-content-evenly align-items-center" style="width: 142px">
 				<span id="current-section">01</span>
 				<span class="divider gray-100"></span>
@@ -245,7 +248,7 @@
 	
 	</div>
 	
-	<!-- TODO: Fix scroll target for header nav to work.-->
+	<!-- TODO: Fix scroll target for header nav to reflect scrollspy behaviour.-->
 	<div id="main-content" data-bs-spy="scroll" data-bs-target="#sidebar-nav #header-nav" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="container-fluid g-0">
 
 		<section id="home" class="gray-100 clearfix">
@@ -295,19 +298,20 @@
 
 					</div>
 
-					<div id="card-grid" class="col">
+					<div class="col">
+
 						<div class="card">
-						  <span><i class="bi bi-box"></i></span>
+						  <span class="service-icon"><i class="bi bi-box"></i></span>
 						  <div class="card-body">
-						  	<h3 class="card-title poppins-bold secondary-headings-label">Design</h3>
+						  	<h5 class="card-title poppins-bold secondary-headings-label">Design</h5>
 						    <p class="card-text">Beautiful Figma designs with pixel perfect components which deliver user-friendly interfaces.</p>
 						  </div>
 						</div>
 						
 						<div class="card">
-						  <span><i class="bi bi-command"></i></span>
+						  <span class="service-icon"><i class="bi bi-command"></i></span>
 						  <div class="card-body">
-						  	<h3 class="card-title poppins-bold secondary-headings-label">Development</h3>
+						  	<h5 class="card-title poppins-bold secondary-headings-label">Development</h5>
 						    <p class="card-text">Secured and performant apps powered by latest technologies from Apple for an elevated experience.</p>
 						  </div>
 						</div>
@@ -319,32 +323,86 @@
 			
 		</section>
 
-		<section id="portfolio" class="secondary-bg-b50">
-			<div class="align-section-content">
-				<h2 class="poppins-bold secondary-headings-label">Portfolio</h2>
+		<section id="portfolio" class="secondary-bg-b50 secondary-text-w25">
+			<div class="container align-section-content">
+
+				<div class="col">
+					
+					<div class="d-flex justify-content-between">
+						
+						<h2 class="poppins-bold secondary-headings-label">Portfolio</h2>
+						
+						<!-- TODO: Add script to make the filter work. -->
+						<div class="dropdown">
+				            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				              <img src="images/dropdown-filter-icon.svg"></span>
+				            </a>
+				            <ul id="project-filter-menu" class="dropdown-menu accent">
+				              <li><button class="dropdown-item active" onclick="filterSelection('all')">All</button></li>
+				              <li>
+				                <hr class="dropdown-divider">
+				              </li>				              
+				              <li><button class="dropdown-item" onclick="filterSelection('mob-dev')">Mobile Development</button></li>
+				              <li><button class="dropdown-item" onclick="filterSelection('ai-ml')">AI/ML</button></li>
+				            </ul>
+				        </div>
+			    	
+			    	</div>
+
+
+			    	<!-- May use better royalty-free images for cards. -->
+					<div class="row align-items-start row-cols-1 row-cols-md-2 g-4">
+						
+						<div class="col">
+							<div class="card">
+								<img src="../images/project1_placeholder.svg" class="card-img-top" alt="Project1 image">
+								<div class="card-body">
+									<h5 class="card-title poppins-bold secondary-headings-label">KartStopper</h5>
+								    <p class="card-text">KartStopper is a one-stop solution for buyers looking to make informed choices before shopping their daily needs. It improves spending habits of people.</p>
+								    <a id="project-btn" href="https://www.linkedin.com/company/kartstopper" class="btn btn-outline-primary btn-sm"><span class="btn-label open-sans-regular">See Project</span></a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col">	
+							<div class="card">
+								<img src="../images/project2_placeholder.svg" class="card-img-top" alt="Project2 image">
+							 	<div class="card-body">
+								    <h5 class="card-title poppins-bold secondary-headings-label">Smart Home Survellance System</h5>
+								    <p class="card-text">An access control system which brings the power of state-of-the-art algorithms used in street surveillance systems to an average consumer's home.</p>
+								    <a id="project-btn" href="https://github.com/ashish-brahma/SmartHomeSecuritySystem" class="btn btn-outline-primary btn-sm"><span class="btn-label open-sans-regular">See Project</span></a>
+								</div>
+							</div>
+						</div>
+					
+					</div>
+				
+				</div>
+			
 			</div>
+
 		</section>
 
-		<section id="experience" class="secondary-bg-b50">
-			<div class="align-section-content">
+		<section id="experience" class="secondary-bg-b50 secondary-text-w25">
+			<div class="container align-section-content">
 				<h2 class="poppins-bold secondary-headings-label">Experience</h2>
 			</div>
 		</section>
 
 		<section id="skills" class="secondary-bg-b50">
-			<div class="align-section-content">
+			<div class="container align-section-content">
 				<h2 class="poppins-bold secondary-headings-label">Skills</h2>
 			</div>
 		</section>
 
 		<section id="contact" class="secondary-bg-b50">
-			<div class="align-section-content">
+			<div class="container align-section-content">
 				<h2 class="poppins-bold secondary-headings-label">Contact</h2>
 			</div>
 		</section>
 
 		<section id="blog" class="secondary-bg-b50">
-			<div class="align-section-content">
+			<div class="container align-section-content">
 				<h2 class="poppins-bold secondary-headings-label">Blog</h2>
 			</div>
 		</section>
