@@ -16,72 +16,74 @@
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body class="poppins-regular">
-
 	<header>
-		<!-- TOP NAVBAR -->
-		<div id="topbar" class="position-fixed top-0 d-lg-none">
-			<nav id="header-nav" class="navbar">
+		<!-- NAVBAR -->
+		<div class="sidebar">
+			<nav id="sidebar-nav" class="navbar">
 				<div class="container-fluid">
-					
-					<div class="icon-bar">
-						<!-- Burger Menu Button -->
-						<button class="navbar-toggler d-inline p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#header-offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-							<img src="images/navbar-toggler-icon.svg"></span>
-						</button>
 
-						<!-- Language Dropdown -->
-						<div class="dropdown d-inline p-2 lang-dropdown">
-				            <button class="btn dropdown-toggle" type="button" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-				              <i class="bi bi-translate"></i>
-				            </button>
-				            <ul class="dropdown-menu accent">
-				              <li class="dropdown-item noto-sans-devanagari-regular">
-				              	<a class="nav-link" href="in-hi/index.html">
-				              		<span>
-				              			<img src="images/flags/in.svg" class="img-thumbnail">
-				              		</span>
-				              		हिंदी
-				              	</a>
-				              </li>
-				              <li class="dropdown-item anek-odia-regular">
-				              	<a class="nav-link" href="in-od/index.html">
-				              		<span>
-				              			<img src="images/flags/in.svg" class="img-thumbnail">
-				              		</span>
-				              		ଓଡ଼ିଆ
-				              	</a>
-				              </li>
-				              <li class="dropdown-item germania-one-regular">
-				              	<a class="nav-link" href="de/index.html">
-				              		<span>
-				              			<img src="images/flags/de.svg" class="img-thumbnail">
-				              		</span>
-				              		Deutsch
-				              	</a>
-				              </li>
-				              <li class="dropdown-item active">
-				              	<a class="nav-link" href="#">
-				              		<span>
-				              			<img src="images/flags/us.svg" class="img-thumbnail">
-				              		</span>
-				              		English
-				              	</a>
-				              </li>
-				            </ul>
-			          	</div>
+					<div id="navbar-header">
+						
+						<div class="icon-bar">
+							<!-- Burger Menu Button -->
+							<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+								<img src="images/navbar-toggler-icon.svg"></span>
+							</button>
+
+							<!-- Language Dropdown -->
+							<div class="dropdown lang-dropdown">
+					            <button class="btn dropdown-toggle" type="button" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					              <i class="bi bi-translate"></i>
+					            </button>
+					            <ul class="dropdown-menu accent">
+					              <li class="dropdown-item noto-sans-devanagari-regular">
+					              	<a class="nav-link" href="in-hi/index.html">
+					              		<span>
+					              			<img src="images/flags/in.svg" class="img-thumbnail">
+					              		</span>
+					              		हिंदी
+					              	</a>
+					              </li>
+					              <li class="dropdown-item anek-odia-regular">
+					              	<a class="nav-link" href="in-od/index.html">
+					              		<span>
+					              			<img src="images/flags/in.svg" class="img-thumbnail">
+					              		</span>
+					              		ଓଡ଼ିଆ
+					              	</a>
+					              </li>
+					              <li class="dropdown-item germania-one-regular">
+					              	<a class="nav-link" href="de/index.html">
+					              		<span>
+					              			<img src="images/flags/de.svg" class="img-thumbnail">
+					              		</span>
+					              		Deutsch
+					              	</a>
+					              </li>
+					              <li class="dropdown-item active">
+					              	<a class="nav-link" href="#">
+					              		<span>
+					              			<img src="images/flags/us.svg" class="img-thumbnail">
+					              		</span>
+					              		English
+					              	</a>
+					              </li>
+					            </ul>
+				          	</div>
+				
+						</div>
+
+						<!-- TODO: Add script to update current section using scrollspy. -->
+						<div id="section-indicator" class="d-flex justify-content-evenly align-items-center secondary-text">
+							<span id="current-section">01</span>
+							<span class="divider gray-100"></span>
+							<span id="end-section">07</span>
+						</div>
+
 					</div>
-
-
-					<!-- TODO: Fix section indicator to update current section using scrollspy. -->
-					<div id="section-indicator" class="d-flex justify-content-evenly align-items-center secondary-text">
-						<span id="current-section">01</span>
-						<span class="divider gray-100"></span>
-						<span id="end-section">07</span>
-					</div>
-
-		
-					<!-- Hidden Sidebar -->
-					<div class="offcanvas offcanvas-start accent" tabindex="-1" id="header-offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+	
+					<!-- OFFCANVAS NAVBAR-->
+					<div class="offcanvas offcanvas-start accent" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 						<div class="offcanvas-header">
 							<div class="icon-bar">
 								<!-- Close Button -->
@@ -92,7 +94,7 @@
 						<div class="offcanvas-body">
 							<ul id="nav-list" class="navbar-nav justify-content-end flex-grow-1 pe-3 poppins-regular">
 								<li class="nav-item" data-bs-dismiss="offcanvas">
-									<a class="nav-link" aria-current="page" href="#">Home</a>
+									<a class="nav-link" aria-current="page" href="#home">Home</a>
 								</li>
 								<li class="nav-item" data-bs-dismiss="offcanvas">
 									<a class="nav-link" aria-current="page" href="#services">Services</a>
@@ -116,170 +118,73 @@
 						</div>
 						
 					</div>
-				
 				</div>
 			</nav>
-		</div>
+
+			<!-- INFOBAR -->
+			<div id="infobar" class="d-none d-lg-block secondary-text">
+
+				<div id="bio">
+					<ul id="bio-list" class="navbar-nav justify-content-end flex-grow-1 pe-3 poppins-regular">
+						<li class="bio-item">
+							<span class="bio-item-title poppins-medium">Name</span><br>
+							<span class="bio-item-description poppins-semibold">Ashish Brahma</span>
+						</li>
+						<li class="bio-item">
+							<span class="bio-item-title poppins-medium">Role</span><br>
+							<span class="bio-item-description poppins-semibold">Mobile Developer</span>
+						</li>
+						<li class="bio-item">
+							<span class="bio-item-title poppins-medium">Email</span><br>
+							<span class="bio-item-description poppins-semibold">ashish.brahma@outlook.com</span>
+						</li>
+					</ul>
+				</div>
+
+			</div>
 	
+		</div>
+
 	</header>
-
-
-	<!-- SIDEBAR -->
-	<div id="sidebar" class="float-start position-fixed d-none d-lg-block">
-		<nav id="sidebar-nav" class="navbar">
-			<div class="container-fluid">
-				<div class="icon-bar">
-					<!-- Burger Menu Button -->
-					<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-						<img src="images/navbar-toggler-icon.svg"></span>
-					</button>
-
-					<!-- Language Dropdown -->
-					<div class="dropend lang-dropdown">
-			            <button class="btn dropdown-toggle" type="button" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-			              <i class="bi bi-translate"></i>
-			            </button>
-			            <ul class="dropdown-menu accent">
-			              <li class="dropdown-item noto-sans-devanagari-regular">
-			              	<a class="nav-link" href="in-hi/index.html">
-			              		<span>
-			              			<img src="images/flags/in.svg" class="img-thumbnail">
-			              		</span>
-			              		हिंदी
-			              	</a>
-			              </li>
-			              <li class="dropdown-item anek-odia-regular">
-			              	<a class="nav-link" href="in-od/index.html">
-			              		<span>
-			              			<img src="images/flags/in.svg" class="img-thumbnail">
-			              		</span>
-			              		ଓଡ଼ିଆ
-			              	</a>
-			              </li>
-			              <li class="dropdown-item germania-one-regular">
-			              	<a class="nav-link" href="de/index.html">
-			              		<span>
-			              			<img src="images/flags/de.svg" class="img-thumbnail">
-			              		</span>
-			              		Deutsch
-			              	</a>
-			              </li>
-			              <li class="dropdown-item active">
-			              	<a class="nav-link" href="#">
-			              		<span>
-			              			<img src="images/flags/us.svg" class="img-thumbnail">
-			              		</span>
-			              		English
-			              	</a>
-			              </li>
-			            </ul>
-		          	</div>
-				</div>
-
 	
-				<!-- Hidden Sidebar -->
-				<div class="offcanvas offcanvas-start accent" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-					<div class="offcanvas-header">
-						<div class="icon-bar">
-							<!-- Close Button -->
-							<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-			          	</div>
-					</div>
 
-					<div class="offcanvas-body">
-						<ul id="nav-list" class="navbar-nav justify-content-end flex-grow-1 pe-3 poppins-regular">
-							<li class="nav-item" data-bs-dismiss="offcanvas">
-								<a class="nav-link" aria-current="page" href="#home">Home</a>
-							</li>
-							<li class="nav-item" data-bs-dismiss="offcanvas">
-								<a class="nav-link" aria-current="page" href="#services">Services</a>
-							</li>
-							<li class="nav-item" data-bs-dismiss="offcanvas">
-								<a class="nav-link" aria-current="page" href="#portfolio">Portfolio</a>
-							</li>
-							<li class="nav-item" data-bs-dismiss="offcanvas">
-								<a class="nav-link" aria-current="page" href="#experience">Experience</a>
-							</li>
-							<li class="nav-item" data-bs-dismiss="offcanvas">
-								<a class="nav-link" aria-current="page" href="#skills">Skills</a>
-							</li>
-							<li class="nav-item" data-bs-dismiss="offcanvas">
-								<a class="nav-link" aria-current="page" href="#contact">Contact</a>
-							</li>
-							<li class="nav-item" data-bs-dismiss="offcanvas">
-								<a class="nav-link" aria-current="page" href="#blog">Blog</a>
-							</li>
-						</ul>
-					</div>
-					
-				</div>
-			</div>
-		</nav>
-
-
-		<!-- INFOBAR -->
-		<div id="infobar" class="d-none d-xl-block secondary-text">
-
-			<!-- TODO: Fix section indicator to update current section using scrollspy. -->
-			<div id="section-indicator" class="d-flex justify-content-evenly align-items-center" style="width: 142px">
-				<span id="current-section">01</span>
-				<span class="divider gray-100"></span>
-				<span id="end-section">07</span>
-			</div>
-
-			<div id="bio">
-				<ul id="bio-list" class="navbar-nav justify-content-end flex-grow-1 pe-3 poppins-regular">
-					<li class="bio-item">
-						<span class="bio-item-title poppins-medium">Name</span><br>
-						<span class="bio-item-description poppins-semibold">Ashish Brahma</span>
-					</li>
-					<li class="bio-item">
-						<span class="bio-item-title poppins-medium">Role</span><br>
-						<span class="bio-item-description poppins-semibold">Mobile Developer</span>
-					</li>
-					<li class="bio-item">
-						<span class="bio-item-title poppins-medium">Email</span><br>
-						<span class="bio-item-description poppins-semibold">ashish.brahma@outlook.com</span>
-					</li>
-				</ul>
-			</div>
-
-		</div>
-	
-	</div>
-	
-	<!-- TODO: Fix scroll target for header nav to reflect scrollspy behaviour.-->
-	<div id="main-content" data-bs-spy="scroll" data-bs-target="#sidebar-nav #header-nav" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="container-fluid g-0">
+	<!-- MAIN CONTENT -->
+	<div id="main-content" data-bs-spy="scroll" data-bs-target="sidebar-nav" data-bs-root-margin="0px 0px -80%" data-bs-smooth-scroll="true" class="container-fluid g-0">
 
 		<section id="home" class="gray-100 clearfix">
-			<picture id="profile-picture" class="image-fluid">
-				<source media="(max-width:767px)" srcset="../images/profile_photo_393.svg">
-				<source media="(max-width:1438px)" srcset="../images/profile_photo_768.svg">
-				<img src='../images/profile_photo_1200.svg' alt="Profile Picture" style="width:auto;">
-			</picture>
 
-			<div id="about" class="container align-section-content secondary-text">
-				<h1 class="poppins-bold">Ashish Brahma</h1>
+			<div class="container-fluid g-0">
 
-				<p>A professional Mobile Application Developer experienced in building applications spanning across Real-Estate, Logistics, Energy, Media, Finance and Retail sectors. Recognised for planning, negotiation, integrity, initiative, proactivity, patience and adaptability.</p>
-			</div>
+				<picture id="profile-picture" class="image-fluid">
+					<source media="(max-width:767px)" srcset="../images/profile_photo_393.svg">
+					<source media="(max-width:1438px)" srcset="../images/profile_photo_768.svg">
+					<img src='../images/profile_photo_1200.svg' alt="Profile Picture" style="width:auto;">
+				</picture>
 
-			<div id="external-links" class="icon-bar">
-				<span class="social-icon" aria-label="External Links">
-					<a class="icon-link btn" href="https://linkedin.com/in/brahma-ashish">
-						<i class="bi bi-linkedin" aria-hidden="true"></i>
-					</a>
-				</span>
-				<span class="social-icon">
-					<a class="icon-link btn" href="https://x.com/b_ashish_3535">
-						<i class="bi bi-twitter-x"></i>
-					</a>
-				</span>
-				<span class="social-icon">
-					<a class="icon-link btn" href="https://github.com/ashish-brahma">
-						<i class="bi bi-github"></i>
-					</a>
-				</span>
+				<div id="about" class="align-section-content secondary-text">
+					<h1 class="poppins-bold">Ashish Brahma</h1>
+
+					<p>A professional Mobile Application Developer experienced in building applications spanning across Real-Estate, Logistics, Energy, Media, Finance and Retail sectors. Recognised for planning, negotiation, integrity, initiative, proactivity, patience and adaptability.</p>
+				</div>
+
+				<div id="social-links" class="icon-bar">
+					<span class="social-icon" aria-label="External Links">
+						<a class="icon-link btn" href="https://linkedin.com/in/brahma-ashish" target="_blank">
+							<i class="bi bi-linkedin" aria-hidden="true"></i>
+						</a>
+					</span>
+					<span class="social-icon">
+						<a class="icon-link btn" href="https://x.com/b_ashish_3535" target="_blank">
+							<i class="bi bi-twitter-x"></i>
+						</a>
+					</span>
+					<span class="social-icon">
+						<a class="icon-link btn" href="https://github.com/ashish-brahma" target="_blank">
+							<i class="bi bi-github"></i>
+						</a>
+					</span>
+				</div>
+
 			</div>
 
 		</section>
@@ -300,18 +205,18 @@
 
 					<div class="col">
 
-						<div class="card">
+						<div class="card h-100">
 						  <span class="service-icon"><i class="bi bi-box"></i></span>
 						  <div class="card-body">
-						  	<h5 class="card-title poppins-bold secondary-headings-label">Design</h5>
+						  	<h5 class="card-title poppins-semibold secondary-headings-label">Design</h5>
 						    <p class="card-text">Beautiful Figma designs with pixel perfect components which deliver user-friendly interfaces.</p>
 						  </div>
 						</div>
 						
-						<div class="card">
+						<div class="card h-100">
 						  <span class="service-icon"><i class="bi bi-command"></i></span>
 						  <div class="card-body">
-						  	<h5 class="card-title poppins-bold secondary-headings-label">Development</h5>
+						  	<h5 class="card-title poppins-semibold secondary-headings-label">Development</h5>
 						    <p class="card-text">Secured and performant apps powered by latest technologies from Apple for an elevated experience.</p>
 						  </div>
 						</div>
@@ -333,7 +238,7 @@
 						<h2 class="poppins-bold secondary-headings-label">Portfolio</h2>
 						
 						<!-- TODO: Add script to make the filter work. -->
-						<div class="dropdown">
+						<div id="project-filter" class="dropdown">
 				            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 				              <img src="images/dropdown-filter-icon.svg"></span>
 				            </a>
@@ -349,28 +254,26 @@
 			    	
 			    	</div>
 
-
-			    	<!-- May use better royalty-free images for cards. -->
 					<div class="row align-items-start row-cols-1 row-cols-md-2 g-4">
 						
 						<div class="col">
-							<div class="card">
-								<img src="../images/project1_placeholder.svg" class="card-img-top" alt="Project1 image">
+							<div class="card h-100">
+								<img src="../images/KS_LinkedInLogo_V2.png" class="card-img-top" alt="Project1 image">
 								<div class="card-body">
-									<h5 class="card-title poppins-bold secondary-headings-label">KartStopper</h5>
+									<h5 class="card-title poppins-semibold secondary-headings-label">KartStopper</h5>
 								    <p class="card-text">KartStopper is a one-stop solution for buyers looking to make informed choices before shopping their daily needs. It improves spending habits of people.</p>
-								    <a id="project-btn" href="https://www.linkedin.com/company/kartstopper" class="btn btn-outline-primary btn-sm"><span class="btn-label open-sans-regular">See Project</span></a>
+								    <a id="project-btn" href="https://www.linkedin.com/company/kartstopper" target="_blank" class="btn btn-outline-primary btn-sm"><span class="btn-label open-sans-regular">See Project</span></a>
 								</div>
 							</div>
 						</div>
 
 						<div class="col">	
-							<div class="card">
-								<img src="../images/project2_placeholder.svg" class="card-img-top" alt="Project2 image">
+							<div class="card h-100">
+								<img src="../images/face-recognition-surveillance.png" class="card-img-top" alt="Project2 image">
 							 	<div class="card-body">
-								    <h5 class="card-title poppins-bold secondary-headings-label">Smart Home Survellance System</h5>
+								    <h5 class="card-title poppins-semibold secondary-headings-label">Smart Home Surveillance System</h5>
 								    <p class="card-text">An access control system which brings the power of state-of-the-art algorithms used in street surveillance systems to an average consumer's home.</p>
-								    <a id="project-btn" href="https://github.com/ashish-brahma/SmartHomeSecuritySystem" class="btn btn-outline-primary btn-sm"><span class="btn-label open-sans-regular">See Project</span></a>
+								    <a id="project-btn" href="https://github.com/ashish-brahma/SmartHomeSecuritySystem" target="_blank" class="btn btn-outline-primary btn-sm"><span class="btn-label open-sans-regular">See Project</span></a>
 								</div>
 							</div>
 						</div>
@@ -385,25 +288,141 @@
 
 		<section id="experience" class="secondary-bg-b50 secondary-text-w25">
 			<div class="container align-section-content">
-				<h2 class="poppins-bold secondary-headings-label">Experience</h2>
+				<div class="col">
+
+					<h2 class="poppins-bold secondary-headings-label">Experience</h2>
+
+					<div class="exp-body">
+
+						<div class="d-flex justify-content-evenly">
+							
+							<div class="p-2 col-2 col-lg-1 col-md-1 col-sm-1">
+								<h5 class="poppins-semibold secondary-headings-label">2024</h5>
+							</div>
+
+							<div class="d-flex flex-column align-items-center justify-content-between">
+								<div class="d-flex justify-content-center">
+									<div class="circle"></div>
+								</div>
+								<div class="d-flex justify-content-center flex-fill" style="margin-top:8px;">
+									<div class="vr"></div>
+								</div>
+							</div>
+							
+							<div class="p-2 col-8 col-lg-8 col-md-8 col-sm-6">
+								
+								<h5 class="poppins-semibold secondary-headings-label">iOS Developer, KartStopper, Vadodara, India (Self-Employed)</h5>
+
+								<div class="d-flex justify-content-start">
+									<span class="start-date"><small>06/2024</small></span>
+									<span class="seperator"><small>-</small></span>
+									<span class="end-date"><small>Present</small></span>
+								</div>
+
+								<ul>
+									<li>Developed a beautiful scalable mobile application which helps people in planning their shopping expenses. It is one-of-a-kind prudential personal finance management tool which boasts of over 10% increase in monthly savings. (SwiftUI, Xcode, Figma)</li>
+								</ul>
+
+							</div>
+
+						</div>
+
+						<div class="d-flex justify-content-evenly">
+							
+							<div class="p-2 col-2 col-lg-1 col-md-1 col-sm-1">
+								<h5 class="poppins-semibold secondary-headings-label">2021</h5>
+							</div>
+
+
+							<div class="d-flex flex-column align-items-center justify-content-between">
+								<div class="d-flex justify-content-center">
+									<div class="circle"></div>
+								</div>
+								<div class="d-flex justify-content-center flex-fill" style="margin-top:8px;">
+									<div class="vr"></div>
+								</div>
+							</div>
+							
+							<div class="p-2 col-8 col-lg-8 col-md-8 col-sm-6">
+								
+								<h5 class="poppins-semibold secondary-headings-label">Business Analyst, Radix Analytics Pvt. Ltd., Ahmedabad, India (Remote)</h5>
+
+								<div class="d-flex justify-content-start">
+									<span class="start-date"><small>06/2021</small></span>
+									<span class="seperator"><small>-</small></span>
+									<span class="end-date"><small>10/2022</small></span>
+								</div>
+
+								<ul>
+									<li>Prepared and analysed datasets to build a bid-pricing predictive model for a US Logistics client with below 5% MAPE resulting in reduced net freight costs. (PrestoDB, Python Pandas)</li>
+									<li>Prepared and managed BI dashboards for decarbonisation plans of a European Energy client to reduce industrial emissions by 60% for achieving IEA Net-Zero goals. (Apache Superset)</li>
+									<li>Developed a web application and configured an API to estimate credit risk of home loan applicants with above 90% accuracy for a BFSI client. (HTML5, CSS3, Python Flask, MySQL)</li>
+								</ul>
+
+							</div>
+
+						</div>
+
+						<div class="d-flex justify-content-evenly">
+							
+							<div class="p-2 col-2 col-lg-1 col-md-1 col-sm-1">
+								<h5 class="poppins-semibold secondary-headings-label">2021</h5>
+							</div>
+
+							<div class="d-flex flex-column align-items-center justify-content-between">
+								<div class="d-flex justify-content-center">
+									<div class="circle"></div>
+								</div>
+								<div class="d-flex justify-content-center flex-fill" style="margin-top:8px;">
+									<div class="vr"></div>
+								</div>
+							</div>
+							
+							<div class="p-2 col-8 col-lg-8 col-md-8 col-sm-6">
+								
+								<h5 class="poppins-semibold secondary-headings-label">Business Analyst Intern, Radix Analytics Pvt. Ltd., Ahmedabad, India (Remote)</h5>
+
+								<div class="d-flex justify-content-start">
+									<span class="start-date"><small>03/2021</small></span>
+									<span class="seperator"><small>-</small></span>
+									<span class="end-date"><small>05/2021</small></span>
+								</div>
+
+								<ul>
+									<li>Orchestrated a POC to maximise XIRR and ROI of an Underwriting Model for a US Real Estate client which yielded 20% higher returns from new development plans. (Excel Solver, VBA)</li>
+								</ul>
+
+							</div>
+
+						</div>
+
+					</div>
+				
+				</div>
 			</div>
 		</section>
 
 		<section id="skills" class="secondary-bg-b50">
 			<div class="container align-section-content">
-				<h2 class="poppins-bold secondary-headings-label">Skills</h2>
+				<div class="col">
+					<h2 class="poppins-bold secondary-headings-label">Skills</h2>
+				</div>
 			</div>
 		</section>
 
 		<section id="contact" class="secondary-bg-b50">
 			<div class="container align-section-content">
-				<h2 class="poppins-bold secondary-headings-label">Contact</h2>
+				<div class="col">
+					<h2 class="poppins-bold secondary-headings-label">Contact</h2>
+				</div>
 			</div>
 		</section>
 
 		<section id="blog" class="secondary-bg-b50">
 			<div class="container align-section-content">
-				<h2 class="poppins-bold secondary-headings-label">Blog</h2>
+				<div class="col">
+					<h2 class="poppins-bold secondary-headings-label">Blog</h2>
+				</div>
 			</div>
 		</section>
 
