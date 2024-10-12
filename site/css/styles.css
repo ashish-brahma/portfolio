@@ -7,10 +7,11 @@ body {
 .sidebar {
 	margin: 0;
 	display: block;
+	position: fixed;
+	z-index: 2;
 	height: 100%;
 	width: auto;
 	padding:16px 42px 16px 16px;
-	position: fixed;
 }
 
 #navbar-header {
@@ -152,19 +153,9 @@ body {
 
 /* MAIN CONTENT */
 
-@media all and (max-width: 991px) {
-	#main-content {
-		padding-top: 112px;
-	}
-
-	section:not(#home) {
-		padding: 112px 0 112px 0;
-	}
-
-	#home {
-		padding-top: 224px;
-		padding-bottom: 112px;
-	}
+#main-content, section {
+	display: flex;
+	flex-direction: column;
 }
 
 section {
@@ -172,17 +163,27 @@ section {
 }
 
 .align-section-content {
-		padding: 32px 16px 32px 16px;
+	padding: 32px 16px 32px 16px;
+}
+
+@media all and (max-width: 991px) {
+	#main-content {
+		padding-top: 112px;
+	}
+
+	section {
+		padding: 112px 0 112px 0;
+	}
+
 }
 
 @media all and (min-width: 768px) {
 	section {
-		padding: 0;
-		height: 90vh;
+		height: 98vh;
 	}
 
 	#home {
-		padding-top: 72px;
+		padding-top: 56px;
 	}
 
 	#experience {
@@ -193,15 +194,14 @@ section {
 @media all and (min-width: 992px) {
 	section {
 		height: 100vh;
-		margin-left: 164px;
 	}
 
 	#home {
-		padding-left: 72px;
+		padding-top: 16px;
 	}
 
-	#experience {
-		height: 100vh;
+	#main-content {
+		padding-left: 276px;
 	}
 
 	.align-section-content {
@@ -211,11 +211,17 @@ section {
 
 @media all and (min-width: 1200px) {
 	section {
+		height: 100vh;
 		margin-left: 264px;
+		padding-left: 0;
 	}
 
-	#home {
+	#main-content {
 		padding-left: 0;
+	}
+
+	#experience {
+		height: 100vh;
 	}
 }
 
@@ -288,6 +294,7 @@ h1 {
 @media all and (max-width: 1438px) {
 	#profile-picture img {
 		display: block;
+		margin-top: 72px;
 		margin-left: auto;
   	margin-right: auto;
   	border-radius: 50%;
@@ -330,7 +337,8 @@ h1 {
 /* SERVICES AND PORTFOLIO */
 
 .col {
-	display: grid;
+	display: flex;
+	flex-direction: column;
 	gap: 32px;
 }
 
@@ -350,13 +358,18 @@ h1 {
 	padding: 8px 16px 8px 16px;
 }
 
-.card .service-icon{
+.card .service-icon {
 	padding: 16px 16px 0 24px;
+	color: #D97A21;
 }
 
-.card i {
+.card .bi-box-arrow-up-right {
+	color: #F5DEC7;
+	font-size: 10px;
+}
+
+.card i:not(.bi-box-arrow-up-right) {
 	font-size: 48px;
-	color: #D97A21;
 }
 
 .card img {
@@ -397,6 +410,11 @@ h1 {
 	color: #FFFFF6;
 }
 
+#portfolio .btn-label {
+	display: flex;
+	gap: 4px;
+}
+
 @media all and (min-width: 768px) {
 	#services button {
 		margin-top: 96px;
@@ -404,15 +422,7 @@ h1 {
 	}
 }
 
-.card, #project-filter {
-	position: static;
-}
-
 /* EXPERIENCE */
-
-.exp-col ul {
-	margin-top: 4px;
-}
 
 .circle {
   width: 48px;
@@ -427,6 +437,172 @@ h1 {
   width: 4px;
   background-color: #D97A21;
   opacity: 1;
+}
+
+
+/* SKILLS */
+
+.skill-donut {
+	position: relative;
+	height: 25vh;
+}
+
+.skill-bar {
+	position: relative;
+	height: 100%;
+}
+
+.skill-donut, .skill-bar {
+	width: 100%;
+	gap: 4px;
+}
+
+@media all and (min-width: 768px) {
+	.skill-donut {
+		width: 30%;
+		gap: 4px;
+	}
+}
+
+@media all and (min-width: 992px) {
+	.skill-bar {
+		width: 35%;
+		gap: 4px;
+	}
+}
+
+.donut-sector {
+	position: absolute;
+	width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.donut-sector::before {
+	content: "";
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	background: #2F1B07;
+}
+
+.donut-ring-outer {
+	position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.donut-ring-outer::before {
+	content: "";
+	width: 130px;
+	height: 130px;
+	border-radius: 50%;
+	background: #2F1B07;
+}
+
+.donut-ring-inner {
+	position: absolute;
+	content: "";
+	width: 132px;
+	height: 132px;
+	border-radius: 50%;
+	z-index: 2;
+}
+
+.donut-ring-inner::before {
+	content: "";
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	background: #2F1B07;
+}
+
+.swift .donut-sector {
+	background: conic-gradient(
+		#2F1B07 0deg 90deg,
+		#FC8E26 90deg 378deg,
+		#2F1B07 378deg 360deg
+	);
+}
+
+.swift .donut-ring-outer {
+	background: conic-gradient(
+		#7E4713 0deg 90deg,
+		#FC8E26 90deg 378deg,
+		#7E4713 378deg 360deg
+	);
+}
+
+.swift .donut-ring-inner {
+	background: conic-gradient(
+		#2F1B07 0deg 90deg,
+		#FC8E26 90deg 378deg,
+		#2F1B07 378deg 360deg
+	);
+}
+
+.ai-ml .donut-sector {
+	background: conic-gradient(
+		#2F1B07 0deg 150deg,
+		#FC8E26 150deg 384deg,
+		#2F1B07 384deg 360deg
+	);
+}
+
+.ai-ml .donut-ring-outer {
+	background: conic-gradient(
+		#7E4713 0deg 150deg,
+		#FC8E26 150deg 384deg,
+		#7E4713 384deg 360deg
+	);
+}
+
+.ai-ml .donut-ring-inner {
+	background: conic-gradient(
+		#2F1B07 0deg 150deg,
+		#FC8E26 150deg 384deg,
+		#2F1B07 384deg 360deg
+	);
+}
+
+.bar-container {
+	padding: 6px 0 6px 0;
+	position: absolute;
+	width: 100%;
+	z-index: 0;
+}
+
+.percentage {
+	z-index: 3;
+}
+
+.skill-donut .percentage {
+	font-size: 48px;
+}
+
+.skill-bar .percentage {
+	font-size: 24px;
+}
+
+.bar {
+	height: 24px;
+	background-color: #FC8E26;
+	z-index: 0;
+}
+
+.ui-ux {
+	width: 80%;
+}
+
+.dev-ops {
+	width: 75%;
+}
+
+.skill {
+	margin-top: 10px;
 }
 
 /* STYLES */
@@ -470,6 +646,14 @@ h1 {
 
 .secondary-headings-label {
 	color: #FC8E26;
+}
+
+.secondary-label-w25 {
+	color: #FDAA5C;
+}
+
+.secondary-label-b50 {
+	background-color: #7E4713;
 }
 
 .secondary-text-w25 {
@@ -550,5 +734,19 @@ h1 {
 .germania-one-regular {
   font-family: "Germania One", system-ui;
   font-weight: 400;
+  font-style: normal;
+}
+
+.figtree-semibold {
+  font-family: "Figtree", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.figtree-bold {
+  font-family: "Figtree", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
   font-style: normal;
 }
