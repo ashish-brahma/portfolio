@@ -15,6 +15,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body class="poppins-regular">
 	<header>
@@ -123,7 +124,7 @@
 			</nav>
 
 			<!-- INFOBAR -->
-			<div id="infobar" class="d-none d-lg-block secondary-text">
+			<div id="infobar" class="d-none d-xl-block secondary-text">
 
 				<div id="bio">
 					<ul id="bio-list" class="navbar-nav justify-content-end flex-grow-1 pe-3 poppins-regular">
@@ -158,11 +159,11 @@
 
 				<picture id="profile-picture" class="image-fluid">
 					<source media="(max-width:767px)" srcset="../images/profile_photo_393.svg">
-					<source media="(max-width:1438px)" srcset="../images/profile_photo_768.svg">
-					<img src='../images/profile_photo_1200.svg' alt="Profile Picture" style="width:auto;">
+					<source media="(max-width:1203px)" srcset="../images/profile_photo_768.svg">
+					<img src='../images/profile_photo_1200.svg' alt="Profile Picture">
 				</picture>
 
-				<div id="about" class="align-section-content secondary-text">
+				<div id="about" class="d-flex flex-column align-section-content secondary-text">
 					<h1 class="poppins-bold">Ashish Brahma</h1>
 
 					<p>A professional Mobile Application Developer experienced in building applications spanning across Real-Estate, Logistics, Energy, Media, Finance and Retail sectors. Recognised for planning, negotiation, integrity, initiative, proactivity, patience and adaptability.</p>
@@ -193,18 +194,18 @@
 		<section id="services" class="secondary-bg-b50 secondary-text-w25">
 
 			<div class="container align-section-content">
-				<div class="row align-items-start row-cols-1 row-cols-md-2 g-4">
+				<div class="row row-cols-1 row-cols-md-2 g-4 justify-content-between">
 					
-					<div class="col">
+					<div class="col col-lg-5">
 						<h2 class="poppins-bold secondary-headings-label">Services</h2>
 
-						<p>I provide a host of services ranging from design, development to marketing campaigns for launching your mobile app.</p>
+						<p>I provide a host of services ranging from design, development to AI/ML augementation for launching your mobile app and making it a success story.</p>
 
-						<button id="download-btn" type="button" class="btn btn-outline-primary btn-lg"><span class="btn-label open-sans-regular">Download Resume<span></button>
+						<button id="download-btn" type="button" class="btn btn-outline-primary btn-lg"><span class="btn-label open-sans-regular">Download Resume</span></button>
 
 					</div>
 
-					<div class="col">
+					<div class="col col-lg-6">
 
 						<div class="card h-100">
 						  <span class="service-icon"><i class="bi bi-box"></i></span>
@@ -255,7 +256,7 @@
 			    	
 			    	</div>
 
-					<div class="row align-items-start row-cols-1 row-cols-md-2 g-4">
+					<div class="row row-cols-1 row-cols-md-2 g-4 align-items-start">
 						
 						<div class="col">
 							<div class="card h-100">
@@ -412,7 +413,7 @@
 					<div id="skills-body">
 
 						<!-- Donuts -->
-						<div class="p-2 d-flex flex-wrap justify-content-evenly">
+						<div class="p-2 d-flex flex-wrap justify-content-evenly donuts">
 							
 							<div class="p-2 d-flex flex-column skill-donut">
 									
@@ -455,7 +456,7 @@
 						</div>
 
 						<!-- Bars -->
-						<div class="p-2 d-flex flex-wrap justify-content-evenly">
+						<div class="p-2 d-flex flex-wrap justify-content-evenly bars">
 
 							<div class="p-2 d-flex flex-column skill-bar">
 								
@@ -495,15 +496,70 @@
 			</div>
 		</section>
 
-		<section id="contact" class="secondary-bg-b50">
+		<section id="contact" class="secondary-bg-b50 secondary-text-w25">
 			<div class="container align-section-content">
 				<div class="col">
-					<h2 class="poppins-bold secondary-headings-label">Contact</h2>
+					<h2 class="poppins-bold secondary-headings-label">Get In Touch</h2>
+
+					<div class="contact-body align-items-start justify-content-between">
+
+						<div class="col col-lg-5">
+							<h4 class="poppins-semibold secondary-headings-label">Let's Connect.</h4>
+
+							<div id="contact-body">
+								<p>It may take some time for me to respond depending on the volume of requests received as we speak.</p>
+								<p>Thanks for your understanding.</p>
+							</div>
+
+						</div>
+
+						<!-- CONTACT FORM -->
+						<div id="contact-form" class="col col-lg-6">
+
+							<form class="fira-sans-condensed-medium">
+
+								<!-- Name -->
+								<div class="mb-3">
+									<label for="input-name" class="form-label visually-hidden">Name</label>
+									<input type="text" class="form-control" id="input-name" aria-label="Name input" placeholder="Name">
+								</div>
+								
+								<!-- Email -->
+								<div class="mb-3">
+									<label for="input-email" class="form-label visually-hidden">Email</label>
+									<input type="email" class="form-control" id="input-email" aria-describedby="emailHelp" aria-label="Email input" placeholder="Email">
+									<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+								</div>
+
+								<!-- Subject -->
+								<div class="mb-3">
+									<label for="input-subject" class="form-label visually-hidden">Subject</label>
+									<input type="text" class="form-control" id="input-subject" aria-label="Subject input" placeholder="Subject">
+								</div>
+
+								<!-- Message -->
+								<div class="mb-3">
+									<label for="textarea-message" class="form-label visually-hidden">Message</label>
+									<textarea class="form-control" id="textarea-message" rows="4" aria-describedby="messageHelp" aria-label="Subject text area" placeholder="Message..."></textarea>
+									<div id="messageHelp" class="form-text">Maximum 300 characters long.</div>
+								</div>
+
+								<div class="mb-3 d-flex justify-content-center">
+									<!-- Submit Button -->
+									<button id="send-btn" type="button" class="btn btn-outline-primary btn-lg"><span class="btn-label fira-sans-condensed-medium">Send</span></button>
+								</div>
+							
+							</form>
+
+						</div>
+
+					</div>
+
 				</div>
 			</div>
 		</section>
 
-		<section id="blog" class="secondary-bg-b50">
+		<section id="blog" class="secondary-bg-b50 secondary-text-w25">
 			<div class="container align-section-content">
 				<div class="col">
 					<h2 class="poppins-bold secondary-headings-label">Blog</h2>

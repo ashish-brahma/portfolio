@@ -5,13 +5,13 @@ body {
 /* SIDEBAR NAVBAR */
 
 .sidebar {
-	margin: 0;
 	display: block;
 	position: fixed;
-	z-index: 2;
 	height: 100%;
 	width: auto;
 	padding:16px 42px 16px 16px;
+	margin: 0;
+	z-index: 4;
 }
 
 #navbar-header {
@@ -31,8 +31,7 @@ body {
 	margin: 10px;
 }
 
-
-@media all and (max-width: 991px) {
+@media all and (max-width: 1199px) {
 	.sidebar {
 		height: auto;
 		width: 100vw;
@@ -69,10 +68,10 @@ body {
 	gap: 12px;
 }
 
-@media all and (max-width: 991px) {
+@media all and (max-width: 1200px) {
 	.navbar .icon-bar {
 		display: flex;
-		gap: px;
+		gap: 12px;
 	}
 }
 
@@ -160,34 +159,17 @@ body {
 
 section {
 	height: inherit;
+	padding: 112px 0 112px 0;
 }
 
 .align-section-content {
 	padding: 32px 16px 32px 16px;
 }
 
-@media all and (max-width: 991px) {
-	#main-content {
-		padding-top: 112px;
-	}
-
-	section {
-		padding: 112px 0 112px 0;
-	}
-
-}
-
 @media all and (min-width: 768px) {
-	section {
-		height: 98vh;
-	}
-
 	#home {
-		padding-top: 56px;
-	}
-
-	#experience {
-		height: inherit;
+		padding-top: 72px;
+		margin-top: 42px;
 	}
 }
 
@@ -197,11 +179,7 @@ section {
 	}
 
 	#home {
-		padding-top: 16px;
-	}
-
-	#main-content {
-		padding-left: 276px;
+		margin-top: 0;
 	}
 
 	.align-section-content {
@@ -212,11 +190,7 @@ section {
 @media all and (min-width: 1200px) {
 	section {
 		height: 100vh;
-		margin-left: 264px;
-		padding-left: 0;
-	}
-
-	#main-content {
+		margin-left: 292px;
 		padding-left: 0;
 	}
 
@@ -231,27 +205,38 @@ section {
 	}
 }
 
+@media all and (min-width: 1366px) {
+	#home {
+		padding-top: 0;
+	}
+}
+
+p {
+	line-height: 28px;
+	margin-bottom: 8px;
+}
+
 /* HOME */
 
 #about p {
 	margin-top: 72px;
 }
 
-@media all and (max-width: 576px) {	
-	#about {
-		padding: 72px 100px 72px 100px;
-	}
+#about {
+	padding: 72px 100px 72px 100px;
 }
 
-@media all and (min-width: 577px) {	
+@media all and (min-width: 576px) {	
 	#about {
-		padding: 72px 64px 72px 64px;
+		padding-left: 64px;
+		padding-right: 64px;
 	}
 }
 
 @media all and (min-width: 1204px) {	
 	#about {
-		padding: 72px 32px 72px 32px;
+		padding-left: 32px;
+		padding-right: 32px;
 	}
 }
 
@@ -279,11 +264,11 @@ h1 {
 
 @media all and (min-width: 992px) {
 	#about h1 {
-		font-size: 96px;
+		font-size: 72px;
 	}
 }
 
-@media all and (min-width: 1200px) {
+@media all and (min-width: 1440px) {
 	#about h1 {
 		font-size: 96px;
 	}
@@ -291,7 +276,11 @@ h1 {
 
 /* PROFILE PICTURE */
 
-@media all and (max-width: 1438px) {
+#profile-picture {
+	width: auto;
+}
+
+@media all and (max-width: 1203px) {
 	#profile-picture img {
 		display: block;
 		margin-top: 72px;
@@ -301,16 +290,25 @@ h1 {
 	}
 }
 
-@media all and (min-width: 1439px) {
-	#home {
-		padding-top: 0px;
-	}
+@media all and (min-width: 1204px) {
 
 	#profile-picture {
 		float: right;
 		margin-left: 32px;
 	}
+
+	#profile-picture img {
+		height: 72vh;
+	}
 }
+
+@media all and (min-width: 1366px) {
+	#profile-picture img {
+		height: 100vh;
+	}
+}
+
+/* SOCIAL LINKS */
 
 #social-links {
 	text-align: center;
@@ -340,6 +338,10 @@ h1 {
 	display: flex;
 	flex-direction: column;
 	gap: 32px;
+}
+
+.row { 
+	display: flex;
 }
 
 #download-btn, #project-btn {
@@ -442,6 +444,18 @@ h1 {
 
 /* SKILLS */
 
+#skills-body {
+	display: flex;
+	flex-direction: column;
+	gap: 64px 64px;
+}
+
+@media all and (min-width: 1204px) {
+	.donuts {
+		margin: 72px 120px 72px 120px;
+	}
+}
+
 .skill-donut {
 	position: relative;
 	height: 25vh;
@@ -460,14 +474,12 @@ h1 {
 @media all and (min-width: 768px) {
 	.skill-donut {
 		width: 30%;
-		gap: 4px;
 	}
 }
 
 @media all and (min-width: 992px) {
 	.skill-bar {
 		width: 35%;
-		gap: 4px;
 	}
 }
 
@@ -479,28 +491,12 @@ h1 {
   z-index: 0;
 }
 
-.donut-sector::before {
-	content: "";
-	width: 120px;
-	height: 120px;
-	border-radius: 50%;
-	background: #2F1B07;
-}
-
 .donut-ring-outer {
 	position: absolute;
   width: 160px;
   height: 160px;
   border-radius: 50%;
   z-index: 1;
-}
-
-.donut-ring-outer::before {
-	content: "";
-	width: 130px;
-	height: 130px;
-	border-radius: 50%;
-	background: #2F1B07;
 }
 
 .donut-ring-inner {
@@ -520,7 +516,7 @@ h1 {
 	background: #2F1B07;
 }
 
-.swift .donut-sector {
+.swift .donut-sector, .swift .donut-ring-inner {
 	background: conic-gradient(
 		#2F1B07 0deg 90deg,
 		#FC8E26 90deg 378deg,
@@ -536,15 +532,7 @@ h1 {
 	);
 }
 
-.swift .donut-ring-inner {
-	background: conic-gradient(
-		#2F1B07 0deg 90deg,
-		#FC8E26 90deg 378deg,
-		#2F1B07 378deg 360deg
-	);
-}
-
-.ai-ml .donut-sector {
+.ai-ml .donut-sector, .ai-ml .donut-ring-inner {
 	background: conic-gradient(
 		#2F1B07 0deg 150deg,
 		#FC8E26 150deg 384deg,
@@ -557,14 +545,6 @@ h1 {
 		#7E4713 0deg 150deg,
 		#FC8E26 150deg 384deg,
 		#7E4713 384deg 360deg
-	);
-}
-
-.ai-ml .donut-ring-inner {
-	background: conic-gradient(
-		#2F1B07 0deg 150deg,
-		#FC8E26 150deg 384deg,
-		#2F1B07 384deg 360deg
 	);
 }
 
@@ -603,6 +583,78 @@ h1 {
 
 .skill {
 	margin-top: 10px;
+}
+
+/* CONTACT */
+
+.contact-body {
+	display: flex;
+	gap: 48px;
+}
+
+#contact-form {
+	padding: 96px 24px 96px 24px;
+}
+
+@media all and (max-width: 768px) {
+	.contact-body {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	#contact-form {
+		padding: 0;
+		width: 100%;
+	}
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	padding: 48px 32px 48px 32px;
+	gap: 16px;
+	background-color: #FC8E26;
+	color: #FFFFF6;
+}
+
+.form-text {
+	color: #F5DEC7;
+}
+
+.form-control {
+	background: none;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 1px solid #FFFFF6;
+	border-radius: 0;
+	padding-left: 0;
+}
+ 
+.form-control::placeholder {
+	color: #FFFFF6;
+}
+
+.form-control:focus {
+	background: rgb(255 255 255 / 10%);
+}
+
+form #send-btn {
+	margin: 8px 12px 8px 12px;
+	padding: 24px 48px 24px 48px;
+	border-radius: 0;
+	color: #F5DEC7;
+	border: 2px solid #F5DEC7;
+}
+
+form #send-btn .btn-label {
+	color: inherit;
+}
+
+form #send-btn:hover {
+	background-color:  #D97A21;
+	color: #FFFFFF;
+	border: 2px solid #FFFFF6;
 }
 
 /* STYLES */
@@ -748,5 +800,11 @@ h1 {
   font-family: "Figtree", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
+  font-style: normal;
+}
+
+.fira-sans-condensed-medium {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 500;
   font-style: normal;
 }
