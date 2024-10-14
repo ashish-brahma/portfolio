@@ -20,7 +20,7 @@
 <body class="poppins-regular">
 	<header>
 		<!-- NAVBAR -->
-		<div class="sidebar">
+		<div class="sidebar secondary-bg-cards-nav">
 			<nav id="sidebar-nav" class="navbar">
 				<div class="container-fluid">
 
@@ -29,46 +29,51 @@
 						<div class="icon-bar">
 							<!-- Burger Menu Button -->
 							<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-								<img src="images/navbar-toggler-icon.svg"></span>
+								<span>
+									<img src="images/navbar-toggler-icon.svg">
+									<div class="overlay secondary-bg-cards-nav">
+										<img src="images/hamburger-button-hover.svg">
+									</div>
+								</span>
 							</button>
 
 							<!-- Language Dropdown -->
-							<div class="dropdown lang-dropdown">
-					            <button class="btn dropdown-toggle" type="button" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<div id="lang-dropdown" class="dropdown">
+					            <button class="btn dropdown-toggle gray-100" type="button" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 					              <i class="bi bi-translate"></i>
 					            </button>
-					            <ul class="dropdown-menu accent">
-					              <li class="dropdown-item noto-sans-devanagari-regular">
-					              	<a class="nav-link" href="in-hi/index.html">
+					            <ul class="dropdown-menu bg-accent">
+					              <li class="noto-sans-devanagari-regular">
+					              	<button class="dropdown-item gray-100" onclick="langSelection('hi-in')">
 					              		<span>
 					              			<img src="images/flags/in.svg" class="img-thumbnail">
+					              			हिंदी
 					              		</span>
-					              		हिंदी
-					              	</a>
+					              	</button>
 					              </li>
-					              <li class="dropdown-item anek-odia-regular">
-					              	<a class="nav-link" href="in-od/index.html">
+					              <li class="anek-odia-regular">
+					              	<button class="dropdown-item gray-100" onclick="langSelection('od-in')">
 					              		<span>
 					              			<img src="images/flags/in.svg" class="img-thumbnail">
 					              		</span>
 					              		ଓଡ଼ିଆ
-					              	</a>
+					              	</button>
 					              </li>
-					              <li class="dropdown-item germania-one-regular">
-					              	<a class="nav-link" href="de/index.html">
+					              <li class="germania-one-regular">
+					              	<button class="dropdown-item gray-100" onclick="langSelection('de')">
 					              		<span>
 					              			<img src="images/flags/de.svg" class="img-thumbnail">
 					              		</span>
 					              		Deutsch
-					              	</a>
+					              	</button>
 					              </li>
-					              <li class="dropdown-item active">
-					              	<a class="nav-link" href="#">
+					              <li>
+					              	<button class="dropdown-item active gray-100" onclick="langSelection('en')">
 					              		<span>
 					              			<img src="images/flags/us.svg" class="img-thumbnail">
 					              		</span>
 					              		English
-					              	</a>
+					              	</button>
 					              </li>
 					            </ul>
 				          	</div>
@@ -78,43 +83,45 @@
 						<!-- TODO: Add script to update current section using scrollspy. -->
 						<div id="section-indicator" class="d-flex justify-content-evenly align-items-center secondary-text">
 							<span id="current-section">01</span>
-							<span class="divider gray-100"></span>
-							<span id="end-section">07</span>
+							<span class="divider bg-gray-100"></span>
+							<span class="gray-100">07</span>
 						</div>
 
 					</div>
 	
 					<!-- OFFCANVAS NAVBAR-->
-					<div class="offcanvas offcanvas-start accent" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+					<div class="offcanvas offcanvas-start bg-accent" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 						<div class="offcanvas-header">
 							<div class="icon-bar">
 								<!-- Close Button -->
-								<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+								<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+									<span><img src="images/hamburger-button.svg"></span>
+								</button>
 				          	</div>
 						</div>
 
 						<div class="offcanvas-body">
 							<ul id="nav-list" class="navbar-nav justify-content-end flex-grow-1 pe-3 poppins-regular">
 								<li class="nav-item" data-bs-dismiss="offcanvas">
-									<a class="nav-link" aria-current="page" href="#home">Home</a>
+									<a class="nav-link gray-100" aria-current="page" href="#home">Home</a>
 								</li>
 								<li class="nav-item" data-bs-dismiss="offcanvas">
-									<a class="nav-link" aria-current="page" href="#services">Services</a>
+									<a class="nav-link gray-100" aria-current="page" href="#services">Services</a>
 								</li>
 								<li class="nav-item" data-bs-dismiss="offcanvas">
-									<a class="nav-link" aria-current="page" href="#portfolio">Portfolio</a>
+									<a class="nav-link gray-100" aria-current="page" href="#portfolio">Portfolio</a>
 								</li>
 								<li class="nav-item" data-bs-dismiss="offcanvas">
-									<a class="nav-link" aria-current="page" href="#experience">Experience</a>
+									<a class="nav-link gray-100" aria-current="page" href="#experience">Experience</a>
 								</li>
 								<li class="nav-item" data-bs-dismiss="offcanvas">
-									<a class="nav-link" aria-current="page" href="#skills">Skills</a>
+									<a class="nav-link gray-100" aria-current="page" href="#skills">Skills</a>
 								</li>
 								<li class="nav-item" data-bs-dismiss="offcanvas">
-									<a class="nav-link" aria-current="page" href="#contact">Contact</a>
+									<a class="nav-link gray-100" aria-current="page" href="#contact">Contact</a>
 								</li>
 								<li class="nav-item" data-bs-dismiss="offcanvas">
-									<a class="nav-link" aria-current="page" href="#blog">Blog</a>
+									<a class="nav-link gray-100" aria-current="page" href="#blog">Blog</a>
 								</li>
 							</ul>
 						</div>
@@ -130,15 +137,15 @@
 					<ul id="bio-list" class="navbar-nav justify-content-end flex-grow-1 pe-3 poppins-regular">
 						<li class="bio-item">
 							<span class="bio-item-title poppins-medium">Name</span><br>
-							<span class="bio-item-description poppins-semibold">Ashish Brahma</span>
+							<span class="bio-item-description poppins-semibold gray-100">Ashish Brahma</span>
 						</li>
 						<li class="bio-item">
 							<span class="bio-item-title poppins-medium">Role</span><br>
-							<span class="bio-item-description poppins-semibold">Mobile Developer</span>
+							<span class="bio-item-description poppins-semibold gray-100">Mobile Developer</span>
 						</li>
 						<li class="bio-item">
 							<span class="bio-item-title poppins-medium">Email</span><br>
-							<span class="bio-item-description poppins-semibold">ashish.brahma@outlook.com</span>
+							<span class="bio-item-description poppins-semibold gray-100">ashish.brahma@outlook.com</span>
 						</li>
 					</ul>
 				</div>
@@ -153,7 +160,7 @@
 	<!-- MAIN CONTENT -->
 	<div id="main-content" data-bs-spy="scroll" data-bs-target="sidebar-nav" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="container-fluid g-0">
 
-		<section id="home" class="gray-100 clearfix">
+		<section id="home" class="bg-gray-100 clearfix">
 
 			<div class="container-fluid g-0">
 
@@ -191,7 +198,7 @@
 
 		</section>
 
-		<section id="services" class="secondary-bg-b50 secondary-text-w25">
+		<section id="services" class="secondary-bg-section secondary-text-section">
 
 			<div class="container align-section-content">
 				<div class="row row-cols-1 row-cols-md-2 g-4 justify-content-between">
@@ -201,13 +208,15 @@
 
 						<p>I provide a host of services ranging from design, development to AI/ML augementation for launching your mobile app and making it a success story.</p>
 
-						<button id="download-btn" type="button" class="btn btn-outline-primary btn-lg"><span class="btn-label open-sans-regular">Download Resume</span></button>
+						<a id="download-btn" type="button" class="btn btn-outline-primary btn-lg" href="/resources/Resume-AshishBrahma-iOSDeveloper-Sep2024.pdf" download>
+							<span class="btn-label gray-100 open-sans-regular">Download Resume</span>
+						</a>
 
 					</div>
 
 					<div class="col col-lg-6">
 
-						<div class="card h-100">
+						<div class="card secondary-bg-cards-nav h-100">
 						  <span class="service-icon"><i class="bi bi-box"></i></span>
 						  <div class="card-body">
 						  	<h5 class="card-title poppins-semibold secondary-headings-label">Design</h5>
@@ -215,7 +224,7 @@
 						  </div>
 						</div>
 						
-						<div class="card h-100">
+						<div class="card secondary-bg-cards-nav h-100">
 						  <span class="service-icon"><i class="bi bi-command"></i></span>
 						  <div class="card-body">
 						  	<h5 class="card-title poppins-semibold secondary-headings-label">Development</h5>
@@ -230,7 +239,7 @@
 			
 		</section>
 
-		<section id="portfolio" class="secondary-bg-b50 secondary-text-w25">
+		<section id="portfolio" class="secondary-bg-section secondary-text-section">
 			<div class="container align-section-content">
 
 				<div class="col">
@@ -241,41 +250,46 @@
 						
 						<!-- TODO: Add script to make the filter work. -->
 						<div id="project-filter" class="dropdown">
-				            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-				              <img src="images/dropdown-filter-icon.svg"></span>
-				            </a>
-				            <ul id="project-filter-menu" class="dropdown-menu accent">
+				            <button class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				              <span>
+				              	<img src="images/dropdown-filter-icon.svg">
+				              	<div class="overlay secondary-bg-section">
+									<img src="images/dropdown-filter-button-hover.svg">
+								</div>
+				              </span>
+				            </button>
+				            <ul id="project-filter-menu" class="dropdown-menu secondary-bg-cards-nav">
 				              <li><button class="dropdown-item active" onclick="filterSelection('all')">All</button></li>
 				              <li>
 				                <hr class="dropdown-divider">
 				              </li>				              
-				              <li><button class="dropdown-item" onclick="filterSelection('mob-dev')">Mobile Development</button></li>
-				              <li><button class="dropdown-item" onclick="filterSelection('ai-ml')">AI/ML</button></li>
+				              <li><button class="dropdown-item gray-100" onclick="filterSelection('mob-dev')">Mobile Development</button></li>
+				              <li><button class="dropdown-item gray-100" onclick="filterSelection('ai-ml')">AI/ML</button></li>
 				            </ul>
 				        </div>
 			    	
 			    	</div>
 
-					<div class="row row-cols-1 row-cols-md-2 g-4 align-items-start">
+					<div class="d-flex flex-wrap justify-content-between align-items-start">
 						
-						<div class="col">
-							<div class="card h-100">
+						<div class="p-2 col">
+							<div class="card secondary-bg-cards-nav h-100">
 								<img src="../images/KS_LinkedInLogo_V2.png" class="card-img-top" alt="Project1 image">
 								<div class="card-body">
 									<h5 class="card-title poppins-semibold secondary-headings-label">KartStopper</h5>
 								    <p class="card-text">KartStopper is a one-stop solution for buyers looking to make informed choices before shopping their daily needs. It improves spending habits of people.</p>
-								    <a id="project-btn" href="https://www.linkedin.com/company/kartstopper" target="_blank" class="btn btn-outline-primary btn-sm"><span class="btn-label open-sans-regular">See Project<i class="bi bi-box-arrow-up-right"></i></span></a>
+								    <a id="project-btn" href="https://www.linkedin.com/company/kartstopper" target="_blank" class="btn btn-outline-primary btn-sm"><span class="btn-label gray-100 open-sans-regular">See Project<i class="bi bi-box-arrow-up-right"></i></span></a>
 								</div>
 							</div>
 						</div>
 
-						<div class="col">	
-							<div class="card h-100">
+						<div class="p-2 ms-auto col">	
+							<div class="card secondary-bg-cards-nav h-100">
 								<img src="../images/face-recognition-surveillance.png" class="card-img-top" alt="Project2 image">
 							 	<div class="card-body">
 								    <h5 class="card-title poppins-semibold secondary-headings-label">Smart Home Surveillance System</h5>
 								    <p class="card-text">An access control system which brings the power of state-of-the-art Machine Learning algorithms used in street surveillance systems to an average consumer's home.</p>
-								    <a id="project-btn" href="https://github.com/ashish-brahma/SmartHomeSecuritySystem" target="_blank" class="btn btn-outline-primary btn-sm"><span class="btn-label open-sans-regular">See Project<i class="bi bi-box-arrow-up-right"></i></span></a>
+								    <a id="project-btn" href="https://github.com/ashish-brahma/SmartHomeSecuritySystem" target="_blank" class="btn btn-outline-primary btn-sm"><span class="btn-label gray-100 open-sans-regular">See Project<i class="bi bi-box-arrow-up-right"></i></span></a>
 								</div>
 							</div>
 						</div>
@@ -288,7 +302,7 @@
 
 		</section>
 
-		<section id="experience" class="secondary-bg-b50 secondary-text-w25">
+		<section id="experience" class="secondary-bg-section secondary-text-section">
 			<div class="container align-section-content">
 				<div class="col">
 
@@ -307,7 +321,7 @@
 									<div class="circle"></div>
 								</div>
 								<div class="d-flex justify-content-center flex-fill" style="margin-top:8px;">
-									<div class="vr"></div>
+									<div class="vr bg-accent"></div>
 								</div>
 							</div>
 							
@@ -341,7 +355,7 @@
 									<div class="circle"></div>
 								</div>
 								<div class="d-flex justify-content-center flex-fill" style="margin-top:8px;">
-									<div class="vr"></div>
+									<div class="vr bg-accent"></div>
 								</div>
 							</div>
 							
@@ -376,7 +390,7 @@
 									<div class="circle"></div>
 								</div>
 								<div class="d-flex justify-content-center flex-fill" style="margin-top:8px;">
-									<div class="vr"></div>
+									<div class="vr bg-accent"></div>
 								</div>
 							</div>
 							
@@ -404,7 +418,7 @@
 			</div>
 		</section>
 
-		<section id="skills" class="secondary-bg-b50">
+		<section id="skills" class="secondary-bg-section">
 			<div class="container align-section-content">
 				<div class="col">
 						
@@ -463,7 +477,7 @@
 								<div class="percentage secondary-label-w25 figtree-semibold">80%</div>
 
 								<div class="d-flex flex-column justify-content-center align-items-start">
-									<div class="d-flex secondary-label-b50 bar-container"></div>
+									<div class="d-flex bar-container"></div>
 									<div class="d-flex ui-ux bar"></div>
 								</div>
 								
@@ -478,7 +492,7 @@
 								<div class="percentage secondary-label-w25 figtree-semibold">75%</div>
 
 								<div class="d-flex flex-column justify-content-center align-items-start">
-									<div class="d-flex secondary-label-b50 bar-container"></div>
+									<div class="d-flex bar-container"></div>
 									<div class="d-flex dev-ops bar"></div>
 								</div>
 								
@@ -496,7 +510,7 @@
 			</div>
 		</section>
 
-		<section id="contact" class="secondary-bg-b50 secondary-text-w25">
+		<section id="contact" class="secondary-bg-section secondary-text-section">
 			<div class="container align-section-content">
 				<div class="col">
 					<h2 class="poppins-bold secondary-headings-label">Get In Touch</h2>
@@ -528,7 +542,7 @@
 								<div class="mb-3">
 									<label for="input-email" class="form-label visually-hidden">Email</label>
 									<input type="email" class="form-control" id="input-email" aria-describedby="emailHelp" aria-label="Email input" placeholder="Email">
-									<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+									<div id="emailHelp" class="form-text gray-button">We'll never share your email with anyone else.</div>
 								</div>
 
 								<!-- Subject -->
@@ -541,12 +555,12 @@
 								<div class="mb-3">
 									<label for="textarea-message" class="form-label visually-hidden">Message</label>
 									<textarea class="form-control" id="textarea-message" rows="4" aria-describedby="messageHelp" aria-label="Subject text area" placeholder="Message..."></textarea>
-									<div id="messageHelp" class="form-text">Maximum 300 characters long.</div>
+									<div id="messageHelp" class="form-text gray-button">Maximum 300 characters long.</div>
 								</div>
 
 								<div class="mb-3 d-flex justify-content-center">
-									<!-- Submit Button -->
-									<button id="send-btn" type="button" class="btn btn-outline-primary btn-lg"><span class="btn-label fira-sans-condensed-medium">Send</span></button>
+									<!-- Send Button -->
+									<button id="send-btn" type="button" class="btn btn-outline-primary btn-lg gray-button"><span class="btn-label gray-100 fira-sans-condensed-medium">Send</span></button>
 								</div>
 							
 							</form>
@@ -559,10 +573,11 @@
 			</div>
 		</section>
 
-		<section id="blog" class="secondary-bg-b50 secondary-text-w25">
+		<section id="blog" class="secondary-bg-section secondary-text-section">
 			<div class="container align-section-content">
 				<div class="col">
 					<h2 class="poppins-bold secondary-headings-label">Blog</h2>
+					<p>Arriving soon. Keep an eye on it. :)</p>
 				</div>
 			</div>
 		</section>
@@ -571,6 +586,23 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script>
+		$(function(){
+
+			$(".dropdown-toggle").on("click", function() {
+				if ( $(".dropdown-toggle").hasClass("active") ) {
+					$(this).removeClass("active");
+					
+				} else {
+					$(".dropdown-toggle").removeClass("active");
+
+				  	$(this).addClass("active");
+				}
+
+			})
+		});
+	</script>
 	<script src="js/script.js"></script>
 </body>
 </html>
