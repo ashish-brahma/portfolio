@@ -30,23 +30,23 @@
 							<!-- Burger Menu Button -->
 							<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
 								<span>
-									<img src="images/navbar-toggler-icon.svg">
+									<img src="images/navbar-toggler-icon.svg" alt="Navbar Toggler Icon">
 									<div class="overlay secondary-bg-cards-nav">
-										<img src="images/hamburger-button-hover.svg">
+										<img src="images/hamburger-button-hover.svg" alt="Navbar Toggler Overlay">
 									</div>
 								</span>
 							</button>
 
 							<!-- Language Dropdown -->
 							<div id="lang-dropdown" class="dropdown">
-					            <button class="btn dropdown-toggle gray-100" type="button" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					            <button class="btn dropdown-toggle gray-100" type="button" role="button" data-bs-toggle="dropdown" alt="Language Dropdown" aria-expanded="false">
 					              <i class="bi bi-translate"></i>
 					            </button>
 					            <ul class="dropdown-menu bg-accent">
 					              <li class="noto-sans-devanagari-regular">
 					              	<button class="dropdown-item gray-100" onclick="langSelection('hi-in')">
 					              		<span>
-					              			<img src="images/flags/in.svg" class="img-thumbnail">
+					              			<img src="images/flags/in.svg" alt="Indian Flag" class="img-thumbnail">
 					              			हिंदी
 					              		</span>
 					              	</button>
@@ -54,7 +54,7 @@
 					              <li class="anek-odia-regular">
 					              	<button class="dropdown-item gray-100" onclick="langSelection('od-in')">
 					              		<span>
-					              			<img src="images/flags/in.svg" class="img-thumbnail">
+					              			<img src="images/flags/in.svg" alt="Indian Flag" class="img-thumbnail">
 					              		</span>
 					              		ଓଡ଼ିଆ
 					              	</button>
@@ -62,7 +62,7 @@
 					              <li class="germania-one-regular">
 					              	<button class="dropdown-item gray-100" onclick="langSelection('de')">
 					              		<span>
-					              			<img src="images/flags/de.svg" class="img-thumbnail">
+					              			<img src="images/flags/de.svg" alt="German Flag" class="img-thumbnail">
 					              		</span>
 					              		Deutsch
 					              	</button>
@@ -70,7 +70,7 @@
 					              <li>
 					              	<button class="dropdown-item active gray-100" onclick="langSelection('en')">
 					              		<span>
-					              			<img src="images/flags/us.svg" class="img-thumbnail">
+					              			<img src="images/flags/us.svg" alt="US Flag" class="img-thumbnail">
 					              		</span>
 					              		English
 					              	</button>
@@ -95,7 +95,7 @@
 							<div class="icon-bar">
 								<!-- Close Button -->
 								<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
-									<span><img src="images/hamburger-button.svg"></span>
+									<span><img src="images/hamburger-button.svg" alt="Hamburger Nav Button"></span>
 								</button>
 				          	</div>
 						</div>
@@ -165,9 +165,9 @@
 			<div class="container-fluid g-0">
 
 				<picture id="profile-picture" class="image-fluid">
-					<source media="(max-width:767px)" srcset="../images/profile_photo_393.svg">
-					<source media="(max-width:1203px)" srcset="../images/profile_photo_768.svg">
-					<img src='../images/profile_photo_1200.svg' alt="Profile Picture">
+					<source media="(max-width:767px)" srcset="images/profile_photo_393.svg">
+					<source media="(max-width:1203px)" srcset="images/profile_photo_768.svg">
+					<img src='images/profile_photo_1200.svg' alt="Profile Picture">
 				</picture>
 
 				<div id="about" class="d-flex flex-column align-section-content secondary-text">
@@ -177,17 +177,17 @@
 				</div>
 
 				<div id="social-links" class="icon-bar">
-					<span class="social-icon" aria-label="External Links">
+					<span class="social-icon" alt="LinkedIn Button" aria-label="External Links">
 						<a class="icon-link btn" href="https://linkedin.com/in/brahma-ashish" target="_blank">
 							<i class="bi bi-linkedin" aria-hidden="true"></i>
 						</a>
 					</span>
-					<span class="social-icon">
+					<span class="social-icon" alt="Twitter Button" aria-label="External Links">
 						<a class="icon-link btn" href="https://x.com/b_ashish_3535" target="_blank">
 							<i class="bi bi-twitter-x"></i>
 						</a>
 					</span>
-					<span class="social-icon">
+					<span class="social-icon" alt="GitHub Button" aria-label="External Links">
 						<a class="icon-link btn" href="https://github.com/ashish-brahma" target="_blank">
 							<i class="bi bi-github"></i>
 						</a>
@@ -250,11 +250,11 @@
 						
 						<!-- TODO: Add script to make the filter work. -->
 						<div id="project-filter" class="dropdown">
-				            <button class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				            <button class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" alt="Project filter dropdown" aria-expanded="false">
 				              <span>
-				              	<img src="images/dropdown-filter-icon.svg">
+				              	<img src="images/dropdown-filter-icon.svg" alt="Dropdown Filter">
 				              	<div class="overlay secondary-bg-section">
-									<img src="images/dropdown-filter-button-hover.svg">
+									<img src="images/dropdown-filter-button-hover.svg" alt="Dropdown Filter Overlay">
 								</div>
 				              </span>
 				            </button>
@@ -274,7 +274,7 @@
 						
 						<div class="p-2 col">
 							<div class="card secondary-bg-cards-nav h-100">
-								<img src="../images/KS_LinkedInLogo_V2.png" class="card-img-top" alt="Project1 image">
+								<img src="images/KS_LinkedInLogo_V2.png" class="card-img-top" alt="Project1 image">
 								<div class="card-body">
 									<h5 class="card-title poppins-semibold secondary-headings-label">KartStopper</h5>
 								    <p class="card-text">KartStopper is a one-stop solution for buyers looking to make informed choices before shopping their daily needs. It improves spending habits of people.</p>
@@ -285,7 +285,7 @@
 
 						<div class="p-2 ms-auto col">	
 							<div class="card secondary-bg-cards-nav h-100">
-								<img src="../images/face-recognition-surveillance.png" class="card-img-top" alt="Project2 image">
+								<img src="images/face-recognition-surveillance.png" class="card-img-top" alt="Project2 image">
 							 	<div class="card-body">
 								    <h5 class="card-title poppins-semibold secondary-headings-label">Smart Home Surveillance System</h5>
 								    <p class="card-text">An access control system which brings the power of state-of-the-art Machine Learning algorithms used in street surveillance systems to an average consumer's home.</p>
