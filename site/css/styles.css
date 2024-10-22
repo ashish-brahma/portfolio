@@ -2,69 +2,60 @@ body {
 	font-size: 16;
 }
 
-/* SIDEBAR NAVBAR */
+/* NAVBAR */
 
-.sidebar {
-	display: block;
-	position: fixed;
-	height: 100%;
-	width: auto;
-	padding:16px 42px 16px 16px;
-	margin: 0;
+#sidebar, nav {
 	z-index: 4;
 }
+	
+#sidebar-nav {
+	position: fixed;
+	width: 100%;
+}
 
-#navbar-header {
+.navbar .icon-bar {
 	display: flex;
-	flex-direction: column;
+	align-items: center;
 }
 
-#section-indicator {
-	margin-top: 72px;
-	padding:0 48px 0 48px;
+#nav-list {
+	align-items: center;		
 }
 
-.divider {
-	width: 62px;
-	flex: 2;
-	padding: 1px;
-	margin: 10px;
+@media all and (min-width: 576px) {
+	#nav-list {
+		padding: 72px 48px;
+		align-items: flex-start;
+	}
 }
 
-@media all and (max-width: 1199px) {
-	.sidebar {
-		height: auto;
-		width: 100vw;
+@media all and (min-width: 1200px) {
+	#sidebar-nav {
+		width: auto;
+    height: 100%;
+    padding-right: 1.75rem;
+    align-content: flex-start;
+  }
+
+	.navbar .icon-bar, .navbar .container {
+		flex-direction: column;
+		align-items: flex-start;
 	}
 
-	#navbar-header {
-		flex-direction: row;
-		width: 100vw;
-		justify-content: space-between;
+	.navbar .icon-bar {
+		gap: 12px;
+	}
+
+	.navbar .container {
+		gap: 72px;
+	}
+
+	#lang-dropdown {
+		padding: 8px;
 	}
 
 	#section-indicator {
-		margin-top: 0;
-	}
-}
-
-.sidebar-nav {
-	border-radius: 0;
-	border: 0;
-}
-
-/* NAVBAR TOOLBAR */
-
-.navbar .icon-bar {
-	display: block;
-	gap: 12px;
-}
-
-@media all and (max-width: 1200px) {
-	.navbar .icon-bar {
-		display: flex;
-		align-items: center;
-		gap: 12px;
+		margin-left: 3.6rem;
 	}
 }
 
@@ -76,11 +67,22 @@ body {
 	border: none;
 }
 
-#navbar .icon-bar button img:not(.dropdown-menu) , .btn-close {
-	display: block;
-	height: auto;
-	width: 100%;
+/* DROPDOWN */
+
+.dropdown i {
+	font-size: 24px;
 }
+
+.dropdown-menu {
+	border-radius: 0;
+}
+
+.dropdown-item button {
+	display: flex;
+	gap:10px;
+}
+
+/* TOGGLE OVERLAY */
 
 .navbar-toggler, #project-filter .dropdown-toggle {
 	position: relative;
@@ -110,203 +112,101 @@ body {
     box-shadow: none;
 }
 
-
-/* DROPDOWN */
-
-@media all and (min-width: 1199px) {
-	.dropdown {
-		margin-top: 12px;
-		padding: 8px;
-	}
-}
-
-.dropdown i {
-	font-size: 24px;
-}
-
-.dropdown-menu {
-	border-radius: 0;
-}
-
-.dropdown-item button {
-	display: flex;
-	gap:10px;
-}
-
 /* OFF-CANVAS NAVBAR */
 
 #offcanvasNavbar {
-	padding:16px 42px 16px 16px;
-	gap: 72px;
-}
-
-.offcanvas-header {
-	display: flex;
-	gap: 72px;
-}
-
-.offcanvas-body{
-	padding: 0 48px 0 48px;
-}
-
-#nav-list {
-	padding: 8px;
-	gap: 10px;
 	font-size: 24px;
 }
 
-.nav-item a {
-	padding: 8px 16px 8px 16px;
-	margin-left: 32px;
-	margin-right: 24px;
+.offcanvas-body {
+	display: flex;
+	flex-direction: column;
 }
 
-
-@media all and (min-width: 1204px) {
-	#infobar {
-		margin-top: 72px;
-		padding:0 48px 0 48px;
+@media all and (min-width: 576px) {
+	.offcanvas-body .nav-item {
+		padding-left: 3rem;
 	}
 }
 
-#bio-list {
-	margin-top: 72px;
-	gap: 24px;
+/* SECTION INDICATOR */
+
+#section-indicator {
+	padding: 0.25rem 0.75rem 0.25rem 0.75rem;
 }
 
-#bio-list .bio-item .bio-item-title {
+.divider {
+	width: 62px;
+	flex: 2;
+	padding: 1px;
+	margin: 10px;
+}
+
+/* INFOBAR */
+
+#infobar {
+  padding-left: 3.6rem;
+}
+
+#bio-list {
+	display: flex;
+	flex-direction: column;
+	padding: 0.25rem 0.75rem 0.25rem 0.75rem;
+	gap: 24px;
+	list-style-type: none;
+}
+
+.bio-item {
+	width: auto;
+}
+
+.bio-item-title {
 	font-size: 15px;
 	text-transform: uppercase;
 }
 
-#bio-list .bio-item .bio-item-description {
+.bio-item-description {
 	font-size: 14px;
 }
 
+
 /* MAIN CONTENT */
 
-
-@media all and (max-width: 992px) {
-	#main-content, section {
-		display: flex;
-		flex-direction: column;
-	}
+#main-content header {
+	margin-bottom: 32px;
 }
 
-section {
-	height: inherit;
-	padding: 112px 0 112px 0;
-}
-
-.align-section-content {
-	padding: 32px 16px 32px 16px;
+#main-content .container-fluid {
+	padding: 8rem 2rem 8rem 2rem;
 }
 
 @media all and (min-width: 768px) {
-	#home {
-		padding-top: 72px;
-		margin-top: 42px;
-	}
-}
-
-@media all and (min-width: 992px) {
-	section {
+	#main-content .container-fluid {
 		height: 100vh;
+		margin: 0;
+		padding-left: 2rem;
 	}
 
-	#home {
-		margin-top: 0;
-	}
-
-	.align-section-content {
-		padding: 72px 32px 72px 32px;
+	#main-content .container-fluid:not(#home) {
+		padding-top: 4.5rem;
+		padding-right: 2rem;
 	}
 }
 
 @media all and (min-width: 1200px) {
-	section {
-		height: 100vh;
-		margin-left: 292px;
-		padding-left: 0;
-	}
-
-	#experience {
-		height: 100vh;
+	#main-content {
+		margin-left: 21rem; 
+		margin-right: 0;
 	}
 }
 
-@media all and (min-width: 1204px) {
-	section {
-		margin-left: 383px;
-	}
-}
-
-@media all and (min-width: 1366px) {
-	#home {
-		padding-top: 0;
-	}
-}
-
-p {
-	line-height: 28px;
-	margin-bottom: 8px;
-}
 
 /* HOME */
 
-#about p {
-	margin-top: 72px;
-}
-
-#about {
-	padding: 72px 100px 72px 100px;
-}
-
-@media all and (min-width: 576px) {	
-	#about {
-		padding-left: 64px;
-		padding-right: 64px;
-	}
-}
-
-@media all and (min-width: 1204px) {	
-	#about {
-		padding-left: 32px;
-		padding-right: 32px;
-	}
-}
-
-@media all and (min-width: 1439px) {	
-	#about {
-		padding-top: 180px;
-	}
-}
-
-h1 {
-	font-size: 48px;
-}
-
-@media all and (min-width: 576px) {
-	h1 {
-		font-size: 48px;
-	}
-}
-
-@media all and (min-width: 768px) {
-	h1 {
-		font-size: 72px;
-	}
-}
-
-@media all and (min-width: 992px) {
-	#about h1 {
-		font-size: 72px;
-	}
-}
-
-@media all and (min-width: 1440px) {
-	#about h1 {
-		font-size: 96px;
+@media all and (min-width: 1204px) {
+	#home.container-fluid {
+		padding-top: 0rem;
+		padding-right: 0rem;
 	}
 }
 
@@ -314,12 +214,12 @@ h1 {
 
 #profile-picture {
 	width: auto;
+	padding: 0;
 }
 
 @media all and (max-width: 1203px) {
 	#profile-picture img {
 		display: block;
-		margin-top: 72px;
 		margin-left: auto;
   	margin-right: auto;
   	border-radius: 50%;
@@ -327,10 +227,8 @@ h1 {
 }
 
 @media all and (min-width: 1204px) {
-
 	#profile-picture {
 		float: right;
-		margin-left: 32px;
 	}
 
 	#profile-picture img {
@@ -341,6 +239,57 @@ h1 {
 @media all and (min-width: 1366px) {
 	#profile-picture img {
 		height: 100vh;
+	}
+}
+
+p {
+	line-height: 28px;
+	margin-bottom: 8px;
+}
+
+
+#about {
+	padding: 4.5rem 2rem 4.5rem 2rem;
+}
+
+@media all and (min-width: 768px) {
+	#about {
+		padding-left: 0rem;
+		padding-right: 0rem;
+	}
+}
+
+@media all and (min-width: 1204px) {
+	#about {
+		padding: 11.25rem 30rem 11.25rem 0rem;
+	}
+}
+
+@media all and (min-width: 1366px) {
+	#about {
+		padding-right: 40rem;
+	}
+}
+
+h1 {
+	font-size: 48px;
+}
+
+@media all and (min-width: 768px) {
+	h1 {
+		font-size: 72px;
+	}
+}
+
+@media all and (min-width: 1204px) {
+	h1 {
+		font-size: 84px;
+	}
+}
+
+@media all and (min-width: 1400px) {
+	h1 {
+		font-size: 96px;
 	}
 }
 
@@ -364,16 +313,6 @@ h1 {
 }
 
 /* SERVICES AND PORTFOLIO */
-
-.col {
-	display: flex;
-	flex-direction: column;
-	gap: 32px;
-}
-
-.row { 
-	display: flex;
-}
 
 #download-btn, #project-btn {
 	margin: 8px 12px 8px 12px;
@@ -448,12 +387,18 @@ h1 {
 /* EXPERIENCE */
 
 .circle {
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   border: 4px solid #D97A21;
   border-radius: 50%;
 }
 
+@media all and (min-width: 320px) {
+	.circle {
+	  width: 48px;
+	  height: 48px;
+	}
+}
 
 /* Vertical Ruler */
 .vr {
@@ -464,43 +409,14 @@ h1 {
 
 /* SKILLS */
 
-#skills-body {
-	display: flex;
-	flex-direction: column;
-	gap: 64px 64px;
-}
-
-@media all and (min-width: 1204px) {
-	.donuts {
-		margin: 72px 120px 72px 120px;
-	}
+#skills-body .donut {
+	padding: 3rem ;
 }
 
 .skill-donut {
 	position: relative;
-	height: 25vh;
-}
-
-.skill-bar {
-	position: relative;
 	height: 100%;
-}
-
-.skill-donut, .skill-bar {
-	width: 100%;
-	gap: 4px;
-}
-
-@media all and (min-width: 768px) {
-	.skill-donut {
-		width: 30%;
-	}
-}
-
-@media all and (min-width: 992px) {
-	.skill-bar {
-		width: 35%;
-	}
+	margin: 0.25rem;
 }
 
 .donut-sector {
@@ -535,6 +451,10 @@ h1 {
 	border-radius: 50%;
 }
 
+.skill-bar {
+	position: relative;
+}
+
 .bar-container {
 	padding: 6px 0 6px 0;
 	position: absolute;
@@ -567,8 +487,16 @@ h1 {
 	width: 75%;
 }
 
-.skill {
-	margin-top: 10px;
+@media all and (max-width: 360px) {
+	.skill {
+		margin-top: 3.2vh;
+	}
+}
+
+@media all and (min-width: 361px) {
+	.skill {
+		margin-top: 1.6vh;
+	}
 }
 
 /* CONTACT */
