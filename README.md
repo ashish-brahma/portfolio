@@ -1,6 +1,8 @@
 # Portfolio
 
-Welcome to my static portfolio website. Backend development is underway as of 16 Oct, 2024.
+Welcome to my static portfolio website! 
+
+*Backend development is underway.*
 
 ## What works
 - Links
@@ -9,7 +11,7 @@ Welcome to my static portfolio website. Backend development is underway as of 16
 ## What does not work (TODO)
 - Dropdowns
 - Contact Form
-- Responsiveness on small devices such as iPhone 6.
+- Overflow handling of sections at various browser heights
 
 ### PS
 
