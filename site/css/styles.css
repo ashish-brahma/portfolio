@@ -178,17 +178,18 @@ body {
 
 #main-content .container-fluid {
 	padding: 8rem 2rem 8rem 2rem;
+	max-width: 100vw;
+	min-height: 100vh;
 }
 
 @media all and (min-width: 768px) {
 	#main-content .container-fluid {
-		height: 100vh;
 		margin: 0;
 		padding-left: 2rem;
 	}
 
 	#main-content .container-fluid:not(#home) {
-		padding-top: 4.5rem;
+		padding-top: 6rem;
 		padding-right: 2rem;
 	}
 }
@@ -213,17 +214,15 @@ body {
 /* PROFILE PICTURE */
 
 #profile-picture {
-	width: auto;
-	padding: 0;
+	max-width: 100vw;
+	min-height: 100vh;
 }
 
-@media all and (max-width: 1203px) {
-	#profile-picture img {
-		display: block;
-		margin-left: auto;
-  	margin-right: auto;
-  	border-radius: 50%;
-	}
+#profile-picture img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 50%;
 }
 
 @media all and (min-width: 1204px) {
@@ -232,13 +231,7 @@ body {
 	}
 
 	#profile-picture img {
-		height: 72vh;
-	}
-}
-
-@media all and (min-width: 1366px) {
-	#profile-picture img {
-		height: 100vh;
+		border-radius: 0;
 	}
 }
 
@@ -409,13 +402,27 @@ h1 {
 
 /* SKILLS */
 
-#skills-body .donut {
-	padding: 3rem ;
+#skills-body {
+	padding: 10% ;
+	--bs-gutter-y: 5rem;
+	--bs-gutter-x: 3rem;
+}
+
+#skills-body .g-donut {
+	padding: 6%;
+	--bs-gutter-y: 6rem;
+	--bs-gutter-x: 5rem;
+	min-height: 100%;
+}
+
+#skills-body .g-bar {
+	--bs-gutter-x: 3rem;
+	min-height: 100%;
 }
 
 .skill-donut {
 	position: relative;
-	height: 100%;
+	min-height: 100%;
 	margin: 0.25rem;
 }
 
@@ -458,7 +465,7 @@ h1 {
 .bar-container {
 	padding: 6px 0 6px 0;
 	position: absolute;
-	width: 100%;
+	min-width: 100%;
 	z-index: 0;
 }
 
@@ -472,6 +479,7 @@ h1 {
 
 .skill-bar .percentage {
 	font-size: 24px;
+	margin-bottom: 2%;
 }
 
 .bar {
@@ -487,16 +495,12 @@ h1 {
 	width: 75%;
 }
 
-@media all and (max-width: 360px) {
-	.skill {
-		margin-top: 3.2vh;
-	}
+.g-donut .skill {
+	margin-top: 6%;
 }
 
-@media all and (min-width: 361px) {
-	.skill {
-		margin-top: 1.6vh;
-	}
+.g-bar .skill {
+	margin-top: 4%;
 }
 
 /* CONTACT */
