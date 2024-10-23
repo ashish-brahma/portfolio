@@ -11,7 +11,7 @@ Welcome to my static portfolio website!
 ## What does not work (TODO)
 - Dropdowns
 - Contact Form
-- Overflow handling of sections at various browser heights
+- Section Indicator
 
 ### PS
 
