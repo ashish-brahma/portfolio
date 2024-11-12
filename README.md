@@ -1,17 +1,19 @@
 # Portfolio
 
-Welcome to my static portfolio website! 
+Welcome to my portfolio website!
 
 *Backend development is underway.*
 
+**UPDATE (NOV 2024)**: Content now loads dynamically from snippet files. Templating will be added soon.
+
 ## What works
+- Section Indicator
 - Links
 - Buttons
 
 ## What does not work (TODO)
 - Dropdowns
 - Contact Form
-- Section Indicator
 
 ### PS
 
