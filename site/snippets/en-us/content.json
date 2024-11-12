@@ -1,0 +1,48 @@
+{
+	"body": {
+		"nav": {
+			"lang-dropdown":{
+				"hi-in": {
+					"label" : "हिंदी",
+					"font" : "noto-sans-devanagari-regular",
+					"country" : "in",
+					"alt" : "Indian Flag"
+				},
+			 	"od-in" : {
+					"label" : "ଓଡ଼ିଆ",
+					"font" : "anek-odia-regular",
+					"country" : "in",
+					"alt" : "Indian Flag"
+				}, 
+			 	"de" : {
+					"label" : "Deutsch",
+					"font" : "germania-one-regular",
+					"country" : "de",
+					"alt" : "German Flag"
+				}, 
+			 	"en-us" : {
+					"label" : "English",
+					"font" : "poppins-regular",
+					"country" : "us",
+					"alt" : "US Flag"
+				}
+			 },
+
+			"bio" : {
+				"name": "Ashish Brahma",
+				"role": "Mobile Developer",
+				"email": "ashish.brahma@outlook.com"
+			}
+		},
+
+		"sections" : {
+			"0": "home", 
+			"1": "services", 
+			"2": "portfolio", 
+			"3": "experience", 
+			"4": "skills", 
+			"5": "contact", 
+			"6": "blog"
+		}
+	}
+}

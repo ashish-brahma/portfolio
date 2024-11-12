@@ -1,0 +1,50 @@
+<header id="contact-header">
+	<h2 class="poppins-bold secondary-headings-label">Get In Touch</h2>
+</header>
+
+<div class="contact-body align-items-start justify-content-between">
+	<div class="col col-lg-5">
+		<h4 class="poppins-semibold secondary-headings-label">Let's Connect.</h4>
+
+		<div id="contact-body">
+			<p>It may take some time for me to respond depending on the volume of requests received as we speak.</p>
+			<p>Thanks for your understanding.</p>
+		</div>
+	</div>
+
+	<!-- TODO: Add script to submit form and display confirmation.-->
+	<div id="contact-form" class="col col-lg-6">
+		<form class="fira-sans-condensed-medium">
+			<!-- Name -->
+			<div class="mb-3">
+				<label for="input-name" class="form-label visually-hidden">Name</label>
+				<input type="text" class="form-control" id="input-name" aria-label="Name input" placeholder="Name">
+			</div>
+			
+			<!-- Email -->
+			<div class="mb-3">
+				<label for="input-email" class="form-label visually-hidden">Email</label>
+				<input type="email" class="form-control" id="input-email" aria-describedby="emailHelp" aria-label="Email input" placeholder="Email">
+				<div id="emailHelp" class="form-text gray-button">We'll never share your email with anyone else.</div>
+			</div>
+
+			<!-- Subject -->
+			<div class="mb-3">
+				<label for="input-subject" class="form-label visually-hidden">Subject</label>
+				<input type="text" class="form-control" id="input-subject" aria-label="Subject input" placeholder="Subject">
+			</div>
+
+			<!-- Message -->
+			<div class="mb-3">
+				<label for="textarea-message" class="form-label visually-hidden">Message</label>
+				<textarea class="form-control" id="textarea-message" rows="4" aria-describedby="messageHelp" aria-label="Subject text area" placeholder="Message..."></textarea>
+				<div id="messageHelp" class="form-text gray-button">Maximum 300 characters long.</div>
+			</div>
+
+			<div class="mb-3 d-flex justify-content-center">
+				<!-- Send Button -->
+				<button id="send-btn" type="button" class="btn btn-outline-primary btn-lg gray-button"><span class="btn-label gray-100 fira-sans-condensed-medium">Send</span></button>
+			</div> <!-- End of .d-flex -->							
+		</form> <!-- End of form -->
+	</div> <!-- End of #contact-form -->
+</div> <!-- End of .contact-body -->
