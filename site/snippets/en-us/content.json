@@ -1,30 +1,30 @@
 {
 	"body": {
-		"nav": {
+		"sidebar-nav": {
 			"lang-dropdown":{
 				"hi-in": {
 					"label" : "हिंदी",
 					"font" : "noto-sans-devanagari-regular",
-					"country" : "in",
-					"alt" : "Indian Flag"
+					"country-code" : "in",
+					"alt-text" : "Indian Flag"
 				},
 			 	"od-in" : {
 					"label" : "ଓଡ଼ିଆ",
 					"font" : "anek-odia-regular",
-					"country" : "in",
-					"alt" : "Indian Flag"
+					"country-code" : "in",
+					"alt-text" : "Indian Flag"
 				}, 
 			 	"de" : {
 					"label" : "Deutsch",
 					"font" : "germania-one-regular",
-					"country" : "de",
-					"alt" : "German Flag"
+					"country-code" : "de",
+					"alt-text" : "German Flag"
 				}, 
 			 	"en-us" : {
 					"label" : "English",
 					"font" : "poppins-regular",
-					"country" : "us",
-					"alt" : "US Flag"
+					"country-code" : "us",
+					"alt-text" : "US Flag"
 				}
 			 },
 

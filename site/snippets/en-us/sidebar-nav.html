@@ -13,40 +13,15 @@
 		    <button class="btn dropdown-toggle gray-100" type="button" role="button" data-bs-toggle="dropdown" alt="Language Dropdown" aria-expanded="false">
 		      <i class="bi bi-translate"></i>
 		    </button>
-		    <ul class="dropdown-menu bg-accent">
-		      <li id="hi-in" class="noto-sans-devanagari-regular">
-		      	<button class="dropdown-item gray-100">
-		      		<span>
-		      			<img src="images/flags/in.svg" alt="Indian Flag" class="img-thumbnail">
-		      			हिंदी
-		      		</span>
-		      	</button>
-		      </li>
-		      <li id="od-in" class="anek-odia-regular">
-		      	<button class="dropdown-item gray-100">
-		      		<span>
-		      			<img src="images/flags/in.svg" alt="Indian Flag" class="img-thumbnail">
-		      		</span>
-		      		ଓଡ଼ିଆ
-		      	</button>
-		      </li>
-		      <li id="de" class="germania-one-regular">
-		      	<button class="dropdown-item gray-100">
-		      		<span>
-		      			<img src="images/flags/de.svg" alt="German Flag" class="img-thumbnail">
-		      		</span>
-		      		Deutsch
-		      	</button>
-		      </li>
-		      <li id="en-us">
-		      	<button class="dropdown-item active gray-100">
-		      		<span>
-		      			<img src="images/flags/us.svg" alt="US Flag" class="img-thumbnail">
-		      		</span>
-		      		English
-		      	</button>
-		      </li>
-		    </ul>
+		    <ul class="dropdown-menu bg-accent"></ul>
+
+		    <template id="lang-item">
+		    	<li>
+			      	<button class="dropdown-item gray-100">
+			      		<span><img class="img-thumbnail"></span>
+			      	</button>
+		      	</li>
+		    </template>
 		</div><!-- End of language dropdown -->
 	</div> <!-- End of .icon-bar -->
 

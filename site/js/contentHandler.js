@@ -2,10 +2,10 @@
 var contentHandler = {
 	// Current language set for content. (default: en-us)
 	getLang: function () {
-		const langDropdown = document.getElementById(K.langDropdown);
-		if (langDropdown == null) {
+		const langDropdown = document.getElementById(K.langDropdownId);
+		if ((langDropdown === null)) {
 			lang = 'en-us';
-		} else lang =  dropdownHandler.activeId(K.langDropdown);
+		} else lang =  dropdownHandler.activeId(K.langDropdownId);
 		return lang;
 	},
 
@@ -41,7 +41,7 @@ var contentHandler = {
 			.then((data) =>  { 
 				// Read HTML body elements from fetched content.
 				contentHandler.content = data[K.bodyIndex];
-				
+
 				// Use view builder to build entire HTML body.
 				viewBuilder.buildBody();
 		});
