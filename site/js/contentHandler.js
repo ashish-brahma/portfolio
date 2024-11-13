@@ -47,6 +47,16 @@ var contentHandler = {
 		});
 	},
 
+	reloadContent : function (dropdownId) {
+		switch (dropdownId) {
+		case K.langDropdownId:
+				contentHandler.loadContent();
+			break;
+		default:
+			console.log("Unable to reload content.");
+		}
+	},
+
 	// Fetch section being currently viewed using scrollspy.
 	currentSection:	function (event) {
 		// Expose element which is being targeted by Scroll Spy. (#main-content)

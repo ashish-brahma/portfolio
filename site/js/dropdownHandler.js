@@ -30,12 +30,12 @@ var dropdownHandler = {
 				node.addEventListener (K.clickEvent, 
 					function(event) {
 						const activeBtn = 
-									document
-										.getElementById(dropdownHandler.activeId(dropdownId))
-										.querySelector(K.buttonElement);
+								document
+									.getElementById(dropdownHandler.activeId(dropdownId))
+									.querySelector(K.buttonElement);
 						activeBtn.classList.remove(K.activeClass);
 						node.classList.add(K.activeClass);
-						contentHandler.loadContent();
+						contentHandler.reloadContent(dropdownId);
 					}
 				);
 			}
