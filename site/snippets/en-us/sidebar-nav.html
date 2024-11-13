@@ -31,7 +31,7 @@
 		<span id="total-sections" class="gray-100"></span>
 	</div>
 
-	<div class="offcanvas offcanvas-start bg-accent" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+	<div id="offcanvasNavbar" class="offcanvas offcanvas-start bg-accent" tabindex="-1" aria-labelledby="offcanvasNavbarLabel">
 		<div class="offcanvas-header">
 			<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
 				<span><img src="images/hamburger-button.svg" alt="Hamburger Nav Button"></span>
@@ -50,19 +50,13 @@
 	</div> <!-- End of .offcanvas-->
 
 	<div id="infobar" class="d-none d-xl-block secondary-text secondary-bg-cards-nav">
-		<ul id="bio-list" class="poppins-regular">
+		<ul id="bio-list" class="poppins-regular"></ul> <!-- End of #bio-list -->
+
+		<template id="bio-list-item">
 			<li class="bio-item">
-				<span class="bio-item-title poppins-medium">Name</span><br>
-				<span class="bio-item-description poppins-semibold gray-100">Ashish Brahma</span>
+				<span class="bio-item-title poppins-medium"></span><br>
+				<span class="bio-item-description poppins-semibold gray-100"></span>
 			</li>
-			<li class="bio-item">
-				<span class="bio-item-title poppins-medium">Role</span><br>
-				<span class="bio-item-description poppins-semibold gray-100">Mobile Developer</span>
-			</li>
-			<li class="bio-item">
-				<span class="bio-item-title poppins-medium">Email</span><br>
-				<span class="bio-item-description poppins-semibold gray-100">ashish.brahma@outlook.com</span>
-			</li>
-		</ul> <!-- End of #bio-list -->
+		</template>
 	</div> <!-- End of #infobar -->	
 </div>  <!-- End of .container-fluid -->

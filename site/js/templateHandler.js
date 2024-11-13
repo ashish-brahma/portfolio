@@ -36,19 +36,19 @@ templateHandler = {
 		for (var i = 0; i < totalItems; i++) {
 			// Clone new list item.
 			const clone = template.content.cloneNode(true);
-			let li = clone.querySelector("li");
+			let li = clone.querySelector(K.listItemElement);
 			li.id = Object.keys(langDropdownObj)[i];
 			li.className = langDropdownObj[li.id][K.langFontIndex];
 			
 			// Insert thumbnail image.
-			let thumbnail = clone.querySelector("img");
+			let thumbnail = clone.querySelector(K.imageElement);
 			const countryCode = langDropdownObj[li.id][K.langCountryCodeIndex];
 			thumbnail.src = K.langFlagLocation + countryCode + K.svgFileExtension;
 			const altText = langDropdownObj[li.id][K.langAltTextIndex];
 			thumbnail.alt = altText;
 			
 			// Add button label.
-			let btn = clone.querySelector("button");
+			let btn = clone.querySelector(K.buttonElement);
 			if (li.id === lang) {
 				btn.classList.add(K.activeClass);
 			}
@@ -57,7 +57,7 @@ templateHandler = {
 			dropdownMenu.appendChild(clone); 
 		}
 
-		// Prepare content to be inserted.
+		// Prepare content to be inserted for #offcanvasNavbar.
 		const navListObj = contentHandler.content[K.sectionIndex];
 		totalItems = Object.keys(navListObj).length;
 
@@ -69,11 +69,34 @@ templateHandler = {
 		for (var i = 0; i < totalItems; i++) {
 			// Clone new nav item.
 			const clone = template.content.cloneNode(true);
-			let anchor = clone.querySelector("a");
+			let anchor = clone.querySelector(K.anchorElement);
 			const sectionId = Object.values(navListObj)[i];
 			anchor.href = K.hashSymbol + sectionId;
 			anchor.innerHTML = sectionId.charAt(0).toUpperCase() + sectionId.slice(1);
 			navList.appendChild(clone);
-		}		
+		}
+
+		// Prepare content to be inserted for #infobar.
+		const infobarObj = navObj[K.navBioIndex];
+		totalItems = Object.keys(infobarObj).length;
+
+		// Identify elements for #bio-list template insertion.
+		const bioList = document.getElementById(K.navBioIndex);
+		template = document.getElementById(K.bioItemId);
+		
+		// Clone the new bio items and insert them into #bio-list.
+		for (var i = 0; i < totalItems; i++) {
+			// Clone new bio item.
+			const clone = template.content.cloneNode(true);
+			let bioItemTitle = clone.querySelector(K.bioItemTitleClass);
+			const title = Object.keys(infobarObj)[i];
+			bioItemTitle.innerHTML = title;
+
+			let bioItemDescription = clone.querySelector(K.bioItemDescriptionClass);
+			const description = Object.values(infobarObj)[i];
+			bioItemDescription.innerHTML = description;
+			
+			bioList.appendChild(clone);
+		}
 	},
 };
