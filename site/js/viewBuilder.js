@@ -10,8 +10,7 @@ viewBuilder = {
 
 	// Fetch and insert #sidebar-nav content.
 	buildNavbar : function () {
-		const snippetURL = contentHandler.getBaseURL() + K.forwardSlash 
-									+ K.sidebarNavId + K.htmlFileExtension;
+		const snippetURL = K.snippetsLocation + K.sidebarNavId + K.htmlFileExtension;
 		
 		const navPromise = contentHandler.fetchContent(snippetURL, false);
 
@@ -38,7 +37,7 @@ viewBuilder = {
 
 	// Convenience function to read sections.
 	getSecObj : function () {
-		return contentHandler.content[K.sectionIndex];
+		return contentHandler.content[K.sidebarNavId][K.navListIndex];
 	},
 
 	// Convenience function to calculate total sections.
@@ -54,8 +53,7 @@ viewBuilder = {
 		const totalSections = viewBuilder.getTotalSections();
 		
 		for (var i = 0; i < totalSections; i++) {
-			var snippetURL = contentHandler.getBaseURL() + K.forwardSlash 
-								+ viewBuilder.getSecObj()[i] + K.htmlFileExtension;
+			var snippetURL =  K.snippetsLocation + viewBuilder.getSecObj()[i] + K.htmlFileExtension;
 			
 			sectionPromises[i] = contentHandler.fetchContent(snippetURL, false);
 		}
@@ -99,7 +97,7 @@ viewBuilder = {
 			.then((responses) => {
 				var i = 0;
 				for (const response of responses) {
-					var sectionId = contentHandler.content[K.sectionIndex][i];
+					var sectionId = contentHandler.content[K.sidebarNavId][K.navListIndex][i];
 					var classes = (sectionId === K.homeSec) ? 
 									K.homeSecClasses : K.genericSecClasses;
 					

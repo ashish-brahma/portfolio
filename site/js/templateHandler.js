@@ -58,7 +58,7 @@ templateHandler = {
 		}
 
 		// Prepare content to be inserted for #offcanvasNavbar.
-		const navListObj = contentHandler.content[K.sectionIndex];
+		const navListObj = navObj[K.navListIndex];
 		totalItems = Object.keys(navListObj).length;
 
 		// Identify elements for #nav-list template insertion.

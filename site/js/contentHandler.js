@@ -9,12 +9,9 @@ var contentHandler = {
 		return lang;
 	},
 
-	getBaseURL: function () {
-		return K.snippetsLocation + contentHandler.getLang();
-	},
-
+	// Convenience function to access content json file of selected lang.
 	getContentURL: function () {
-		return contentHandler.getBaseURL() + K.contentLocation;
+		return K.langContentLocation + contentHandler.getLang() + K.contentLocation;
 	},
 
 	// Set up an object to store list of body elements to be read from content file.
@@ -68,7 +65,7 @@ var contentHandler = {
 			var scrollInstance = bootstrap.ScrollSpy.getInstance($scrollSpyEl);
 
 			// Fetch list of sections.
-			const secObj = contentHandler.content[K.sectionIndex];
+			const secObj = contentHandler.content[K.sidebarNavId][K.navListIndex];
 			
 			// Get Id of current section using hash property of the instance's active target.
 			var sectionId = scrollInstance
