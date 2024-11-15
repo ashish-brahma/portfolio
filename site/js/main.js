@@ -1,10 +1,10 @@
 // Invoke function to load content.
 contentHandler.loadContent();
 
-// Update current section of section indicator.
+// Initiate scrollspy event listener.
 document.addEventListener(K.domContentLoadedEvent, 
-								contentHandler.currentSection(event));
+								sectionHandler.listenCurrentSection(event));
 
-// Persist active state of dropdown toggler.
+// Initiate event listeners for all dropdown togglers.
 document.addEventListener(K.domContentLoadedEvent, 
 								dropdownHandler.persistToggleActive(event));

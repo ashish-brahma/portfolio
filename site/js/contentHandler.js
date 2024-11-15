@@ -4,17 +4,26 @@ var contentHandler = {
 	getLang: function () {
 		const langDropdown = document.getElementById(K.langDropdownId);
 		if ((langDropdown === null)) {
-			lang = 'en-us';
-		} else lang =  dropdownHandler.activeId(K.langDropdownId);
+			var lang = 'en-us';
+		} else lang = dropdownHandler.activeId(K.langDropdownId);
 		return lang;
 	},
 
-	// Convenience function to access content json file of selected lang.
+	// Current filter set in portfolio project dropdown. (default: All)
+	getProjectFilter: function () {
+		const projDropdown = document.getElementById(K.projFilterId);
+		if ((projDropdown === null)) {
+			var projFilter = 'All';
+		} else projFilter =  dropdownHandler.activeId(K.projFilterId);
+		return projFilter;
+	},
+
+	// Convenience function to access content json file of selected language.
 	getContentURL: function () {
 		return K.langContentLocation + contentHandler.getLang() + K.contentLocation;
 	},
 
-	// Set up an object to store list of body elements to be read from content file.
+	// Set up an object to store list of body elements to be read from language content file.
 	content: {},
 
 	// Fetch content from URL
@@ -44,42 +53,18 @@ var contentHandler = {
 		});
 	},
 
+	// Invoke relevant method to dynamically load/filter content depending upon dropdown Id.
 	reloadContent : function (dropdownId) {
 		switch (dropdownId) {
 		case K.langDropdownId:
-				contentHandler.loadContent();
+			contentHandler.loadContent();
+			break;
+		
+		case K.projFilterId: 
+			sectionHandler.reloadPortfolio();
 			break;
 		default:
 			console.log("Unable to reload content.");
 		}
-	},
-
-	// Fetch section being currently viewed using scrollspy.
-	currentSection:	function (event) {
-		// Expose element which is being targeted by Scroll Spy. (#main-content)
-		window.$scrollSpyEl = document.querySelector(K.scrollSpyEl);
-
-		$scrollSpyEl.addEventListener(K.scrollSpyActivatedEvent, () => {
-			/* Capture instance of the element which is currently being 
-			targeted by Scroll Spy. */
-			var scrollInstance = bootstrap.ScrollSpy.getInstance($scrollSpyEl);
-
-			// Fetch list of sections.
-			const secObj = contentHandler.content[K.sidebarNavId][K.navListIndex];
-			
-			// Get Id of current section using hash property of the instance's active target.
-			var sectionId = scrollInstance
-								._activeTarget
-								.hash
-								.replaceAll(K.hashSymbol, K.emptyString);
-
-			// Set current section's number using sectionId.
-			var sectionNum = Object.values(secObj).indexOf(sectionId) + 1;
-
-			// Update section indicator.
-			document
-				.getElementById(K.currentSectionId)
-				.textContent = (sectionNum < 10) ? (K.zeroString + sectionNum) : sectionNum;
-		});
 	}
 };

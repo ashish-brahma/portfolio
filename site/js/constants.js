@@ -30,6 +30,8 @@ const K = {
 	bioItemId: "bio-list-item",
 	bioItemTitleClass: ".bio-item-title",
 	bioItemDescriptionClass: ".bio-item-description",
+	sectionBlockId: "section-block",
+	divElement: "div",
 	dropdownClass:".dropdown",
 	dropdownMenuClass: ".dropdown-menu",
 	dropdownToggleClass: ".dropdown-toggle",
@@ -42,5 +44,7 @@ const K = {
 	activeClass: "active",
 	forwardSlash: "/",
 	htmlFileExtension: ".html",
-	projFilter: "project-filter"
+	projFilterId: "project-filter",
+	projFilterMenuId: "project-filter-menu",
+	cardsClass: "card"
 };

@@ -3,100 +3,68 @@ templateHandler = {
 	// Boolean to check browser support for HTML template element.
 	isTemplateSupported : "content" in document.createElement("template"),
 
-	// Convenience function to determine insertion method.
-	injectTemplate : function (id, lang) {
-		if (templateHandler.isTemplateSupported) {
-			switch (id) {
-			case K.sidebarNavId:
-				templateHandler.injectSidebarNavTemplate(lang);
-				break;
-			default:
-				console.log(`No suitable template method for Id ${id}.`);
-			}
-		} else {
-		// TODO: Browser does not support template element. Fix it.
+	// Delegate clone insertion to appropritate handler method.
+	cloneItems : function (clone, targetId, iterIndex) {
+		switch (targetId) {
+		case K.langItemId :
+			// Clone new list item.
+			navHandler.cloneListItem(clone, iterIndex);
+			
+			// Insert thumbnail image.
+			navHandler.cloneThmbImage(clone);
+			
+			// Add button label.
+			navHandler.cloneBtn(clone);
+			
+			break;
+
+		case K.navListIndex :
+			// Clone anchor elements of nav buttons.
+			navHandler.cloneAnchor(clone, iterIndex);
+			break;
+
+		case K.navBioIndex :
+			// Clone title and description items of infobar.
+			navHandler.cloneBioItemTitle(clone, iterIndex);
+			navHandler.cloneBioItemDescription(clone, iterIndex);
+			break;
+
+		case K.mainContentId :
+			// Clone sections of main-content.
+			sectionHandler.cloneSection(clone, iterIndex);
+
+		default:
+			console.log("Templating ...");
+		}
+	},
+
+	// Insert cloned template items in the target element.
+	setTemplate : function (obj, target, template, objId) {
+		var totalItems = Object.keys(obj).length;
+		for (var i = 0; i < totalItems; i++) {
+			const clone = template.content.cloneNode(true);
+			templateHandler.cloneItems(clone, objId, i);
+			target.appendChild(clone);
 		}
 	},
 
 	// Insert template content of #sidebar-nav.
-	injectSidebarNavTemplate : function (lang) {
-		// Prepare content to be inserted for #lang-dropdown.
-		const navObj = contentHandler.content[K.sidebarNavId];
-		const langDropdownObj = navObj[K.langDropdownId];
-		var totalItems = Object.keys(langDropdownObj).length;
+	injectSidebarNavTemplate : function () {
+		// Insert templates for #lang-dropdown.
+		navHandler.insertLangDropdown();
 		
-		// Identify elements for #lang-dropdown template insertion.
-		const dropdownMenu = document
-								.getElementById(K.langDropdownId)
-								.querySelector(K.dropdownMenuClass);
+		// Insert templates for #offcanvasNavbar.
+		navHandler.insertNavList();
 
-		var template = document.getElementById(K.langItemId);
+		// Insert templates for #infobar.
+		navHandler.insertInfobar();
+	},
 
-		// Clone the new list items and insert them into #dropdown-menu. 
-		for (var i = 0; i < totalItems; i++) {
-			// Clone new list item.
-			const clone = template.content.cloneNode(true);
-			let li = clone.querySelector(K.listItemElement);
-			li.id = Object.keys(langDropdownObj)[i];
-			li.className = langDropdownObj[li.id][K.langFontIndex];
-			
-			// Insert thumbnail image.
-			let thumbnail = clone.querySelector(K.imageElement);
-			const countryCode = langDropdownObj[li.id][K.langCountryCodeIndex];
-			thumbnail.src = K.langFlagLocation + countryCode + K.svgFileExtension;
-			const altText = langDropdownObj[li.id][K.langAltTextIndex];
-			thumbnail.alt = altText;
-			
-			// Add button label.
-			let btn = clone.querySelector(K.buttonElement);
-			if (li.id === lang) {
-				btn.classList.add(K.activeClass);
-			}
-			btn.innerHTML += langDropdownObj[li.id][K.langLabelIndex];
-			
-			dropdownMenu.appendChild(clone); 
-		}
+	// Insert template content of #main-content.
+	injectMainContentTemplate : function () {
+		sectionHandler.insertSections();
 
-		// Prepare content to be inserted for #offcanvasNavbar.
-		const navListObj = navObj[K.navListIndex];
-		totalItems = Object.keys(navListObj).length;
-
-		// Identify elements for #nav-list template insertion.
-		const navList = document.getElementById(K.navListIndex);
-		template = document.getElementById(K.navItemId);
-
-		// Clone the new nav items and insert them into #nav-list.
-		for (var i = 0; i < totalItems; i++) {
-			// Clone new nav item.
-			const clone = template.content.cloneNode(true);
-			let anchor = clone.querySelector(K.anchorElement);
-			const sectionId = Object.values(navListObj)[i];
-			anchor.href = K.hashSymbol + sectionId;
-			anchor.innerHTML = sectionId.charAt(0).toUpperCase() + sectionId.slice(1);
-			navList.appendChild(clone);
-		}
-
-		// Prepare content to be inserted for #infobar.
-		const infobarObj = navObj[K.navBioIndex];
-		totalItems = Object.keys(infobarObj).length;
-
-		// Identify elements for #bio-list template insertion.
-		const bioList = document.getElementById(K.navBioIndex);
-		template = document.getElementById(K.bioItemId);
-		
-		// Clone the new bio items and insert them into #bio-list.
-		for (var i = 0; i < totalItems; i++) {
-			// Clone new bio item.
-			const clone = template.content.cloneNode(true);
-			let bioItemTitle = clone.querySelector(K.bioItemTitleClass);
-			const title = Object.keys(infobarObj)[i];
-			bioItemTitle.innerHTML = title;
-
-			let bioItemDescription = clone.querySelector(K.bioItemDescriptionClass);
-			const description = Object.values(infobarObj)[i];
-			bioItemDescription.innerHTML = description;
-			
-			bioList.appendChild(clone);
-		}
+		// Update section indicator.
+		sectionHandler.insertTotalSections();
 	},
 };
