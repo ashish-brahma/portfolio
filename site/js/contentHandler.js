@@ -9,15 +9,6 @@ var contentHandler = {
 		return lang;
 	},
 
-	// Current filter set in portfolio project dropdown. (default: All)
-	getProjectFilter: function () {
-		const projDropdown = document.getElementById(K.projFilterId);
-		if ((projDropdown === null)) {
-			var projFilter = 'All';
-		} else projFilter =  dropdownHandler.activeId(K.projFilterId);
-		return projFilter;
-	},
-
 	// Convenience function to access content json file of selected language.
 	getContentURL: function () {
 		return K.langContentLocation + contentHandler.getLang() + K.contentLocation;
@@ -61,8 +52,9 @@ var contentHandler = {
 			break;
 		
 		case K.projFilterId: 
-			sectionHandler.reloadPortfolio();
+			portfolioSectionHandler.reloadPortfolioSection();
 			break;
+		
 		default:
 			console.log("Unable to reload content.");
 		}

@@ -20,7 +20,7 @@ var dropdownHandler = {
 	},
 
 	// Switch active state to new dropdown selection.
-	newSelection: function (dropdownId) {
+	listenNewSelection: function (dropdownId) {
 		const dropdownMenuButtons = document
 									.getElementById(dropdownId)
 									.querySelector(K.dropdownMenuClass)

@@ -13,6 +13,10 @@ viewBuilder = {
 		const snippetURL = K.snippetsLocation + K.sidebarNavId + K.htmlFileExtension;
 		
 		const navPromise = contentHandler.fetchContent(snippetURL, false);
+
+		/* Pass defualt language selection to navHandler as 
+		   it inaccessible in thenable block of navPromise. (Likely a bug.) */
+		navHandler.activeLang = contentHandler.getLang();
 		
 		navPromise
 			.then((response) => {
@@ -22,7 +26,7 @@ viewBuilder = {
 				templateHandler.injectSidebarNavTemplate();
 
 				// Initiate listeners for changes to language dropdown selection.
-				dropdownHandler.newSelection(K.langDropdownId);
+				dropdownHandler.listenNewSelection(K.langDropdownId);
 			});
 	},
 
@@ -43,10 +47,9 @@ viewBuilder = {
 				// Insert content of all sections using templates.
 				sectionHandler.getSectionContent(responses); 
 				templateHandler.injectMainContentTemplate();
-
-				// TODO: Template project dropdown to make newSelection work.
+				
 				// Initiate listeners for changes to project filter dropdown selection.
-				dropdownHandler.newSelection(K.projFilterId);
+				dropdownHandler.listenNewSelection(K.projFilterId);
 			});
 	},
 

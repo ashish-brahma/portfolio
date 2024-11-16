@@ -1,5 +1,8 @@
 // Handler to manage nav content.
 navHandler = {
+	// Set up an object to read current language.
+	activeLang : "",
+
 	// Convenience function to read nav content.
 	getNavObj : function () {
 		return contentHandler.content[K.sidebarNavId];
@@ -69,7 +72,7 @@ navHandler = {
 	},
 
 	// Add thumbnail image.
-	cloneThmbImage : function (clone) {
+	cloneThmbImage : function (clone, iterIndex) {
 		let thumbnail = clone.querySelector(K.imageElement);
 		const langDropdownObj = navHandler.getLangDropdownObj();
 		const liId = Object.keys(langDropdownObj)[iterIndex];
@@ -80,13 +83,13 @@ navHandler = {
 	},
 
 	// Add button label.
-	cloneBtn : function (clone) {
+	cloneBtn : function (clone, iterIndex) {
 		let btn = clone.querySelector(K.buttonElement);
+		const langDropdownObj = navHandler.getLangDropdownObj();
 		const liId = Object.keys(langDropdownObj)[iterIndex];
-		if (liId === contentHandler.getLang()) {
+		if (liId === navHandler.activeLang) {
 			btn.classList.add(K.activeClass);
 		}
-		const langDropdownObj = navHandler.getLangDropdownObj();
 		btn.innerHTML += langDropdownObj[liId][K.langLabelIndex];
 	},
 

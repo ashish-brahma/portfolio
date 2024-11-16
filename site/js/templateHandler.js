@@ -6,16 +6,15 @@ templateHandler = {
 	// Delegate clone insertion to appropritate handler method.
 	cloneItems : function (clone, targetId, iterIndex) {
 		switch (targetId) {
-		case K.langItemId :
+		case K.langDropdownId :
 			// Clone new list item.
 			navHandler.cloneListItem(clone, iterIndex);
 			
 			// Insert thumbnail image.
-			navHandler.cloneThmbImage(clone);
+			navHandler.cloneThmbImage(clone, iterIndex);
 			
 			// Add button label.
-			navHandler.cloneBtn(clone);
-			
+			navHandler.cloneBtn(clone, iterIndex);
 			break;
 
 		case K.navListIndex :
@@ -30,8 +29,14 @@ templateHandler = {
 			break;
 
 		case K.mainContentId :
-			// Clone sections of main-content.
+			// Clone sections of #main-content.
 			sectionHandler.cloneSection(clone, iterIndex);
+			break;
+
+		case K.projFilterMenuId:
+			// Clone elements of #project-filter-menu.
+			portfolioSectionHandler.cloneProjFilterListItem(clone, iterIndex);
+			break;
 
 		default:
 			console.log("Templating ...");
@@ -66,5 +71,8 @@ templateHandler = {
 
 		// Update section indicator.
 		sectionHandler.insertTotalSections();
+
+		// Insert template of individual sections.
+		sectionHandler.templateSections();
 	},
 };

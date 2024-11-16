@@ -29,19 +29,45 @@
 			 },
 
 			"bio-list" : {
-				"name": "Ashish Brahma",
-				"role": "Mobile Developer",
-				"email": "ashish.brahma@outlook.com"
+				"name" : "Ashish Brahma",
+				"role" : "Mobile Developer",
+				"email" : "ashish.brahma@outlook.com"
 			},
 
 			"nav-list" : {
-				"0": "home", 
-				"1": "services", 
-				"2": "portfolio", 
-				"3": "experience", 
-				"4": "skills", 
-				"5": "contact", 
-				"6": "blog"
+				"0" : "home", 
+				"1" : "services", 
+				"2" : "portfolio", 
+				"3" : "experience", 
+				"4" : "skills", 
+				"5" : "contact", 
+				"6" : "blog"
+			}
+		},
+
+		"main-content" : {
+			"portfolio" : {
+				"project-filter" : {
+					"All" : "mobile-dev ai-ml",
+					"Mobile Development": "mobile-dev",
+					"AI/ML" : "ai-ml"
+				},
+				"projects" : {
+					"kartstopper": {
+						"card" : "mobile-dev",
+						"card-img-top" : "KS_LinkedInLogo_V2",
+						"alt" : "Project1 image",
+						"card-text" : "KartStopper is a one-stop solution for buyers looking to make informed choices before shopping their daily needs. It improves spending habits of people.",
+						"href" : "https://www.linkedin.com/company/kartstopper"
+					},
+					"smart-home-surveillance-system" : {
+						"card" : "ai-ml",
+						"card-img-top" : "face-recognition-surveillance",
+						"alt" : "Project2 image",
+						"card-text" : "An access control system which brings the power of state-of-the-art Machine Learning algorithms used in street surveillance systems to an average consumer's home.",
+						"href" : "https://github.com/ashish-brahma/SmartHomeSecuritySystem"
+					}
+				}
 			}
 		}
 	}

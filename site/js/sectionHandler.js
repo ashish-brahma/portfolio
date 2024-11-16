@@ -44,12 +44,53 @@ sectionHandler = {
 		let section = clone.querySelector(K.divElement);
 		section.id = sectionHandler.getSecObj()[iterIndex];
 		
-		const classes = (section.id === K.homeSec) ? 
+		const classes = (section.id === K.homeSecId) ? 
 						K.homeSecClasses : K.genericSecClasses;
 		
 		section.className = classes;
 
 		section.innerHTML = sectionHandler.sectionContent[iterIndex];
+	},
+
+	// Convenience function to insert section heading.
+	insertSectionHeading : function (id) {
+		if (id === K.homeSecId) {
+			const sectionHeading = document
+										.getElementById(id)
+										.querySelector(K.lvlOneHeadingElement);
+			sectionHeading.innerHTML = navHandler.getInfobarObj()[K.bioNameIndex];
+		} else {
+			const sectionHeading = document
+										.getElementById(id)
+										.querySelector(K.lvlTwoHeadingElement);
+			sectionHeading.innerHTML = id.charAt(0).toUpperCase() + id.slice(1);
+		}
+	},
+
+	// Delegate cloning to appropriate handler method.
+	templateSectionById : function (iterIndex) {
+		const sectionId = sectionHandler.getSecObj()[iterIndex];
+		
+		switch(sectionId) {
+		case K.portfolioSecId :
+			portfolioSectionHandler.insertPortfolioTemplates();
+			break;
+		default:
+			console.log("Templating ...");
+		}
+	},
+
+	templateSections : function () {
+		const secObj = sectionHandler.getSecObj();
+		const totalSections = sectionHandler.getTotalSections();
+		for (var i = 0; i < totalSections; i++ ) {
+			// Insert section heading.
+			const sectionId = Object.values(secObj)[i];
+			sectionHandler.insertSectionHeading(sectionId);
+			
+			// Insert section template.
+			sectionHandler.templateSectionById(i);
+		}
 	},
 
 	// Fetch section being currently viewed using scrollspy.
@@ -79,22 +120,5 @@ sectionHandler = {
 				.getElementById(K.currentSectionId)
 				.textContent = (sectionNum < 10) ? (K.zeroString + sectionNum) : sectionNum;
 		});
-	},
-
-	// Reload portfolio section using filters.
-	reloadPortfolioSection : function () {
-		const projFilter = contentHandler.getProjectFilter();
-		const cards = document.querySelector(K.cardClass);
-
-		// TODO: Fix this loop to display only cards containing filter.
-		cards.forEach(
-			function (node) {
-				if (node.classList.contains(projFilter)) {
-					node.style.display = "";
-				} else {
-					node.style.display = "none";
-				}
-			}
-		);
 	}
 };
