@@ -38,6 +38,16 @@ templateHandler = {
 			portfolioSectionHandler.cloneProjFilterListItem(clone, iterIndex);
 			break;
 
+		case K.projRowId:
+			// Clone cards for all projects.
+			portfolioSectionHandler.cloneProjCard(clone, iterIndex);
+			break;
+
+		case K.projColId:
+			// Clone cols for all projects.
+			portfolioSectionHandler.cloneProjCol(clone, iterIndex);
+			break;
+
 		default:
 			console.log("Templating ...");
 		}
