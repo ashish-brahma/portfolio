@@ -2,11 +2,7 @@
 var contentHandler = {
 	// Current language set for content. (default: en-us)
 	getLang: function () {
-		const langDropdown = document.getElementById(K.langDropdownId);
-		if ((langDropdown === null)) {
-			var lang = 'en-us';
-		} else lang = dropdownHandler.activeId(K.langDropdownId);
-		return lang;
+		return dropdownHandler.activeId(K.langDropdownId);
 	},
 
 	// Convenience function to access content json file of selected language.
@@ -51,7 +47,7 @@ var contentHandler = {
 			contentHandler.loadContent();
 			break;
 		
-		case K.projFilterId: 
+		case K.projFilterId:
 			portfolioSectionHandler.reloadPortfolioSection();
 			break;
 		

@@ -2,11 +2,7 @@
 portfolioSectionHandler = {
 	// Current filter set in portfolio project dropdown. (default: All)
 	getActiveProjFilter: function () {
-		const projDropdown = document.getElementById(K.projFilterId);
-		if ((projDropdown === null)) {
-			var projFilter = 'All';
-		} else projFilter =  dropdownHandler.activeId(K.projFilterId);
-		return "All";
+		return dropdownHandler.activeId(K.projFilterId);
 	},
 
 	// Convenience function to read content.
@@ -67,7 +63,7 @@ portfolioSectionHandler = {
 		hr.classList.add(K.dropdownDividerClassName);
 	},
 
-	// Insert link symbol in #project-btn.
+	// Insert button label in #project-btn.
 	insertButtonLabels : function () {
 		const projRow = document.getElementById(K.projRowId);
 		const projButtons = projRow.querySelectorAll(K.periodSymbol + K.btnLabelIndex);
@@ -90,7 +86,7 @@ portfolioSectionHandler = {
 		const projId = Object.keys(projRowObj)[iterIndex];
 
 		// Add project filter class.
-		card.classList.add(projRowObj[projId][K.cardIndex]);
+		card.className += projRowObj[projId][K.cardIndex];
 
 		// Add project image.
 		let cardImg = card.querySelector(K.imageElement);
@@ -124,7 +120,11 @@ portfolioSectionHandler = {
 
 		// Prepare content for cloning.
 		const pfObj = portfolioSectionHandler.getProjFilterObj();
+
+		// Add list item id.
+		let li = clone.querySelector(K.listItemElement);
 		const liId = Object.keys(pfObj)[iterIndex];
+		li.id = pfObj[liId];
 		
 		// Add button classes.
 		const activeFilter = portfolioSectionHandler.getActiveProjFilter();
@@ -139,9 +139,10 @@ portfolioSectionHandler = {
 	// Reload portfolio section using filters.
 	reloadPortfolioSection : function () {
 		const projFilter = portfolioSectionHandler.getActiveProjFilter();
-		const cards = document.querySelector(K.cardClass);
+		const projRow = document.getElementById(K.projRowId);
+		const cards = projRow.querySelectorAll(K.periodSymbol + K.cardIndex);
 
-		// TODO: Fix this loop to display only cards containing filter.
+		// TODO: Clean (hot) reload filters and cards.
 		cards.forEach(
 			function (node) {
 				if (node.classList.contains(projFilter)) {

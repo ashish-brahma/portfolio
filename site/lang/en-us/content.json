@@ -48,13 +48,13 @@
 		"main-content" : {
 			"portfolio" : {
 				"project-filter" : {
-					"All" : "mobile-dev ai-ml",
+					"All" : "all",
 					"Mobile Development": "mobile-dev",
 					"AI/ML" : "ai-ml"
 				},
 				"project-cards-row" : {
 					"kartstopper": {
-						"card" : "mobile-dev",
+						"card" : " mobile-dev all",
 						"card-img-top" : "KS_LinkedInLogo_V2",
 						"alt" : "Project1 image",
 						"card-title" : "KartStopper",
@@ -62,10 +62,10 @@
 						"href" : "https://www.linkedin.com/company/kartstopper"
 					},
 					"smart-home-surveillance-system" : {
-						"card" : "ai-ml",
+						"card" : " ai-ml all",
 						"card-img-top" : "face-recognition-surveillance",
 						"alt" : "Project2 image",
-						"card-title" : "Smart Home Surveillance System",
+						"card-title" : "Smart Home Surveillance System", 
 						"card-text" : "An access control system which brings the power of state-of-the-art Machine Learning algorithms used in street surveillance systems to an average consumer's home.",
 						"href" : "https://github.com/ashish-brahma/SmartHomeSecuritySystem"
 					}

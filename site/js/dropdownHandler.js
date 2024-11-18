@@ -3,20 +3,52 @@ var dropdownHandler = {
 	// Fetch current selection of the dropdown.
 	activeId: function (dropdownId) {
 		var currentSelection = K.emptyString;
-		const dropdownMenuItems = document
-									.getElementById(dropdownId)
-									.querySelector(K.dropdownMenuClass)
-									.querySelectorAll(K.listItemElement);
-		dropdownMenuItems.forEach(
-			function (node) {
-				const btn = node.querySelector(K.buttonElement);
-				// Rule out null value due to new selection.
-				if ((btn != null) && (btn.classList.contains(K.activeClass))) {
-					currentSelection = node.id;
+		const dropdown = document.getElementById(dropdownId);
+		
+		// In case content is yet to be populated, use defauts.
+		if (dropdown === null) {
+			currentSelection = dropdownHandler.defaultId(dropdownId);
+		} else {
+			const dropdownMenuItems = document
+										.getElementById(dropdownId)
+										.querySelector(K.dropdownMenuClass)
+										.querySelectorAll(K.listItemElement);
+			
+			dropdownMenuItems.forEach(
+				function (node) {
+					const btn = node.querySelector(K.buttonElement);
+					if ((btn != null) && (btn.classList.contains(K.activeClass))) {
+						currentSelection = node.id;
+					}
 				}
+			);
+
+			// In case current selection could not be assigned, use defaults.
+			switch (currentSelection) {
+				case  K.emptyString:
+				case  null:
+					currentSelection = dropdownHandler.defaultId(dropdownId);
+					break;
+				default: 
+					console.log("Reading dropdowns.");
 			}
-		);
+		}
+		
 		return currentSelection;
+	},
+
+	// Convenience function to get default selection of dropdown.
+	defaultId : function (dropdownId) {
+		switch (dropdownId) {
+		case K.langDropdownId:
+			return K.defaultLang;
+			break;
+		case K.projFilterId:
+			return K.defaultProjFilter;
+			break;
+		default:
+		console.log("Unable to fetch default settings for dropdown.");
+		}
 	},
 
 	// Switch active state to new dropdown selection.
@@ -29,10 +61,10 @@ var dropdownHandler = {
 			function (node) {
 				node.addEventListener (K.clickEvent, 
 					function(event) {
-						const activeBtn = 
-								document
-									.getElementById(dropdownHandler.activeId(dropdownId))
-									.querySelector(K.buttonElement);
+						var activeId = dropdownHandler.activeId(dropdownId);
+						const activeBtn = document
+												.getElementById(activeId)
+												.querySelector(K.buttonElement);
 						activeBtn.classList.remove(K.activeClass);
 						node.classList.add(K.activeClass);
 						contentHandler.reloadContent(dropdownId);

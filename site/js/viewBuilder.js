@@ -47,7 +47,7 @@ viewBuilder = {
 				// Insert content of all sections using templates.
 				sectionHandler.getSectionContent(responses); 
 				templateHandler.injectMainContentTemplate();
-				
+
 				// Initiate listeners for changes to project filter dropdown selection.
 				dropdownHandler.listenNewSelection(K.projFilterId);
 			});
