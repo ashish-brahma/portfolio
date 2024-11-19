@@ -10,9 +10,9 @@ Welcome to my portfolio website!
 - Section Indicator
 - Links
 - Buttons
+- Dropdowns
 
 ## What does not work (TODO)
-- Dropdowns
 - Contact Form
 
 ### PS
