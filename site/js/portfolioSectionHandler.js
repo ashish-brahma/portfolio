@@ -136,20 +136,23 @@ portfolioSectionHandler = {
 		btn.innerHTML = liId;
 	},
 
-	// Reload portfolio section using filters.
-	reloadPortfolioSection : function () {
-		const projFilter = portfolioSectionHandler.getActiveProjFilter();
+	// Load projects according to filter selected.
+	filterSection : function () {
+		const activeFilter = portfolioSectionHandler.getActiveProjFilter();
 		const projRow = document.getElementById(K.projRowId);
-		const cards = projRow.querySelectorAll(K.periodSymbol + K.cardIndex);
+		const cols = projRow.querySelectorAll(K.periodSymbol + K.colClass);
 
-		// TODO: Clean (hot) reload filters and cards.
-		cards.forEach(
+		cols.forEach(
 			function (node) {
-				if (node.classList.contains(projFilter)) {
-					node.style.display = "";
-				} else {
-					node.style.display = "none";
-				}
+				const self = node;
+				const cards = node.querySelectorAll(K.periodSymbol + K.cardIndex);
+				cards.forEach (
+					function (node) {
+						self.style.display = (node
+												.classList
+												.contains(activeFilter)) ? "block" : "none";
+					}
+				);
 			}
 		);
 	}

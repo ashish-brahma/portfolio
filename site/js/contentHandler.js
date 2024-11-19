@@ -48,7 +48,7 @@ var contentHandler = {
 			break;
 		
 		case K.projFilterId:
-			portfolioSectionHandler.reloadPortfolioSection();
+			portfolioSectionHandler.filterSection();
 			break;
 		
 		default:

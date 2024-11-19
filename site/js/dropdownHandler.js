@@ -5,10 +5,8 @@ var dropdownHandler = {
 		var currentSelection = K.emptyString;
 		const dropdown = document.getElementById(dropdownId);
 		
-		// In case content is yet to be populated, use defauts.
-		if (dropdown === null) {
-			currentSelection = dropdownHandler.defaultId(dropdownId);
-		} else {
+		// Rule out null condition caused by absence of populated content.
+		if (dropdown !== null) {
 			const dropdownMenuItems = document
 										.getElementById(dropdownId)
 										.querySelector(K.dropdownMenuClass)
@@ -22,16 +20,11 @@ var dropdownHandler = {
 					}
 				}
 			);
-
-			// In case current selection could not be assigned, use defaults.
-			switch (currentSelection) {
-				case  K.emptyString:
-				case  null:
-					currentSelection = dropdownHandler.defaultId(dropdownId);
-					break;
-				default: 
-					console.log("Reading dropdowns.");
-			}
+		} 
+		
+		// In case current selection could not be assigned, use defaults.
+		if ((currentSelection === K.emptyString) || (currentSelection == null)) {
+			currentSelection = dropdownHandler.defaultId(dropdownId);
 		}
 		
 		return currentSelection;
@@ -47,7 +40,7 @@ var dropdownHandler = {
 			return K.defaultProjFilter;
 			break;
 		default:
-		console.log("Unable to fetch default settings for dropdown.");
+			console.log("Unable to fetch default settings for dropdown.");
 		}
 	},
 
@@ -66,6 +59,7 @@ var dropdownHandler = {
 												.getElementById(activeId)
 												.querySelector(K.buttonElement);
 						activeBtn.classList.remove(K.activeClass);
+						activeBtn.className = node.className;
 						node.classList.add(K.activeClass);
 						contentHandler.reloadContent(dropdownId);
 					}
