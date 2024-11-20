@@ -3,6 +3,39 @@ templateHandler = {
 	// Boolean to check browser support for HTML template element.
 	isTemplateSupported : "content" in document.createElement("template"),
 
+	// Insert cloned template items in the target element.
+	setTemplate : function (obj, target, template, objId) {
+		var totalItems = Object.keys(obj).length;
+		for (var i = 0; i < totalItems; i++) {
+			const clone = template.content.cloneNode(true);
+			templateHandler.cloneItems(clone, objId, i);
+			target.appendChild(clone);
+		}
+	},
+
+	// Insert template content of #sidebar-nav.
+	injectSidebarNavTemplate : function () {
+		// Insert templates for #lang-dropdown.
+		navHandler.insertLangDropdown();
+		
+		// Insert templates for #offcanvasNavbar.
+		navHandler.insertNavList();
+
+		// Insert templates for #infobar.
+		navHandler.insertInfobar();
+	},
+
+	// Insert template content of #main-content.
+	injectMainContentTemplate : function () {
+		sectionHandler.insertSections();
+
+		// Update section indicator.
+		sectionHandler.insertTotalSections();
+
+		// Insert template of individual sections.
+		sectionHandler.templateSections();
+	},
+
 	// Delegate clone insertion to appropritate handler method.
 	cloneItems : function (clone, targetId, iterIndex) {
 		switch (targetId) {
@@ -48,41 +81,18 @@ templateHandler = {
 			portfolioSectionHandler.cloneProjCol(clone, iterIndex);
 			break;
 
+		case K.profilePicIndex:
+			// Clone profile picture sources.
+			homeSectionHandler.clonePictureSource(clone, iterIndex);
+			break;
+
+		case K.socialId:
+			// Clone social media buttons.
+			homeSectionHandler.cloneSocialButton(clone, iterIndex);
+			break;
+
 		default:
 			console.log("Templating ...");
 		}
-	},
-
-	// Insert cloned template items in the target element.
-	setTemplate : function (obj, target, template, objId) {
-		var totalItems = Object.keys(obj).length;
-		for (var i = 0; i < totalItems; i++) {
-			const clone = template.content.cloneNode(true);
-			templateHandler.cloneItems(clone, objId, i);
-			target.appendChild(clone);
-		}
-	},
-
-	// Insert template content of #sidebar-nav.
-	injectSidebarNavTemplate : function () {
-		// Insert templates for #lang-dropdown.
-		navHandler.insertLangDropdown();
-		
-		// Insert templates for #offcanvasNavbar.
-		navHandler.insertNavList();
-
-		// Insert templates for #infobar.
-		navHandler.insertInfobar();
-	},
-
-	// Insert template content of #main-content.
-	injectMainContentTemplate : function () {
-		sectionHandler.insertSections();
-
-		// Update section indicator.
-		sectionHandler.insertTotalSections();
-
-		// Insert template of individual sections.
-		sectionHandler.templateSections();
 	},
 };

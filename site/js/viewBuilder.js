@@ -8,6 +8,12 @@ viewBuilder = {
 		bootstrap.ScrollSpy.getInstance($scrollSpyEl).refresh();
 	},
 
+	// Hide loading icon.
+	hideLoadingIcon : function () {
+		const loadingIcon = document.getElementById(K.loadingIconId);
+		loadingIcon.style.display = "none";
+	},
+
 	// Fetch and insert #sidebar-nav content.
 	buildNavbar : function () {
 		const snippetURL = K.snippetsLocation + K.sidebarNavId + K.htmlFileExtension;
@@ -44,6 +50,9 @@ viewBuilder = {
 		
 		Promise.all(sectionPromises)
 			.then((responses) => {
+				// Stop showing loading icon.
+				viewBuilder.hideLoadingIcon();
+
 				// Insert content of all sections using templates.
 				sectionHandler.getSectionContent(responses); 
 				templateHandler.injectMainContentTemplate();

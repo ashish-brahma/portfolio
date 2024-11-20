@@ -28,7 +28,7 @@ var contentHandler = {
 	},
 
 	// Process request for fetching and inserting content into HTML body.
-	loadContent : function () {			
+	loadContent : function () {
 		// Start fetching content from the url.
 		contentHandler.fetchContent(contentHandler.getContentURL(), true)
 			.then((data) =>  { 

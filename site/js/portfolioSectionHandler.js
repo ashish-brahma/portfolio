@@ -90,10 +90,10 @@ portfolioSectionHandler = {
 
 		// Add project image.
 		let cardImg = card.querySelector(K.imageElement);
-		cardImg.src = K.cardImageLocation 
+		cardImg.src = K.imagesLocation 
 						+ projRowObj[projId][K.cardImageTopClassName] 
 						+ K.pngFileExtension;
-		cardImg.alt = projRowObj[projId][K.cardImageAltIndex];
+		cardImg.alt = projRowObj[projId][K.altIndex];
 
 		// Add project title.
 		let cardTitle = card.querySelector(K.periodSymbol + K.cardTitleIndex);

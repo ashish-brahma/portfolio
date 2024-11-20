@@ -45,7 +45,7 @@ sectionHandler = {
 		section.id = sectionHandler.getSecObj()[iterIndex];
 		
 		const classes = (section.id === K.homeSecId) ? 
-						K.homeSecClasses : K.genericSecClasses;
+						        K.homeSecClasses : K.genericSecClasses;
 		
 		section.className = classes;
 
@@ -63,7 +63,7 @@ sectionHandler = {
 			const sectionHeading = document
 										.getElementById(id)
 										.querySelector(K.lvlTwoHeadingElement);
-			sectionHeading.innerHTML = id.charAt(0).toUpperCase() + id.slice(1);
+			sectionHeading.innerHTML = stringExt.capitalize(id);
 		}
 	},
 
@@ -72,9 +72,14 @@ sectionHandler = {
 		const sectionId = sectionHandler.getSecObj()[iterIndex];
 		
 		switch(sectionId) {
+		case K.homeSecId :
+			homeSectionHandler.insertHomeTemplates();
+			break;
+
 		case K.portfolioSecId :
 			portfolioSectionHandler.insertPortfolioTemplates();
 			break;
+		
 		default:
 			console.log("Templating ...");
 		}

@@ -1,7 +1,7 @@
 // Handler to manage nav content.
 navHandler = {
 	// Set up an object to read current language.
-	activeLang : "",
+	activeLang : K.emptyString,
 
 	// Convenience function to read nav content.
 	getNavObj : function () {
@@ -78,7 +78,7 @@ navHandler = {
 		const liId = Object.keys(langDropdownObj)[iterIndex];
 		const countryCode = langDropdownObj[liId][K.langCountryCodeIndex];
 		thumbnail.src = K.langFlagLocation + countryCode + K.svgFileExtension;
-		const altText = langDropdownObj[liId][K.langAltTextIndex];
+		const altText = langDropdownObj[liId][K.altIndex];
 		thumbnail.alt = altText;
 	},
 
@@ -99,7 +99,7 @@ navHandler = {
 		const navListObj = navHandler.getNavListObj();
 		const sectionId = Object.values(navListObj)[iterIndex];
 		anchor.href = K.hashSymbol + sectionId;
-		anchor.innerHTML = sectionId.charAt(0).toUpperCase() + sectionId.slice(1);
+		anchor.innerHTML = stringExt.capitalize(sectionId);
 	},
 
 	// Add new bio item title.

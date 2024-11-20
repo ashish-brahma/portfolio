@@ -46,6 +46,44 @@
 		},
 
 		"main-content" : {
+			"home" : {
+				"profile-picture" : {
+					"source" : {
+						"sm" : { 
+							"media" : "(max-width:767px)",
+							"srcset" : "profile_photo_393"
+						},
+						"md" : { 
+							"media" : "(max-width:1203px)",
+							"srcset" : "profile_photo_768"
+						}
+					},
+					"img" : { 
+						"src" : "profile_photo_1200",
+						"alt" : "Profile Picture"
+					}
+				},
+				"about" : {
+					"p" : "A professional Mobile Application Developer experienced in building applications spanning across Real-Estate, Logistics, Energy, Media, Finance and Retail sectors. Recognised for planning, negotiation, integrity, initiative, proactivity, patience and adaptability."
+				},
+				"social-links" : {
+					"linkedIn" : {
+						"alt" : "LinkedIn Button",
+						"href" : "https://linkedin.com/in/brahma-ashish",
+						"i" : " bi-linkedin"
+					},
+					"twitter-x" : {
+						"alt" : "Twitter Button",
+						"href" : "https://x.com/b_ashish_3535",
+						"i" : " bi-twitter-x"
+					},
+					"github" : {
+						"alt" : "GitHub Button",
+						"href" : "https://github.com/ashish-brahma",
+						"i" : " bi-github"
+					}
+				}
+			},
 			"portfolio" : {
 				"project-filter" : {
 					"All" : "all",

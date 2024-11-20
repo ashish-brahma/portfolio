@@ -33,7 +33,13 @@
 		<nav id="sidebar-nav" class="navbar secondary-bg-cards-nav">
 		</nav> <!-- End of #sidebar-nav -->
 
-		<div id="main-content" data-bs-spy="scroll" data-bs-target="sidebar-nav" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="container-fluid g-0"></div> <!-- End of #main-content -->
+		<div id="main-content" data-bs-spy="scroll" data-bs-target="sidebar-nav" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="container-fluid g-0">
+			<div id="loading-icon" class="text-center">
+			  <div class="spinner-border" role="status">
+			    <span class="visually-hidden">Loading...</span>
+			  </div> <!-- End of .spinner-border -->
+			</div> <!-- End of .text-center -->
+		</div> <!-- End of #main-content -->
 
 		<template id="section-block">
 			<div></div>
@@ -42,10 +48,12 @@
 	</div> <!-- End of .d-flex -->
 
 	<!-- Load internal scripts -->
+	<script src="js/stringExt.js"></script>
 	<script src="js/constants.js"></script> 
 	<script src="js/dropdownHandler.js"></script>
 	<script src="js/navHandler.js"></script>
 	<script src="js/sectionHandler.js"></script>
+	<script src="js/homeSectionHandler.js"></script>
 	<script src="js/portfolioSectionHandler.js"></script>
 	<script src="js/templateHandler.js"></script>
 	<script src="js/viewBuilder.js"></script>
