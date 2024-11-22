@@ -38,6 +38,7 @@ const K = {
 	dropdownMenuClass: ".dropdown-menu",
 	dropdownToggleClass: ".dropdown-toggle",
 	dropdownDividerClassName: "dropdown-divider",
+	unorderedListElement: "ul",
 	listItemElement: "li",
 	langItemId: "lang-item",
 	buttonElement: "button",
@@ -89,5 +90,12 @@ const K = {
 	btnLabelIndex: "btn-label",
 	projButtonLabel: "See Project",
 	iconElement: "i",
-	projButtonIconClassName: "bi bi-box-arrow-up-right"
+	projButtonIconClassName: "bi bi-box-arrow-up-right",
+	experienceSecId: "experience",
+	expBodyId: "exp-body",
+	expListItemId: "exp-list-item",
+	yearIndex: "year",
+	desginationIndex: "designation",
+	startDateIndex: "start-date",
+	endDateIndex: "end-date"
 };

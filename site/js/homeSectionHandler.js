@@ -15,16 +15,17 @@ homeSectionHandler = {
 		return homeSectionHandler.getHomeObj()[K.profilePicIndex][K.imageElement];
 	},
 
-	// Insert cloned templates of source element in #profile-picture.
+	// Insert responsive sources in #profile-picture.
 	insertPictureSources : function () {
-		const picObj = homeSectionHandler.getPicSourceObj();
-
-		// Identify elements for #profile-picture template insertion.
+		const sourceObj = homeSectionHandler.getPicSourceObj();
 		const profilePicture = document.getElementById(K.profilePicIndex);
-		const sourceTemplate = document.getElementById(K.pictureSourceId);
-
-		// Insert cloned template in #profile-picture.
-		templateHandler.setTemplate(picObj, profilePicture, sourceTemplate, K.profilePicIndex);
+		for (const srcId of Object.keys(sourceObj)) {
+			var source = profilePicture.appendChild(document.createElement(K.imgSourceElement));
+			source.media = sourceObj[srcId][K.sourceMediaAttribute];
+			source.srcset = K.imagesLocation 
+									+ sourceObj[srcId][K.sourceSrcsetAttribute] 
+									+ K.svgFileExtension;
+		}
 	},
 	
 	// Insert image content of #profile-picture.
@@ -69,21 +70,6 @@ homeSectionHandler = {
 		homeSectionHandler.insertProfilePicture();
 		homeSectionHandler.insertAbout();
 		homeSectionHandler.insertSocialLinks();
-	},
-
-	// Add new picture source.
-	clonePictureSource : function (clone, iterIndex) {
-		let source = clone.querySelector(K.imgSourceElement);
-
-		// Prepare picture data.
-		const picObj = homeSectionHandler.getPicSourceObj();
-		const srcId = Object.keys(picObj)[iterIndex];
-
-		// Set source attributes.
-		source.media = picObj[srcId][K.sourceMediaAttribute];
-		source.srcset = K.imagesLocation 
-								+ picObj[srcId][K.sourceSrcsetAttribute] 
-								+ K.svgFileExtension;
 	},
 
 	// Add new social button.

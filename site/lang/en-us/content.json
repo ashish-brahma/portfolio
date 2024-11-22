@@ -129,6 +129,37 @@
 						"href" : "https://github.com/ashish-brahma/SmartHomeSecuritySystem"
 					}
 				}
+			},
+			"experience" : {
+				"0" : {
+					"year" : "2024",
+					"designation" : "iOS Developer, KartStopper, Vadodara, India (Self-Employed)",
+					"start-date" : "06/2024",
+					"end-date" : "Present",
+					"ul" : [
+						"Developed a beautiful scalable mobile application which helps people in planning their shopping expenses. It is one-of-a-kind prudential personal finance management tool which boasts of over 10% increase in monthly savings. (SwiftUI, Xcode, Figma)"
+					]
+				},
+				"1" : {
+					"year" : "2021",
+					"designation" : "Business Analyst, Radix Analytics Pvt. Ltd., Ahmedabad, India (Remote)",
+					"start-date" : "06/2021",
+					"end-date" : "10/2022",
+					"ul" : [
+						"Prepared and analysed datasets to build a bid-pricing predictive model for a US Logistics client with below 5% MAPE resulting in reduced net freight costs. (PrestoDB, Python Pandas)",
+						"Prepared and managed BI dashboards for decarbonisation plans of a European Energy client to reduce industrial emissions by 60% for achieving IEA Net-Zero goals. (Apache Superset)",
+						"Developed a web application and configured an API to estimate credit risk of home loan applicants with above 90% accuracy for a BFSI client. (HTML5, CSS3, Python Flask, MySQL)"
+					]
+				},
+				"2" : {
+					"year" : "2021",
+					"designation" : "Business Analyst Intern, Radix Analytics Pvt. Ltd., Ahmedabad, India (Remote)",
+					"start-date" : "03/2021",
+					"end-date" : "05/2022",
+					"ul" : [
+						"Orchestrated a POC to maximise XIRR and ROI of an Underwriting Model for a US Real Estate client which yielded 20% higher returns from new development plans. (Excel Solver, VBA)"
+					]
+				}
 			}
 		}
 	}

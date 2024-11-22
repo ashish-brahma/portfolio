@@ -84,6 +84,10 @@ sectionHandler = {
 			portfolioSectionHandler.insertPortfolioTemplates();
 			break;
 		
+		case K.experienceSecId :
+			experienceSectionHandler.insertExperienceTemplates();
+			break;
+
 		default:
 			console.log("Templating ...");
 		}
