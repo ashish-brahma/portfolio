@@ -85,8 +85,8 @@ portfolioSectionHandler = {
 		const projRowObj = portfolioSectionHandler.getProjRowObj();
 		const projId = Object.keys(projRowObj)[iterIndex];
 
-		// Add project filter class.
-		card.className += projRowObj[projId][K.cardIndex];
+		// Add project filter classes.
+		card.classList.add(...projRowObj[projId][K.cardIndex]);
 
 		// Add project image.
 		let cardImg = card.querySelector(K.imageElement);

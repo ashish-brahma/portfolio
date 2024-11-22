@@ -26,7 +26,7 @@ homeSectionHandler = {
 		// Insert cloned template in #profile-picture.
 		templateHandler.setTemplate(picObj, profilePicture, sourceTemplate, K.profilePicIndex);
 	},
-
+	
 	// Insert image content of #profile-picture.
 	insertImage : function () {
 		const imgObj = homeSectionHandler.getImageObj();
@@ -43,7 +43,7 @@ homeSectionHandler = {
 		homeSectionHandler.insertImage();
 	},
 
-	// Insert cloned templates of #about.
+	// Insert content of #about.
 	insertAbout : function () {
 		const aboutObj = homeSectionHandler.getHomeObj()[K.aboutId];
 		const aboutBody = document.getElementById(K.aboutId);
@@ -103,6 +103,6 @@ homeSectionHandler = {
 
 		// Add icon class.
 		let icon = btn.querySelector(K.iconElement);
-		icon.className += btnObj[btnId][K.iconElement];
+		icon.classList.add(btnObj[btnId][K.iconElement]);
 	}
 };

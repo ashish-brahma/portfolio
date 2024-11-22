@@ -76,11 +76,6 @@ templateHandler = {
 			portfolioSectionHandler.cloneProjCard(clone, iterIndex);
 			break;
 
-		case K.projColId:
-			// Clone cols for all projects.
-			portfolioSectionHandler.cloneProjCol(clone, iterIndex);
-			break;
-
 		case K.profilePicIndex:
 			// Clone profile picture sources.
 			homeSectionHandler.clonePictureSource(clone, iterIndex);
@@ -89,6 +84,11 @@ templateHandler = {
 		case K.socialId:
 			// Clone social media buttons.
 			homeSectionHandler.cloneSocialButton(clone, iterIndex);
+			break;
+
+		case K.servicesRowId:
+			// Clone cards for all services.
+			servicesSectionHandler.cloneServiceCard(clone, iterIndex);
 			break;
 
 		default:

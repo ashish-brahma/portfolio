@@ -76,6 +76,10 @@ sectionHandler = {
 			homeSectionHandler.insertHomeTemplates();
 			break;
 
+		case K.servicesSecId :
+			servicesSectionHandler.insertServicesTemplates();
+			break;
+			
 		case K.portfolioSecId :
 			portfolioSectionHandler.insertPortfolioTemplates();
 			break;

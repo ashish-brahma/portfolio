@@ -1,42 +1,32 @@
 <header id="services-header">
-	<h2 class="poppins-bold secondary-headings-label">Services</h2>
+	<h2 class="poppins-bold secondary-headings-label"></h2>
 </header>
 
 <div id="services-body" class="row">
 	<div class="col col-lg-6">
-		<section id="intro">
-			<p>I provide a host of services ranging from design, development to AI/ML augementation for launching your mobile app and making it a success story.</p>
-		</section>
+		<section id="intro"></section>
 
 		<div class="d-grid justify-content-center p-3">
-			<a id="download-btn" type="button" class="btn btn-outline-primary btn-lg" href="resources/Resume-AshishBrahma-iOSDeveloper-Sep2024.pdf" download>
-			<span class="btn-label gray-100 open-sans-regular">Download Resume</span>
+			<a id="download-btn" type="button" class="btn btn-outline-primary btn-lg" target="_blank">
+			<span class="btn-label gray-100 open-sans-regular"></span>
 			</a>
 		</div>
 	</div> <!-- End of .row -->
 
 
 	<div class="col col-lg-6">
-		<div class="row row-cols-1 row-cols-md-1 g-4">
+		<div id ="service-cards-row" class="row row-cols-1 row-cols-md-1 g-4"></div>
+		
+		<template id="service-card">
 			<div class="col">
 				<div class="card secondary-bg-cards-nav">
-				  <span class="service-icon"><i class="bi bi-box"></i></span>
-				  <div class="card-body">
-				  	<h5 class="card-title poppins-semibold secondary-headings-label">Design</h5>
-				    <p class="card-text">Beautiful Figma designs with pixel perfect components which deliver user-friendly interfaces.</p>
-				  </div>
+					<span class="service-icon"><i class="bi"></i></span>
+					<div class="card-body">
+						<h5 class="card-title poppins-semibold secondary-headings-label"></h5>
+						<p class="card-text"></p>
+					</div>
 				</div>
 			</div> <!-- End of .col -->
-
-			<div class="col">
-				<div class="card secondary-bg-cards-nav">
-				  <span class="service-icon"><i class="bi bi-command"></i></span>
-				  <div class="card-body">
-				  	<h5 class="card-title poppins-semibold secondary-headings-label">Development</h5>
-				    <p class="card-text">Secured and performant apps powered by latest technologies from Apple for an elevated experience.</p>
-				  </div> <!-- End of .card-body -->
-				</div> <!-- End of .card -->
-			</div> <!-- End of .col -->
-		</div> <!-- End of .row -->
+		</template> <!-- End of template -->
 	</div> <!-- End of .col -->
 </div> <!-- End of .row -->
