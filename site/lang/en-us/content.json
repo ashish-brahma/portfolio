@@ -160,6 +160,32 @@
 						"Orchestrated a POC to maximise XIRR and ROI of an Underwriting Model for a US Real Estate client which yielded 20% higher returns from new development plans. (Excel Solver, VBA)"
 					]
 				}
+			},
+			"skills" : {
+				"swift" : {
+					"col" : "g-donut",
+					"skill-chart" : "skill-donut",
+					"percentage" : "80%",
+					"skill-label" : "Swift6"
+				},
+				"ai-ml" : {
+					"col" : "g-donut",
+					"skill-chart" : "skill-donut",
+					"percentage" : "65%",
+					"skill-label" : "AI/ML"
+				},
+				"ui-ux" : {
+					"col" : "g-bar",
+					"skill-chart" : "skill-bar",
+					"percentage" : "80%",
+					"skill-label" : "UI/UX"
+				},
+				"dev-ops" : {
+					"col" : "g-bar",
+					"skill-chart" : "skill-bar",
+					"percentage" : "75%",
+					"skill-label" : "DevOps"
+				}
 			}
 		}
 	}

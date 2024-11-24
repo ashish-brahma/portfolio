@@ -8,7 +8,7 @@ templateHandler = {
 		var totalItems = Object.keys(obj).length;
 		for (var i = 0; i < totalItems; i++) {
 			const clone = template.content.cloneNode(true);
-			templateHandler.cloneItems(clone, objId, i);
+			templateHandler.cloneItems(clone, objId, i, obj);
 			target.appendChild(clone);
 		}
 	},
@@ -37,7 +37,7 @@ templateHandler = {
 	},
 
 	// Delegate clone insertion to appropritate handler method.
-	cloneItems : function (clone, targetId, iterIndex) {
+	cloneItems : function (clone, targetId, iterIndex, obj) {
 		switch (targetId) {
 		case K.langDropdownId :
 			// Clone new list item.
@@ -91,6 +91,16 @@ templateHandler = {
 			experienceSectionHandler.cloneExpListItem(clone, iterIndex);
 			break;
 
+		case K.skillsBodyId:
+			// Clone items under skills.
+			skillsSectionHandler.cloneSkillsListItem(clone, iterIndex);
+			break;
+
+		case K.skillChartIndex:
+			// Clone charts.
+			skillsSectionHandler.cloneChart(clone, iterIndex, obj);
+			break;
+			
 		default:
 			console.log("Templating ...");
 		}

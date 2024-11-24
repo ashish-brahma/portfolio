@@ -97,5 +97,16 @@ const K = {
 	yearIndex: "year",
 	desginationIndex: "designation",
 	startDateIndex: "start-date",
-	endDateIndex: "end-date"
+	endDateIndex: "end-date",
+	skillsSecId: "skills",
+	skillsBodyId: "skills-body",
+	skillChartIndex: "skill-chart",
+	hyphenSymbol: "-",
+	skillsListItemId: "skills-list-item",
+	skillFlexBoxId: "skill-flexbox",
+	skillsPercentageIndex: "percentage",
+	skillClass: "skill",
+	skillsLabelIndex: "skill-label",
+	skillDonutClass: "skill-donut",
+	justifyContentCentreClass: "justify-content-center"
 };

@@ -88,6 +88,10 @@ sectionHandler = {
 			experienceSectionHandler.insertExperienceTemplates();
 			break;
 
+		case K.skillsSecId :
+			skillsSectionHandler.insertSkillTemplates();
+			break;
+		
 		default:
 			console.log("Templating ...");
 		}
