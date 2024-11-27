@@ -100,7 +100,17 @@ templateHandler = {
 			// Clone charts.
 			skillsSectionHandler.cloneChart(clone, iterIndex, obj);
 			break;
-			
+		
+		case K.formFieldIndex:
+			// Clone form fields.
+			contactSectionHandler.cloneFormFields(clone, iterIndex);
+			break;
+
+		case K.formSubmitBtnIndex:
+			// Clone submit button of form.
+			contactSectionHandler.cloneSendButton(clone, iterIndex, obj);
+			break;
+
 		default:
 			console.log("Templating ...");
 		}

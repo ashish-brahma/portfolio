@@ -54,16 +54,40 @@ sectionHandler = {
 
 	// Convenience function to insert section heading.
 	insertSectionHeading : function (id) {
-		if (id === K.homeSecId) {
-			const sectionHeading = document
-										.getElementById(id)
-										.querySelector(K.lvlOneHeadingElement);
-			sectionHeading.innerHTML = navHandler.getInfobarObj()[K.bioNameIndex];
-		} else {
-			const sectionHeading = document
-										.getElementById(id)
-										.querySelector(K.lvlTwoHeadingElement);
-			sectionHeading.innerHTML = stringExt.capitalize(id);
+		const section = document.getElementById(id);
+		var heading = K.emptyString;
+		const header = section.querySelector(K.headerElement);
+		const headingFont = contentHandler.fonts[K.boldFontIndex];
+		
+		// No header element in home section.
+		if (header == null) {
+			const about = section.querySelector(K.hashSymbol + K.aboutId);
+			const lvlOneHeading = about
+									.appendChild(document
+													.createElement(K.lvlOneHeadingElement));
+			lvlOneHeading.classList.add(headingFont);
+			heading = lvlOneHeading;
+		
+		} else {    // All other sections contain header element.
+			const lvlTwoHeading = header
+								.appendChild(document
+												.createElement(K.lvlTwoHeadingElement));
+			const lvlTwoFont = contentHandler.fonts[K.boldFontIndex];
+			lvlTwoHeading.classList.add(headingFont, K.lvlTwoFontColorClass);
+			heading = lvlTwoHeading;
+		}
+		
+		switch (id) {
+		case K.homeSecId:
+			heading.textContent = navHandler.getInfobarObj()[K.bioNameIndex];
+			break;
+		
+		case K.contactSecId:
+			heading.textContent = contactSectionHandler.getContactObj()[K.headingIndex];
+			break;
+
+		default:
+			heading.textContent = stringExt.capitalize(id);
 		}
 	},
 
@@ -72,24 +96,32 @@ sectionHandler = {
 		const sectionId = sectionHandler.getSecObj()[iterIndex];
 		
 		switch(sectionId) {
-		case K.homeSecId :
+		case K.homeSecId:
 			homeSectionHandler.insertHomeTemplates();
 			break;
 
-		case K.servicesSecId :
+		case K.servicesSecId:
 			servicesSectionHandler.insertServicesTemplates();
 			break;
 			
-		case K.portfolioSecId :
+		case K.portfolioSecId:
 			portfolioSectionHandler.insertPortfolioTemplates();
 			break;
 		
-		case K.experienceSecId :
+		case K.experienceSecId:
 			experienceSectionHandler.insertExperienceTemplates();
 			break;
 
-		case K.skillsSecId :
+		case K.skillsSecId:
 			skillsSectionHandler.insertSkillTemplates();
+			break;
+
+		case K.contactSecId:
+			contactSectionHandler.insertContactTemplates();
+			break; 
+
+		case K.blogSecId:
+			blogSectionHandler.insertBlogTemplates();
 			break;
 		
 		default:
@@ -97,6 +129,7 @@ sectionHandler = {
 		}
 	},
 
+	// Template all sections.
 	templateSections : function () {
 		const secObj = sectionHandler.getSecObj();
 		const totalSections = sectionHandler.getTotalSections();

@@ -10,6 +10,9 @@ var contentHandler = {
 		return K.langContentLocation + contentHandler.getLang() + K.contentLocation;
 	},
 
+	// Set up an object to load font pack.
+	fonts: {},
+
 	// Set up an object to store list of body elements to be read from language content file.
 	content: {},
 
@@ -32,6 +35,9 @@ var contentHandler = {
 		// Start fetching content from the url.
 		contentHandler.fetchContent(contentHandler.getContentURL(), true)
 			.then((data) =>  { 
+				// Read fonts.
+				contentHandler.fonts = data[K.fontPackIndex];
+
 				// Read HTML body elements from fetched content.
 				contentHandler.content = data[K.bodyIndex];
 

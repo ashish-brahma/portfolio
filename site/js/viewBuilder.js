@@ -14,6 +14,13 @@ viewBuilder = {
 		loadingIcon.style.display = "none";
 	},
 
+	// Set fonts across body elements.
+	setFonts : function () {
+		const body = document.querySelector(K.bodyElement);
+		const font = contentHandler.fonts[K.regularFontIndex];
+		body.classList.add(font);
+	},
+
 	// Fetch and insert #sidebar-nav content.
 	buildNavbar : function () {
 		const snippetURL = K.snippetsLocation + K.sidebarNavId + K.htmlFileExtension;
@@ -52,6 +59,9 @@ viewBuilder = {
 			.then((responses) => {
 				// Stop showing loading icon.
 				viewBuilder.hideLoadingIcon();
+
+				// Set language font.
+				viewBuilder.setFonts();
 
 				// Insert content of all sections using templates.
 				sectionHandler.getSectionContent(responses); 

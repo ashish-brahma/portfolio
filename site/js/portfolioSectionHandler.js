@@ -67,9 +67,11 @@ portfolioSectionHandler = {
 	insertButtonLabels : function () {
 		const projRow = document.getElementById(K.projRowId);
 		const projButtons = projRow.querySelectorAll(K.periodSymbol + K.btnLabelIndex);
+		const btnFont = contentHandler.fonts[K.btnLabelIndex];
 		projButtons.forEach(
 			function (node) {
-				node.innerHTML = K.projButtonLabel;
+				node.textContent = K.projButtonLabel;
+				node.classList.add(btnFont);
 				const icon = node.appendChild(document.createElement(K.iconElement));
 				icon.className = K.projButtonIconClassName;
 			}
@@ -96,12 +98,14 @@ portfolioSectionHandler = {
 		cardImg.alt = projRowObj[projId][K.altIndex];
 
 		// Add project title.
+		const font = contentHandler.fonts[K.semiboldFontIndex];
 		let cardTitle = card.querySelector(K.periodSymbol + K.cardTitleIndex);
-		cardTitle.innerHTML = projRowObj[projId][K.cardTitleIndex];
+		cardTitle.classList.add(font);
+		cardTitle.textContent = projRowObj[projId][K.cardTitleIndex];
 
 		// Add body text.
 		let cardText = card.querySelector(K.periodSymbol + K.cardTextIndex);
-		cardText.innerHTML = projRowObj[projId][K.cardTextIndex];
+		cardText.textContent = projRowObj[projId][K.cardTextIndex];
 
 		// Add project button. Insert labels later.
 		let btn = card.querySelector(K.hashSymbol + K.projButtonId);

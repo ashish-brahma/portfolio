@@ -1,4 +1,13 @@
-{
+{	
+	"fonts": {
+			"regular" : "poppins-regular",
+			"medium" : "poppins-medium",
+			"semibold" : "poppins-semibold",
+			"bold" : "poppins-bold",
+			"btn-label" : "open-sans-regular",
+			"percentage" :"figtree-semibold",
+			"form" : "fira-sans-condensed-medium"
+	},
 	"body": {
 		"sidebar-nav": {
 			"lang-dropdown":{
@@ -186,6 +195,57 @@
 					"percentage" : "75%",
 					"skill-label" : "DevOps"
 				}
+			},
+			"contact" : {
+				"heading" : "Get In Touch",
+				"body-cta" : "Let's Connect.",
+				"body-text" : [
+					"It may take some time for me to respond depending on the volume of requests received as we speak.",
+					"Thanks for your understanding."
+				],
+				"contact-form" : {
+					"input-name" : {
+						"form-label" : "Name",
+						"type" : "text",
+						"aria-label" : "Name input",
+						"placeholder" : "Name"
+					},
+					"input-email" : {
+						"form-label" : "Email",
+						"type" : "email",
+						"aria-label" : "Email input",
+						"aria-describedby" : "emailHelp",
+						"placeholder" : "Email",
+						"form-text" : {
+							"id" : "emailHelp",
+							"text": "We'll never share your email with anyone else."
+						}
+					},
+					"input-subject" : {
+						"form-label" : "Subject",
+						"type" : "text",
+						"aria-label" : "Subject input",
+						"placeholder" : "Subject"
+					},
+					"textarea-message" : {
+						"form-label" : "Message",
+						"rows" : "4",
+						"aria-label" : "Message text area",
+						"aria-describedby" : "messageHelp",
+						"placeholder" : "Message...",
+						"form-text" : {
+							"id" : "messageHelp",
+							"text": "Maximum 300 characters long."
+						}
+					},
+					"form-submit-btn" : {
+						"div" : ["d-flex","justify-content-center"],
+						"send-btn" : "Send"
+					}
+				} 
+			},
+			"blog" : {
+				"blog-body" : "Arriving soon. Keep an eye on it. :)"
 			}
 		}
 	}

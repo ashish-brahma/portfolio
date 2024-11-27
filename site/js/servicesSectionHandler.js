@@ -20,9 +20,12 @@ servicesSectionHandler = {
 	// Insert content of #download-btn.
 	insertDownloadBtn : function () {
 		const btnObj = servicesSectionHandler.getServicesObj()[K.downloadBtnId];
+		const btnFont = contentHandler.fonts[K.btnLabelIndex];
 		const downloadBtn = document.getElementById(K.downloadBtnId);
 		downloadBtn.href = btnObj[K.hrefIndex];
-		downloadBtn.querySelector(K.spanElement).textContent = btnObj[K.spanElement];
+		const label = downloadBtn.querySelector(K.periodSymbol + K.btnLabelIndex);
+		label.textContent = btnObj[K.spanElement];
+		label.classList.add(btnFont);
 	},
 
 	// Add cloned cards in rows of service col.
@@ -59,7 +62,9 @@ servicesSectionHandler = {
 		icon.classList.add(servicesRowObj[serviceId][K.iconElement]);
 
 		// Add card title.
+		const font = contentHandler.fonts[K.semiboldFontIndex];
 		let cardTitle = card.querySelector(K.periodSymbol + K.cardTitleIndex);
+		cardTitle.classList.add(font);
 		cardTitle.textContent = servicesRowObj[serviceId][K.cardTitleIndex];
 
 		// Add card text.

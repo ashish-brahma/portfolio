@@ -75,7 +75,9 @@ skillsSectionHandler = {
 		}
 
 		// Add skill label.
+		const font = contentHandler.fonts[K.semiboldFontIndex];
 		let skillLabel = clone.querySelector(K.periodSymbol + K.skillsLabelIndex);
+		skillLabel.classList.add(font);
 		skillLabel.textContent = skillsObj[skillId][K.skillsLabelIndex];
 	},
 
@@ -91,7 +93,9 @@ skillsSectionHandler = {
 		skillFbox.classList.add(skillId);
 
 		// Add percentage.
+		const font = contentHandler.fonts[K.skillsPercentageIndex];
 		let percentage = clone.querySelector(K.periodSymbol + K.skillsPercentageIndex);
+		percentage.classList.add(font);
 		percentage.textContent = skillsObj[skillId][K.skillsPercentageIndex];
 	}
 

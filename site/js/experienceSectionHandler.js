@@ -23,13 +23,16 @@ experienceSectionHandler = {
 		// Prepare content for cloning.
 		const expObj = experienceSectionHandler.getExpObj();
 		const expId = Object.keys(expObj)[iterIndex];
+		const headingFont = contentHandler.fonts[K.semiboldFontIndex];
 
 		// Add year.
 		let year = clone.querySelector(K.periodSymbol + K.yearIndex);
+		year.classList.add(headingFont);
 		year.textContent = expObj[expId][K.yearIndex];
 
 		// Add designation.
 		let des = clone.querySelector(K.periodSymbol + K.desginationIndex);
+		des.classList.add(headingFont);
 		des.textContent = expObj[expId][K.desginationIndex];
 
 		// Add start and end dates.

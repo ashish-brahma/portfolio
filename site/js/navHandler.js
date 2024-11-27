@@ -99,22 +99,26 @@ navHandler = {
 		const navListObj = navHandler.getNavListObj();
 		const sectionId = Object.values(navListObj)[iterIndex];
 		anchor.href = K.hashSymbol + sectionId;
-		anchor.innerHTML = stringExt.capitalize(sectionId);
+		anchor.textContent = stringExt.capitalize(sectionId);
 	},
 
 	// Add new bio item title.
 	cloneBioItemTitle : function (clone, iterIndex) {
 		let bioItemTitle = clone.querySelector(K.bioItemTitleClass);
+		const font = contentHandler.fonts[K.mediumFontIndex];
+		bioItemTitle.classList.add(font);
 		const infobarObj = navHandler.getInfobarObj();
 		const title = Object.keys(infobarObj)[iterIndex];
-		bioItemTitle.innerHTML = title;
+		bioItemTitle.textContent = title;
 	},
 
 	// Add new bio item description.
 	cloneBioItemDescription : function (clone, iterIndex) {
 		let bioItemDescription = clone.querySelector(K.bioItemDescriptionClass);
+		const font = contentHandler.fonts[K.semiboldFontIndex];
+		bioItemDescription.classList.add(font);
 		const infobarObj = navHandler.getInfobarObj();
 		const description = Object.values(infobarObj)[iterIndex];
-		bioItemDescription.innerHTML = description;
+		bioItemDescription.textContent = description;
 	}
 };
