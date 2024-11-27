@@ -4,7 +4,7 @@ Welcome to my portfolio website!
 
 *Backend development is underway.*
 
-**UPDATE (NOV 2024)**: Content now loads dynamically from snippet files. Templates are being added.
+**UPDATE (NOV 2024)**: Content now loads in English(en-us) language dynamically. Support for other languages is WIP.
 
 ## What works
 - Section Indicator
