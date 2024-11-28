@@ -1,5 +1,5 @@
 // Handler to manage nav content.
-navHandler = {
+var navHandler = {
 	// Set up an object to read current language.
 	activeLang : K.emptyString,
 

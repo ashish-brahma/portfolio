@@ -1,5 +1,5 @@
 // Handler object to manage content of portfolio section.
-portfolioSectionHandler = {
+var portfolioSectionHandler = {
 	// Current filter set in portfolio project dropdown. (default: All)
 	getActiveProjFilter: function () {
 		return dropdownHandler.activeId(K.projFilterId);

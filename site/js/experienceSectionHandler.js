@@ -1,5 +1,5 @@
 // Handler object to manage content of experience section.
-experienceSectionHandler = {
+var experienceSectionHandler = {
 	// Convenience function to read content.
 	getExpObj : function () {
 		return contentHandler.content[K.mainContentId][K.experienceSecId];

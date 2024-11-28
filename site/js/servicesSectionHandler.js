@@ -1,5 +1,5 @@
 // Handler object to manage content of services section.
-servicesSectionHandler = {
+var servicesSectionHandler = {
 	// Convenience function to read content.
 	getServicesObj : function () {
 		return contentHandler.content[K.mainContentId][K.servicesSecId];

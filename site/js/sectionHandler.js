@@ -1,5 +1,5 @@
 // Handler object to manage section content.
-sectionHandler = {
+var sectionHandler = {
 	// Convenience function to read sections.
 	getSecObj : function () {
 		return contentHandler.content[K.sidebarNavId][K.navListIndex];
@@ -25,31 +25,6 @@ sectionHandler = {
 	// Convenience function to collect reponses of section promises for templating.
 	getSectionContent : function (responses) {
 		sectionHandler.sectionContent = responses;
-	},
-
-	// Add all sections.
-	insertSections : function () {
-		const secObj = sectionHandler.getSecObj();
-
-		// Identify elements for #section-block template insertion.
-		const mainContent = document.getElementById(K.mainContentId);
-		const secTemplate = document.getElementById(K.sectionBlockId);
-
-		// Insert cloned template in #main-content.
-		templateHandler.setTemplate(secObj, mainContent, secTemplate, K.mainContentId);
-	},
-
-	// Clone new section.
-	cloneSection : function (clone, iterIndex) {
-		let section = clone.querySelector(K.divElement);
-		section.id = sectionHandler.getSecObj()[iterIndex];
-		
-		const classes = (section.id === K.homeSecId) ? 
-						        K.homeSecClasses : K.genericSecClasses;
-		
-		section.className = classes;
-
-		section.innerHTML = sectionHandler.sectionContent[iterIndex];
 	},
 
 	// Convenience function to insert section heading.
@@ -91,11 +66,9 @@ sectionHandler = {
 		}
 	},
 
-	// Delegate cloning to appropriate handler method.
-	templateSectionById : function (iterIndex) {
-		const sectionId = sectionHandler.getSecObj()[iterIndex];
-		
-		switch(sectionId) {
+	// Delegate templating to appropriate handler method.
+	templateSection : function (id) {
+		switch(id) {
 		case K.homeSecId:
 			homeSectionHandler.insertHomeTemplates();
 			break;
@@ -129,17 +102,29 @@ sectionHandler = {
 		}
 	},
 
-	// Template all sections.
-	templateSections : function () {
+	// Add all sections.
+	insertSections : function () {
 		const secObj = sectionHandler.getSecObj();
 		const totalSections = sectionHandler.getTotalSections();
+		const mainContent = document.getElementById(K.mainContentId);
+		var classes = K.homeSecClasses;
+		
 		for (var i = 0; i < totalSections; i++ ) {
-			// Insert section heading.
-			const sectionId = Object.values(secObj)[i];
-			sectionHandler.insertSectionHeading(sectionId);
+			const section = mainContent.appendChild(document.createElement(K.divElement));
 			
-			// Insert section template.
-			sectionHandler.templateSectionById(i);
+			section.id = sectionHandler.getSecObj()[i];
+
+			section.className = K.defaultSecClasses + classes;
+			
+			if (section.id === K.homeSecId) {
+				classes = K.genericSecClasses;
+			}
+			
+			section.innerHTML = sectionHandler.sectionContent[i];
+
+			sectionHandler.insertSectionHeading(section.id);
+
+			sectionHandler.templateSection(section.id);
 		}
 	},
 

@@ -1,5 +1,5 @@
 // Handler object to insert templates
-templateHandler = {
+var templateHandler = {
 	// Boolean to check browser support for HTML template element.
 	isTemplateSupported : "content" in document.createElement("template"),
 
@@ -31,9 +31,6 @@ templateHandler = {
 
 		// Update section indicator.
 		sectionHandler.insertTotalSections();
-
-		// Insert template of individual sections.
-		sectionHandler.templateSections();
 	},
 
 	// Delegate clone insertion to appropritate handler method.
@@ -59,11 +56,6 @@ templateHandler = {
 			// Clone title and description items of infobar.
 			navHandler.cloneBioItemTitle(clone, iterIndex);
 			navHandler.cloneBioItemDescription(clone, iterIndex);
-			break;
-
-		case K.mainContentId :
-			// Clone sections of #main-content.
-			sectionHandler.cloneSection(clone, iterIndex);
 			break;
 
 		case K.projFilterMenuId:

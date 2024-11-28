@@ -1,5 +1,5 @@
 // Handler object to manage content of home section.
-homeSectionHandler = {
+var homeSectionHandler = {
 	// Convenience function to read content.
 	getHomeObj : function () {
 		return contentHandler.content[K.mainContentId][K.homeSecId];

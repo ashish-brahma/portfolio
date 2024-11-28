@@ -1,5 +1,5 @@
 // Handler object to manage content of portfolio section.
-skillsSectionHandler = {
+var skillsSectionHandler = {
 	// Convenience function to read content.
 	getSkillsObj : function () {
 		return contentHandler.content[K.mainContentId][K.skillsSecId];

@@ -43,7 +43,7 @@ var contentHandler = {
 
 				// Use view builder to build entire HTML body.
 				viewBuilder.buildBody();
-		});
+			});
 	},
 
 	// Invoke relevant method to dynamically load/filter content depending upon dropdown Id.

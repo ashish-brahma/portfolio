@@ -1,5 +1,5 @@
 // Handler object to manage content of contact section.
-contactSectionHandler = {
+var contactSectionHandler = {
 	// Convenience function to read content.
 	getContactObj : function () {
 		return contentHandler.content[K.mainContentId][K.contactSecId];
@@ -75,9 +75,11 @@ contactSectionHandler = {
 		// Identify elements for #form-field template insertion.
 		const formDiv = document.getElementById(K.formIndex);
 		const form = formDiv.appendChild(document.createElement(K.formElement));
+		const formFieldTemplate = document.getElementById(K.formFieldIndex);
+
+		// TODO: Set form attributes for submission.
 		const font = contentHandler.fonts[K.formElement];
 		form.classList.add(font);
-		const formFieldTemplate = document.getElementById(K.formFieldIndex);
 		
 		// Insert cloned template in #form-field.
 		templateHandler.setTemplate(formObj, form, 
@@ -97,7 +99,7 @@ contactSectionHandler = {
 		const input = field.appendChild(document.createElement(K.inputElement));
 		input.id = id;
 		input.type = inputObj[K.inputTypeAttribute];
-		input.classList.add(K.formControlIndex);
+		input.classList.add(K.formControlClasses);
 		
 		if (Object.keys(inputObj).indexOf(K.ariaDescribedByAttribute) > -1) {
 			input.setAttribute(K.ariaDescribedByAttribute, inputObj[K.ariaDescribedByAttribute]);
@@ -105,6 +107,7 @@ contactSectionHandler = {
 		input.ariaLabel = inputObj[K.ariaLabelAttribute];
 		
 		input.placeholder = inputObj[K.placeholderAttribute];
+		input.required = true;
 	},
 
 	// Insert input field.
@@ -168,6 +171,7 @@ contactSectionHandler = {
 		textarea.setAttribute(K.ariaDescribedByAttribute, fieldObj[K.ariaDescribedByAttribute]);
 		textarea[K.ariaLabelAttribute] = fieldObj[K.ariaLabelAttribute];
 		textarea.placeholder = fieldObj[K.placeholderAttribute];
+		textarea.required = true;
 
 		// Add help text.
 		contactSectionHandler.insertHelpText(messageObj, field);
@@ -198,6 +202,7 @@ contactSectionHandler = {
 		contactSectionHandler.insertFormContent();
 	},
 
+	// Convenience function to delegate field insertion to appropriate handler method.
 	insertField : function (id, field) {
 		switch (id) {
 		case K.inputNameIndex:
@@ -242,10 +247,5 @@ contactSectionHandler = {
 	cloneSendButton : function (clone, iterIndex, obj) {
 		let btn = clone.querySelector(K.hashSymbol + K.sendBtnId);
 		btn.textContent = obj[K.sendBtnId];
-	},
-
-	// TODO: Add script to submit form and display confirmation.
-	processForm : function () {
-		
 	}
 };

@@ -1,5 +1,5 @@
 // Handler object to build views.
-viewBuilder = {
+var viewBuilder = {
 	// Convenience function to insert prepared inner html content using an element's Id.
 	insertHtml : function (id, innerHtml) {
 		document.getElementById(id).innerHTML += innerHtml;
@@ -67,8 +67,14 @@ viewBuilder = {
 				sectionHandler.getSectionContent(responses); 
 				templateHandler.injectMainContentTemplate();
 
+				// Initiate event listeners for all dropdown togglers.
+				dropdownHandler.persistToggleActive();
+
 				// Initiate listeners for changes to project filter dropdown selection.
 				dropdownHandler.listenNewSelection(K.projFilterId);
+
+				// Initiate form submission event listener.
+				formHandler.submitForm(event);
 			});
 	},
 
@@ -79,7 +85,8 @@ viewBuilder = {
 			viewBuilder.buildNavbar();
 			viewBuilder.buildMainContent();
 		} else {
-		// TODO: In case browser does not support template element, do something else.
+		// In case browser does not support template element, do something else.
+			console.log("Templating not supported. Aborting...");
 		}
 	}
 };

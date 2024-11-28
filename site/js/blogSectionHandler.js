@@ -1,5 +1,5 @@
 // Handler object to manage content of blog section.
-blogSectionHandler = {
+var blogSectionHandler = {
 	// Convenience function to read content.
 	getBlogObj : function () {
 		return contentHandler.content[K.mainContentId][K.blogSecId];
