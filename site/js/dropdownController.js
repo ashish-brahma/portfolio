@@ -1,5 +1,5 @@
-// Handler object to manage dropdown events.
-var dropdownHandler = {
+// Controller object to manage dropdown events.
+var dropdownController = {
 	// Fetch current selection of the dropdown.
 	activeId: function (dropdownId) {
 		var currentSelection = K.emptyString;
@@ -24,7 +24,7 @@ var dropdownHandler = {
 		
 		// In case current selection could not be assigned, use defaults.
 		if ((currentSelection === K.emptyString) || (currentSelection == null)) {
-			currentSelection = dropdownHandler.defaultId(dropdownId);
+			currentSelection = dropdownController.defaultId(dropdownId);
 		}
 		
 		return currentSelection;
@@ -54,14 +54,14 @@ var dropdownHandler = {
 			function (node) {
 				node.addEventListener (K.clickEvent, 
 					function(event) {
-						var activeId = dropdownHandler.activeId(dropdownId);
+						var activeId = dropdownController.activeId(dropdownId);
 						const activeBtn = document
 												.getElementById(activeId)
 												.querySelector(K.buttonElement);
 						activeBtn.classList.remove(K.activeClass);
 						activeBtn.className = node.className;
 						node.classList.add(K.activeClass);
-						contentHandler.reloadContent(dropdownId);
+						contentController.reloadContent(dropdownId);
 					}
 				);
 			}

@@ -1,7 +1,3 @@
-body {
-	font-size: 16px;
-}
-
 /* NAVBAR */
 
 #sidebar, nav {
@@ -737,36 +733,42 @@ form #send-btn:hover {
 
 .poppins-thin {
   font-family: "Poppins", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 100;
   font-style: normal;
 }
 
 .poppins-regular {
   font-family: "Poppins", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
 
 .poppins-medium {
   font-family: "Poppins", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
 }
 
 .poppins-semibold {
   font-family: "Poppins", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
 }
 
 .poppins-bold {
   font-family: "Poppins", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
 }
 
 .poppins-regular-italic {
   font-family: "Poppins", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 400;
   font-style: italic;
 }
@@ -775,6 +777,15 @@ form #send-btn:hover {
   font-family: "Noto Sans Devanagari", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.noto-sans-devanagari-bold {
+  font-family: "Noto Sans Devanagari", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
@@ -791,6 +802,7 @@ form #send-btn:hover {
 
 .germania-one-regular {
   font-family: "Germania One", system-ui;
+  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
@@ -811,6 +823,7 @@ form #send-btn:hover {
 
 .fira-sans-condensed-medium {
   font-family: "Fira Sans Condensed", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
 }

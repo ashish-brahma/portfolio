@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<!-- Set meta data. -->
 	<meta charset="utf-8">
@@ -49,31 +49,34 @@
 		<div id="main-content" data-bs-spy="scroll" data-bs-target="sidebar-nav" 
 			 data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" 
 			 class="container-fluid g-0">
+		</div> <!-- End of #main-content -->
+		
+		<template id="loading-spinner-icon">
 			<div id="loading-icon" class="text-center">
 			  	<div class="spinner-border" role="status">
 			    	<span class="visually-hidden"></span>
 			  	</div> <!-- End of .spinner-border -->
 			</div> <!-- End of #loading-icon -->
-		</div> <!-- End of #main-content -->
+		</template> <!-- End of template -->
 	</div> <!-- End of .d-flex -->
 
 	<!-- Load internal scripts -->
 	<script src="js/stringExt.js"></script>
 	<script src="js/constants.js"></script> 
-	<script src="js/dropdownHandler.js"></script>
-	<script src="js/navHandler.js"></script>
-	<script src="js/sectionHandler.js"></script>
-	<script src="js/homeSectionHandler.js"></script>
-	<script src="js/servicesSectionHandler.js"></script>
-	<script src="js/portfolioSectionHandler.js"></script>
-	<script src="js/experienceSectionHandler.js"></script>
-	<script src="js/skillsSectionHandler.js"></script>
-	<script src="js/contactSectionHandler.js"></script>
-	<script src="js/blogSectionHandler.js"></script>
-	<script src="js/templateHandler.js"></script>
-	<script src="js/viewBuilder.js"></script>
-	<script src="js/contentHandler.js"></script>
-	<script src="js/formHandler.js"></script>
+	<script src="js/dropdownController.js"></script>
+	<script src="js/navController.js"></script>
+	<script src="js/sectionController.js"></script>
+	<script src="js/homeSectionController.js"></script>
+	<script src="js/servicesSectionController.js"></script>
+	<script src="js/portfolioSectionController.js"></script>
+	<script src="js/experienceSectionController.js"></script>
+	<script src="js/skillsSectionController.js"></script>
+	<script src="js/contactSectionController.js"></script>
+	<script src="js/blogSectionController.js"></script>
+	<script src="js/templateController.js"></script>
+	<script src="js/viewController.js"></script>
+	<script src="js/contentController.js"></script>
+	<script src="js/formController.js"></script>
 	<script src="js/main.js"></script> 
 </body>
 </html>

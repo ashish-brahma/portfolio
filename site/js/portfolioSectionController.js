@@ -1,56 +1,56 @@
-// Handler object to manage content of portfolio section.
-var portfolioSectionHandler = {
+// Controller object to manage content of portfolio section.
+var portfolioSectionController = {
 	// Current filter set in portfolio project dropdown. (default: All)
 	getActiveProjFilter: function () {
-		return dropdownHandler.activeId(K.projFilterId);
+		return dropdownController.activeId(K.projFilterId);
 	},
 
 	// Convenience function to read content.
 	getPortfolioObj : function () {
-		return contentHandler.content[K.mainContentId][K.portfolioSecId];
+		return contentController.content[K.mainContentId][K.portfolioSecId];
 	},
 
 	// Convenience function to read dropdown filter content.
 	getProjFilterObj : function () {
-		return portfolioSectionHandler.getPortfolioObj()[K.projFilterId];
+		return portfolioSectionController.getPortfolioObj()[K.projFilterId];
 	},
 
 	// Convenience function to read content of all project cards.
 	getProjRowObj : function () {
-		return portfolioSectionHandler.getPortfolioObj()[K.projRowId];
+		return portfolioSectionController.getPortfolioObj()[K.projRowId];
 	},
 
 	// Add cloned buttons in project filter.
 	insertProjFilter : function () {
-		const pfObj = portfolioSectionHandler.getProjFilterObj();
+		const pfObj = portfolioSectionController.getProjFilterObj();
 
 		// Identify elements for #project-list-item template insertion.
 		const projectFilterMenu = document.getElementById(K.projFilterMenuId);
 		const projListItemTemplate = document.getElementById(K.projListItemId);
 		
 		// Insert cloned template in #project-filter-menu.
-		templateHandler.setTemplate(pfObj, projectFilterMenu, 
+		templateController.setTemplate(pfObj, projectFilterMenu, 
 										   projListItemTemplate, K.projFilterMenuId);
 	},
 
 	// Add cloned cards in columns of project row.
 	insertProjCardGrid : function () {
-		const projRowObj = portfolioSectionHandler.getProjRowObj();
+		const projRowObj = portfolioSectionController.getProjRowObj();
 
 		// Identify elements for #project-card template insertion.
 		const projectCardsRow = document.getElementById(K.projRowId);
 		const projCardTemplate = document.getElementById(K.projCardId);
 
 		// Insert cloned templates in #project-cards-row.
-		templateHandler.setTemplate(projRowObj, projectCardsRow, 
+		templateController.setTemplate(projRowObj, projectCardsRow, 
 										   projCardTemplate, K.projRowId);
 	},
 
 	// Insert cloned templates in portfolio section.
 	insertPortfolioTemplates : function () {
-		portfolioSectionHandler.insertProjFilter();
-		portfolioSectionHandler.insertProjCardGrid();
-		portfolioSectionHandler.insertButtonLabels();
+		portfolioSectionController.insertProjFilter();
+		portfolioSectionController.insertProjCardGrid();
+		portfolioSectionController.insertButtonLabels();
 	},
 
 	// Add dropdown divider
@@ -67,7 +67,7 @@ var portfolioSectionHandler = {
 	insertButtonLabels : function () {
 		const projRow = document.getElementById(K.projRowId);
 		const projButtons = projRow.querySelectorAll(K.periodSymbol + K.btnLabelIndex);
-		const btnFont = contentHandler.fonts[K.btnLabelIndex];
+		const btnFont = contentController.fonts[K.btnLabelIndex];
 		projButtons.forEach(
 			function (node) {
 				node.textContent = K.projButtonLabel;
@@ -84,7 +84,7 @@ var portfolioSectionHandler = {
 		let card = clone.querySelector(K.periodSymbol + K.cardIndex);
 		
 		// Prepare content for cloning.
-		const projRowObj = portfolioSectionHandler.getProjRowObj();
+		const projRowObj = portfolioSectionController.getProjRowObj();
 		const projId = Object.keys(projRowObj)[iterIndex];
 
 		// Add project filter classes.
@@ -98,7 +98,7 @@ var portfolioSectionHandler = {
 		cardImg.alt = projRowObj[projId][K.altIndex];
 
 		// Add project title.
-		const font = contentHandler.fonts[K.semiboldFontIndex];
+		const font = contentController.fonts[K.semiboldFontIndex];
 		let cardTitle = card.querySelector(K.periodSymbol + K.cardTitleIndex);
 		cardTitle.classList.add(font);
 		cardTitle.textContent = projRowObj[projId][K.cardTitleIndex];
@@ -116,14 +116,14 @@ var portfolioSectionHandler = {
 	cloneProjFilterListItem : function (clone, iterIndex) {
 		// Insert dropdown divider after first button.
 		if (iterIndex == 1) {
-			portfolioSectionHandler.insertDropdownDivider();
+			portfolioSectionController.insertDropdownDivider();
 		}
 		
 		// Add new button.
 		let btn = clone.querySelector(K.buttonElement);
 
 		// Prepare content for cloning.
-		const pfObj = portfolioSectionHandler.getProjFilterObj();
+		const pfObj = portfolioSectionController.getProjFilterObj();
 
 		// Add list item id.
 		let li = clone.querySelector(K.listItemElement);
@@ -131,7 +131,7 @@ var portfolioSectionHandler = {
 		li.id = pfObj[liId];
 		
 		// Add button classes.
-		const activeFilter = portfolioSectionHandler.getActiveProjFilter();
+		const activeFilter = portfolioSectionController.getActiveProjFilter();
 		if (liId === activeFilter) {
 			btn.classList.add(K.activeClass);
 		} else btn.classList.add(K.projListColorClass);
@@ -142,7 +142,7 @@ var portfolioSectionHandler = {
 
 	// Load projects according to filter selected.
 	filterSection : function () {
-		const activeFilter = portfolioSectionHandler.getActiveProjFilter();
+		const activeFilter = portfolioSectionController.getActiveProjFilter();
 		const projRow = document.getElementById(K.projRowId);
 		const cols = projRow.querySelectorAll(K.periodSymbol + K.colClass);
 

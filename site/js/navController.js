@@ -1,31 +1,31 @@
-// Handler to manage nav content.
-var navHandler = {
+// Controller to manage nav content.
+var navController = {
 	// Set up an object to read current language.
 	activeLang : K.emptyString,
 
 	// Convenience function to read nav content.
 	getNavObj : function () {
-		return contentHandler.content[K.sidebarNavId];
+		return contentController.content[K.sidebarNavId];
 	},
 
 	// Convenience function to read language dropdown content.
 	getLangDropdownObj : function () {
-		return navHandler.getNavObj()[K.langDropdownId];
+		return contentController.langDropdown;
 	},
 
 	// Convenience function to read #nav-list content.
 	getNavListObj : function () {
-		return navHandler.getNavObj()[K.navListIndex];
+		return navController.getNavObj()[K.navListIndex];
 	},
 
 	// Convenience function to read #bio-list content.
 	getInfobarObj : function () {
-		return navHandler.getNavObj()[K.navBioIndex];
+		return navController.getNavObj()[K.navBioIndex];
 	},
 
 	// Insert cloned templates in #lang-dropdown.
 	insertLangDropdown : function () {
-		const langDropdownObj = navHandler.getLangDropdownObj();
+		const langDropdownObj = navController.getLangDropdownObj();
 
 		const dropdownMenu = document
 								.getElementById(K.langDropdownId)
@@ -33,70 +33,69 @@ var navHandler = {
 
 		var langItemTemplate = document.getElementById(K.langItemId);
 
-		templateHandler.setTemplate(langDropdownObj, dropdownMenu, 
+		templateController.setTemplate(langDropdownObj, dropdownMenu, 
 										langItemTemplate, K.langDropdownId);
 	},
 
 	// Insert cloned templates in #nav-list.
 	insertNavList : function () {
-		const navListObj = navHandler.getNavListObj();
+		const navListObj = navController.getNavListObj();
 
 		// Identify elements for #nav-list template insertion.
 		const navList = document.getElementById(K.navListIndex);
 		var navItemTemplate = document.getElementById(K.navItemId);
 
 		// Insert clone templates in #nav-list.
-		templateHandler.setTemplate(navListObj, navList, 
+		templateController.setTemplate(navListObj, navList, 
 										navItemTemplate, K.navListIndex);
 	},
 
 	// Insert cloned templates in #bio-list.
 	insertInfobar : function () {
-		const infobarObj = navHandler.getInfobarObj();
+		const infobarObj = navController.getInfobarObj();
 
 		// Identify elements for #bio-list template insertion.
 		const bioList = document.getElementById(K.navBioIndex);
 		var bioItemTemplate = document.getElementById(K.bioItemId);
 		
 		// Insert clone templates in #bio-list.
-		templateHandler.setTemplate(infobarObj, bioList,
+		templateController.setTemplate(infobarObj, bioList,
 										bioItemTemplate, K.navBioIndex);
 	},
 
 	// Add new list item.
-	cloneListItem : function (clone, iterIndex) {
+	cloneListItem : function (clone, iterIndex, obj) {
 		let li = clone.querySelector(K.listItemElement);
-		const langDropdownObj = navHandler.getLangDropdownObj();
-		li.id = Object.keys(langDropdownObj)[iterIndex];
-		li.className = langDropdownObj[li.id][K.langFontIndex];
+		li.id = Object.keys(obj)[iterIndex];
+		li.className = obj[li.id][K.langFontIndex];
 	},
 
 	// Add thumbnail image.
-	cloneThmbImage : function (clone, iterIndex) {
+	cloneThmbImage : function (clone, iterIndex, obj) {
 		let thumbnail = clone.querySelector(K.imageElement);
-		const langDropdownObj = navHandler.getLangDropdownObj();
-		const liId = Object.keys(langDropdownObj)[iterIndex];
-		const countryCode = langDropdownObj[liId][K.langCountryCodeIndex];
+		const liId = Object.keys(obj)[iterIndex];
+		const countryCode = obj[liId][K.langCountryCodeIndex];
 		thumbnail.src = K.langFlagLocation + countryCode + K.svgFileExtension;
-		const altText = langDropdownObj[liId][K.altIndex];
+		const altText = obj[liId][K.altIndex];
 		thumbnail.alt = altText;
 	},
 
 	// Add button label.
-	cloneBtn : function (clone, iterIndex) {
+	cloneBtn : function (clone, iterIndex, obj) {
 		let btn = clone.querySelector(K.buttonElement);
-		const langDropdownObj = navHandler.getLangDropdownObj();
-		const liId = Object.keys(langDropdownObj)[iterIndex];
-		if (liId === navHandler.activeLang) {
+		const liId = Object.keys(obj)[iterIndex];
+		if (liId === navController.activeLang) {
 			btn.classList.add(K.activeClass);
 		}
-		btn.innerHTML += langDropdownObj[liId][K.langLabelIndex];
+		const label = btn.appendChild(document.createElement(K.spanElement));
+		label.setAttribute(K.langAttribute, liId);
+		label.textContent = obj[liId][K.langLabelIndex];
 	},
 
 	// Add new nav list anchor.
 	cloneAnchor : function (clone, iterIndex) {
 		let anchor = clone.querySelector(K.anchorElement);
-		const navListObj = navHandler.getNavListObj();
+		const navListObj = navController.getNavListObj();
 		const sectionId = Object.values(navListObj)[iterIndex];
 		anchor.href = K.hashSymbol + sectionId;
 		anchor.textContent = stringExt.capitalize(sectionId);
@@ -105,9 +104,9 @@ var navHandler = {
 	// Add new bio item title.
 	cloneBioItemTitle : function (clone, iterIndex) {
 		let bioItemTitle = clone.querySelector(K.bioItemTitleClass);
-		const font = contentHandler.fonts[K.mediumFontIndex];
+		const font = contentController.fonts[K.mediumFontIndex];
 		bioItemTitle.classList.add(font);
-		const infobarObj = navHandler.getInfobarObj();
+		const infobarObj = navController.getInfobarObj();
 		const title = Object.keys(infobarObj)[iterIndex];
 		bioItemTitle.textContent = title;
 	},
@@ -115,9 +114,9 @@ var navHandler = {
 	// Add new bio item description.
 	cloneBioItemDescription : function (clone, iterIndex) {
 		let bioItemDescription = clone.querySelector(K.bioItemDescriptionClass);
-		const font = contentHandler.fonts[K.semiboldFontIndex];
+		const font = contentController.fonts[K.semiboldFontIndex];
 		bioItemDescription.classList.add(font);
-		const infobarObj = navHandler.getInfobarObj();
+		const infobarObj = navController.getInfobarObj();
 		const description = Object.values(infobarObj)[iterIndex];
 		bioItemDescription.textContent = description;
 	}

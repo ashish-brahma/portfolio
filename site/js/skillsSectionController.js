@@ -1,8 +1,8 @@
-// Handler object to manage content of portfolio section.
-var skillsSectionHandler = {
+// Controller object to manage content of portfolio section.
+var skillsSectionController = {
 	// Convenience function to read content.
 	getSkillsObj : function () {
-		return contentHandler.content[K.mainContentId][K.skillsSecId];
+		return contentController.content[K.mainContentId][K.skillsSecId];
 	},
 
 	// Set up an object to store chart types by skill Id.
@@ -10,7 +10,7 @@ var skillsSectionHandler = {
 
 	// Add cloned templates of all charts.
 	insertCharts : function () {
-		const chartObj = skillsSectionHandler.chartObj;
+		const chartObj = skillsSectionController.chartObj;
 		const totalCharts = Object.keys(chartObj).length;
 		
 		for (var i = 0; i < totalCharts; i++) {
@@ -28,33 +28,33 @@ var skillsSectionHandler = {
 			const chartTemplate = document.querySelector(K.hashSymbol + chartType);
 			
 			// Insert cloned template of the chart identified using skill id.
-			templateHandler.setTemplate(slicedChartObj, skillChart, 
+			templateController.setTemplate(slicedChartObj, skillChart, 
 													chartTemplate, K.skillChartIndex);
 		}
 	},
 
 	// Add cloned charts in #skills-body.
 	insertSkillsBody : function () {
-		const skillsObj = skillsSectionHandler.getSkillsObj();
+		const skillsObj = skillsSectionController.getSkillsObj();
 
 		// Identify elements for #skills-list-item template insertion.
 		const skillsBody = document.getElementById(K.skillsBodyId);
 		const skillsListItemTemplate = document.getElementById(K.skillsListItemId);
 		
 		// Insert cloned template in #skills-body.
-		templateHandler.setTemplate(skillsObj, skillsBody, 
+		templateController.setTemplate(skillsObj, skillsBody, 
 										   skillsListItemTemplate, K.skillsBodyId);
 	},
 
 	// Insert cloned templates of #skills.
 	insertSkillTemplates : function () {
-		skillsSectionHandler.insertSkillsBody();
-		skillsSectionHandler.insertCharts();
+		skillsSectionController.insertSkillsBody();
+		skillsSectionController.insertCharts();
 	},
 
 	// Add new skill item.
 	cloneSkillsListItem : function (clone, iterIndex) {
-		const skillsObj = skillsSectionHandler.getSkillsObj();
+		const skillsObj = skillsSectionController.getSkillsObj();
 		skillId = Object.keys(skillsObj)[iterIndex];
 
 		// Add col class.
@@ -66,7 +66,7 @@ var skillsSectionHandler = {
 		const chartType = skillsObj[skillId][K.skillChartIndex];
 		chart.id = skillId + K.hyphenSymbol + K.skillChartIndex;
 		chart.classList.add(chartType);
-		skillsSectionHandler.chartObj[skillId] = chartType;
+		skillsSectionController.chartObj[skillId] = chartType;
 
 		// Add skill class based on chart type.
 		let skill = clone.querySelector(K.periodSymbol + K.skillClass);
@@ -75,7 +75,7 @@ var skillsSectionHandler = {
 		}
 
 		// Add skill label.
-		const font = contentHandler.fonts[K.semiboldFontIndex];
+		const font = contentController.fonts[K.semiboldFontIndex];
 		let skillLabel = clone.querySelector(K.periodSymbol + K.skillsLabelIndex);
 		skillLabel.classList.add(font);
 		skillLabel.textContent = skillsObj[skillId][K.skillsLabelIndex];
@@ -83,7 +83,7 @@ var skillsSectionHandler = {
 
 	// Add new chart.
 	cloneChart : function (clone, iterIndex, obj) {
-		const skillsObj = skillsSectionHandler.getSkillsObj();
+		const skillsObj = skillsSectionController.getSkillsObj();
 
 		// iterIndex is zero as obj is a single pair of skill id and chart type.
 		const skillId = Object.keys(obj)[iterIndex];
@@ -93,7 +93,7 @@ var skillsSectionHandler = {
 		skillFbox.classList.add(skillId);
 
 		// Add percentage.
-		const font = contentHandler.fonts[K.skillsPercentageIndex];
+		const font = contentController.fonts[K.skillsPercentageIndex];
 		let percentage = clone.querySelector(K.periodSymbol + K.skillsPercentageIndex);
 		percentage.classList.add(font);
 		percentage.textContent = skillsObj[skillId][K.skillsPercentageIndex];

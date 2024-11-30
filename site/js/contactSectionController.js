@@ -1,38 +1,38 @@
-// Handler object to manage content of contact section.
-var contactSectionHandler = {
+// Controller object to manage content of contact section.
+var contactSectionController = {
 	// Convenience function to read content.
 	getContactObj : function () {
-		return contentHandler.content[K.mainContentId][K.contactSecId];
+		return contentController.content[K.mainContentId][K.contactSecId];
 	},
 
 	// Convenience function to read form content.
 	getFormObj : function () {
-		return contactSectionHandler.getContactObj()[K.formIndex];
+		return contactSectionController.getContactObj()[K.formIndex];
 	},
 
 	// Convenience function to read submit button content.
 	getFormSubmitBtnObj : function () {
-		return contactSectionHandler.getFormObj()[K.formSubmitBtnIndex];
+		return contactSectionController.getFormObj()[K.formSubmitBtnIndex];
 	},
 
 	// Convenience function to read input name content.
 	getFormNameObj : function () {
-		return contactSectionHandler.getFormObj()[K.inputNameIndex];
+		return contactSectionController.getFormObj()[K.inputNameIndex];
 	},
 
 	// Convenience function to read input email content.
 	getFormEmailObj : function () {
-		return contactSectionHandler.getFormObj()[K.inputEmailIndex];
+		return contactSectionController.getFormObj()[K.inputEmailIndex];
 	},
 
 	// Convenience function to read input subject content.
 	getFormSubjectObj : function () {
-		return contactSectionHandler.getFormObj()[K.inputSubjectIndex];
+		return contactSectionController.getFormObj()[K.inputSubjectIndex];
 	},
 
 	// Convenience function to read textarea message content.
 	getFormMessageObj : function () {
-		return contactSectionHandler.getFormObj()[K.textAreaMessageIndex];
+		return contactSectionController.getFormObj()[K.textAreaMessageIndex];
 	},
 
 	// Convenience function to read form label.
@@ -49,11 +49,11 @@ var contactSectionHandler = {
 
 	// Insert body content.
 	insertContactBody : function () {
-		const contactObj = contactSectionHandler.getContactObj();
+		const contactObj = contactSectionController.getContactObj();
 		const contactBody = document.querySelector(K.periodSymbol + K.contactBodyClass);
 
 		// Insert call to action.
-		const font = contentHandler.fonts[K.semiboldFontIndex];
+		const font = contentController.fonts[K.semiboldFontIndex];
 		const cta = contactBody.querySelector(K.periodSymbol + K.contactBodyCTAIndex);
 		cta.classList.add(font);
 		cta.textContent = contactObj[K.contactBodyCTAIndex];
@@ -70,19 +70,23 @@ var contactSectionHandler = {
 
 	// Insert cloned templates of contact form.
 	insertFormContent : function () {
-		const formObj = contactSectionHandler.getFormObj();
+		const formObj = contactSectionController.getFormObj();
 		
 		// Identify elements for #form-field template insertion.
 		const formDiv = document.getElementById(K.formIndex);
 		const form = formDiv.appendChild(document.createElement(K.formElement));
 		const formFieldTemplate = document.getElementById(K.formFieldIndex);
 
-		// TODO: Set form attributes for submission.
-		const font = contentHandler.fonts[K.formElement];
+		// Set font.	
+		const font = contentController.fonts[K.formElement];
 		form.classList.add(font);
+
+		// Set default validation class.
+		form.classList.add(K.formNeedsValidationClass);
+		form.noValidate = true;
 		
 		// Insert cloned template in #form-field.
-		templateHandler.setTemplate(formObj, form, 
+		templateController.setTemplate(formObj, form, 
 										   formFieldTemplate, K.formFieldIndex);
 	},
 
@@ -113,15 +117,15 @@ var contactSectionHandler = {
 	// Insert input field.
 	insertInputField : function (obj, field, id) {
 		// Add label.
-		const label = contactSectionHandler.getFormLabelObj(obj);
+		const label = contactSectionController.getFormLabelObj(obj);
 		var labelObj = {};
 		labelObj[K.fieldIdIndex] = id;
 		labelObj[K.formLabelIndex] = label;
-		contactSectionHandler.insertLabelItem(labelObj, field);
+		contactSectionController.insertLabelItem(labelObj, field);
 
 		// Add input.
-		const fieldObj = contactSectionHandler.getFormFieldObj(obj);
-		contactSectionHandler.insertInputItem(fieldObj, field, id);
+		const fieldObj = contactSectionController.getFormFieldObj(obj);
+		contactSectionController.insertInputItem(fieldObj, field, id);
 	},
 
 	// Insert help text.
@@ -134,36 +138,36 @@ var contactSectionHandler = {
 
 	// Insert name field.
 	insertNameField : function (id, field) {
-		inputNameObj = contactSectionHandler.getFormNameObj();
-		contactSectionHandler.insertInputField(inputNameObj, field, id);
+		inputNameObj = contactSectionController.getFormNameObj();
+		contactSectionController.insertInputField(inputNameObj, field, id);
 	},
 
 	// Insert email field.
 	insertEmailField : function (id, field) {
-		inputEmailObj = contactSectionHandler.getFormEmailObj();
-		contactSectionHandler.insertInputField(inputEmailObj, field, id);
-		contactSectionHandler.insertHelpText(inputEmailObj, field);
+		inputEmailObj = contactSectionController.getFormEmailObj();
+		contactSectionController.insertInputField(inputEmailObj, field, id);
+		contactSectionController.insertHelpText(inputEmailObj, field);
 	},
 
 	// Insert subject field.
 	insertSubjectField : function (id, field) {
-		inputSubjectObj = contactSectionHandler.getFormSubjectObj();
-		contactSectionHandler.insertInputField(inputSubjectObj, field, id);
+		inputSubjectObj = contactSectionController.getFormSubjectObj();
+		contactSectionController.insertInputField(inputSubjectObj, field, id);
 	},
 
 	// Insert message field.
 	insertMessageField : function (id, field) {
-		messageObj = contactSectionHandler.getFormMessageObj();
+		messageObj = contactSectionController.getFormMessageObj();
 
 		// Add label.
-		const label = contactSectionHandler.getFormLabelObj(messageObj);
+		const label = contactSectionController.getFormLabelObj(messageObj);
 		var labelObj = {};
 		labelObj[K.fieldIdIndex] = id;
 		labelObj[K.formLabelIndex] = label;
-		contactSectionHandler.insertLabelItem(labelObj, field);
+		contactSectionController.insertLabelItem(labelObj, field);
 		
 		// Add textarea.
-		const fieldObj = contactSectionHandler.getFormFieldObj(messageObj);
+		const fieldObj = contactSectionController.getFormFieldObj(messageObj);
 		const textarea = field.appendChild(document.createElement(K.textAreaElement));
 		textarea.id = id;
 		textarea.classList.add(K.formControlIndex);
@@ -171,15 +175,16 @@ var contactSectionHandler = {
 		textarea.setAttribute(K.ariaDescribedByAttribute, fieldObj[K.ariaDescribedByAttribute]);
 		textarea[K.ariaLabelAttribute] = fieldObj[K.ariaLabelAttribute];
 		textarea.placeholder = fieldObj[K.placeholderAttribute];
+		textarea.maxLength = 300;
 		textarea.required = true;
 
 		// Add help text.
-		contactSectionHandler.insertHelpText(messageObj, field);
+		contactSectionController.insertHelpText(messageObj, field);
 	},
 
 	// Insert send button template.
 	insertSendButton : function (formField) {
-		const sendBtnObj = contactSectionHandler.getFormSubmitBtnObj();
+		const sendBtnObj = contactSectionController.getFormSubmitBtnObj();
 
 		// Add send button div classes.
 		formField.classList.add(...sendBtnObj[K.divElement]);
@@ -192,37 +197,37 @@ var contactSectionHandler = {
 		const formSubmitBtnTemplate = document.getElementById(K.formSubmitBtnIndex);
 		
 		// Insert send button in #form-field.
-		templateHandler.setTemplate(slicedBtnObj, formField, 
+		templateController.setTemplate(slicedBtnObj, formField, 
 										   formSubmitBtnTemplate, K.formSubmitBtnIndex);
 	},
 
 	// Insert all content.
 	insertContactTemplates : function () {
-		contactSectionHandler.insertContactBody();
-		contactSectionHandler.insertFormContent();
+		contactSectionController.insertContactBody();
+		contactSectionController.insertFormContent();
 	},
 
-	// Convenience function to delegate field insertion to appropriate handler method.
+	// Convenience function to delegate field insertion to appropriate Controller method.
 	insertField : function (id, field) {
 		switch (id) {
 		case K.inputNameIndex:
-			contactSectionHandler.insertNameField(id, field);
+			contactSectionController.insertNameField(id, field);
 			break;
 
 		case K.inputEmailIndex:
-			contactSectionHandler.insertEmailField(id, field);
+			contactSectionController.insertEmailField(id, field);
 			break;
 
 		case K.inputSubjectIndex:
-			contactSectionHandler.insertSubjectField(id, field);
+			contactSectionController.insertSubjectField(id, field);
 			break;
 
 		case K.textAreaMessageIndex:
-			contactSectionHandler.insertMessageField(id, field);
+			contactSectionController.insertMessageField(id, field);
 			break;
 
 		case K.formSubmitBtnIndex:
-			contactSectionHandler.insertSendButton(field);
+			contactSectionController.insertSendButton(field);
 			break;
 
 		default: 
@@ -236,16 +241,18 @@ var contactSectionHandler = {
 		let field = clone.querySelector(K.divElement);
 
 		// Identify field data.
-		const formObj = contactSectionHandler.getFormObj();
+		const formObj = contactSectionController.getFormObj();
 		const fieldId = Object.keys(formObj)[iterIndex];
 
-		// Delegate field templation to appropriate handler method.
-		contactSectionHandler.insertField(fieldId, field);
+		// Delegate field templation to appropriate Controller method.
+		contactSectionController.insertField(fieldId, field);
 	},
 
 	// Add send button.
 	cloneSendButton : function (clone, iterIndex, obj) {
 		let btn = clone.querySelector(K.hashSymbol + K.sendBtnId);
 		btn.textContent = obj[K.sendBtnId];
+
+		// TODO: Set form attributes for submission.
 	}
 };

@@ -1,22 +1,18 @@
-// Handler object to manage section content.
-var sectionHandler = {
+// Controller object to manage section content.
+var sectionController = {
 	// Convenience function to read sections.
 	getSecObj : function () {
-		return contentHandler.content[K.sidebarNavId][K.navListIndex];
-	},
-
-	// Convenience function to calculate total sections.
-	getTotalSections : function () {
-		const secObj = sectionHandler.getSecObj();
-		const totalSections = Object.keys(secObj).length;
-		return totalSections;
+		return navController.getNavObj()[K.navListIndex];
 	},
 
 	// Convenience function to insert total sections in section indicator.
 	insertTotalSections : function () {
-		const totalSections = sectionHandler.getTotalSections();
-		viewBuilder.insertHtml(K.totalSectionsId,
-				(totalSections < 10) ? (K.zeroString + totalSections) : totalSections);
+		const secObj = sectionController.getSecObj();
+		const lastIndex = Object.keys(secObj).length - 1;
+		const zeroString = navController.getNavObj()[K.zeroStringIndex];
+		const totalSections = Object.keys(secObj)[lastIndex];
+		viewController.insertHtml(K.totalSectionsId,
+				(lastIndex < 10) ? (zeroString + totalSections) : totalSections);
 	},
 
 	// Set up an object for section content to be inserted.
@@ -24,7 +20,7 @@ var sectionHandler = {
 
 	// Convenience function to collect reponses of section promises for templating.
 	getSectionContent : function (responses) {
-		sectionHandler.sectionContent = responses;
+		sectionController.sectionContent = responses;
 	},
 
 	// Convenience function to insert section heading.
@@ -32,7 +28,7 @@ var sectionHandler = {
 		const section = document.getElementById(id);
 		var heading = K.emptyString;
 		const header = section.querySelector(K.headerElement);
-		const headingFont = contentHandler.fonts[K.boldFontIndex];
+		const headingFont = contentController.fonts[K.boldFontIndex];
 		
 		// No header element in home section.
 		if (header == null) {
@@ -47,18 +43,20 @@ var sectionHandler = {
 			const lvlTwoHeading = header
 								.appendChild(document
 												.createElement(K.lvlTwoHeadingElement));
-			const lvlTwoFont = contentHandler.fonts[K.boldFontIndex];
+			const lvlTwoFont = contentController.fonts[K.boldFontIndex];
 			lvlTwoHeading.classList.add(headingFont, K.lvlTwoFontColorClass);
 			heading = lvlTwoHeading;
 		}
 		
 		switch (id) {
 		case K.homeSecId:
-			heading.textContent = navHandler.getInfobarObj()[K.bioNameIndex];
+			let bioNameIndex = Object.keys(navController.getInfobarObj())[0];
+			heading.textContent = navController.getInfobarObj()[bioNameIndex];
 			break;
 		
 		case K.contactSecId:
-			heading.textContent = contactSectionHandler.getContactObj()[K.headingIndex];
+			let headingIndex = Object.keys(contactSectionController.getContactObj())[0];
+			heading.textContent = contactSectionController.getContactObj()[headingIndex];
 			break;
 
 		default:
@@ -66,35 +64,35 @@ var sectionHandler = {
 		}
 	},
 
-	// Delegate templating to appropriate handler method.
+	// Delegate templating to appropriate Controller method.
 	templateSection : function (id) {
 		switch(id) {
 		case K.homeSecId:
-			homeSectionHandler.insertHomeTemplates();
+			homeSectionController.insertHomeTemplates();
 			break;
 
 		case K.servicesSecId:
-			servicesSectionHandler.insertServicesTemplates();
+			servicesSectionController.insertServicesTemplates();
 			break;
 			
 		case K.portfolioSecId:
-			portfolioSectionHandler.insertPortfolioTemplates();
+			portfolioSectionController.insertPortfolioTemplates();
 			break;
 		
 		case K.experienceSecId:
-			experienceSectionHandler.insertExperienceTemplates();
+			experienceSectionController.insertExperienceTemplates();
 			break;
 
 		case K.skillsSecId:
-			skillsSectionHandler.insertSkillTemplates();
+			skillsSectionController.insertSkillTemplates();
 			break;
 
 		case K.contactSecId:
-			contactSectionHandler.insertContactTemplates();
+			contactSectionController.insertContactTemplates();
 			break; 
 
 		case K.blogSecId:
-			blogSectionHandler.insertBlogTemplates();
+			blogSectionController.insertBlogTemplates();
 			break;
 		
 		default:
@@ -104,15 +102,15 @@ var sectionHandler = {
 
 	// Add all sections.
 	insertSections : function () {
-		const secObj = sectionHandler.getSecObj();
-		const totalSections = sectionHandler.getTotalSections();
+		const secObj = sectionController.getSecObj();
+		const totalSections = Object.keys(secObj).length;
 		const mainContent = document.getElementById(K.mainContentId);
 		var classes = K.homeSecClasses;
 		
 		for (var i = 0; i < totalSections; i++ ) {
 			const section = mainContent.appendChild(document.createElement(K.divElement));
 			
-			section.id = sectionHandler.getSecObj()[i];
+			section.id = Object.values(sectionController.getSecObj())[i];
 
 			section.className = K.defaultSecClasses + classes;
 			
@@ -120,11 +118,11 @@ var sectionHandler = {
 				classes = K.genericSecClasses;
 			}
 			
-			section.innerHTML = sectionHandler.sectionContent[i];
+			section.innerHTML = sectionController.sectionContent[i];
 
-			sectionHandler.insertSectionHeading(section.id);
+			sectionController.insertSectionHeading(section.id);
 
-			sectionHandler.templateSection(section.id);
+			sectionController.templateSection(section.id);
 		}
 	},
 
@@ -139,7 +137,8 @@ var sectionHandler = {
 			var scrollInstance = bootstrap.ScrollSpy.getInstance($scrollSpyEl);
 
 			// Fetch list of sections.
-			const secObj = sectionHandler.getSecObj();
+			const secObj = sectionController.getSecObj();
+			const navObj = navController.getNavObj();
 			
 			// Get Id of current section using hash property of the instance's active target.
 			var sectionId = scrollInstance
@@ -148,12 +147,14 @@ var sectionHandler = {
 								.replaceAll(K.hashSymbol, K.emptyString);
 
 			// Set current section's number using sectionId.
-			var sectionNum = Object.values(secObj).indexOf(sectionId) + 1;
-
+			const index = Object.values(secObj).indexOf(sectionId);
+			const sectionNum = Object.keys(secObj)[index];
+			const zeroString = navObj[K.zeroStringIndex];
+			
 			// Update section indicator.
 			document
 				.getElementById(K.currentSectionId)
-				.textContent = (sectionNum < 10) ? (K.zeroString + sectionNum) : sectionNum;
+				.textContent = (index + 1 < 10) ?  (zeroString + sectionNum) : sectionNum;
 		});
 	}
 };

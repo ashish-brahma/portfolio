@@ -1,56 +1,30 @@
 {	
 	"fonts": {
-			"regular" : "poppins-regular",
+			"regular" : "noto-sans-devanagari-regular",
 			"medium" : "poppins-medium",
 			"semibold" : "poppins-semibold",
-			"bold" : "poppins-bold",
+			"bold" : "noto-sans-devanagari-bold",
 			"btn-label" : "open-sans-regular",
 			"percentage" :"figtree-semibold",
 			"form" : "fira-sans-condensed-medium"
 	},
 	"body": {
 		"sidebar-nav": {
-			"lang-dropdown":{
-				"hi-in": {
-					"label" : "हिंदी",
-					"font" : "noto-sans-devanagari-regular",
-					"country-code" : "in",
-					"alt-text" : "Indian Flag"
-				},
-			 	"od-in" : {
-					"label" : "ଓଡ଼ିଆ",
-					"font" : "anek-odia-regular",
-					"country-code" : "in",
-					"alt-text" : "Indian Flag"
-				}, 
-			 	"de" : {
-					"label" : "Deutsch",
-					"font" : "germania-one-regular",
-					"country-code" : "de",
-					"alt-text" : "German Flag"
-				}, 
-			 	"en-us" : {
-					"label" : "English",
-					"font" : "poppins-regular",
-					"country-code" : "us",
-					"alt-text" : "US Flag"
-				}
-			 },
-
+			"zero-string" : "०",
 			"bio-list" : {
-				"name" : "Ashish Brahma",
-				"role" : "Mobile Developer",
-				"email" : "ashish.brahma@outlook.com"
+				"नाम" : "आशीष ब्रह्मा",
+				"भूमिका" : "मोबाइल डेवलपर",
+				"ईमेल" : "ashish.brahma@outlook.com"
 			},
 
 			"nav-list" : {
-				"0" : "home", 
-				"1" : "services", 
-				"2" : "portfolio", 
-				"3" : "experience", 
-				"4" : "skills", 
-				"5" : "contact", 
-				"6" : "blog"
+				"१" : "home", 
+				"२" : "services", 
+				"३" : "portfolio", 
+				"४" : "experience", 
+				"४" : "skills", 
+				"६" : "contact", 
+				"७" : "blog"
 			}
 		},
 

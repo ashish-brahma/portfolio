@@ -1,6 +1,6 @@
 // Invoke function to load content.
-contentHandler.loadContent();
+contentController.loadContent();
 
 // Initiate scrollspy event listener.
 document.addEventListener(K.domContentLoadedEvent, 
-						sectionHandler.listenCurrentSection(event));
+						sectionController.listenCurrentSection(event));

@@ -1,4 +1,4 @@
-/* Extensions to process strings.*/
+// Extension to process strings.
 var stringExt = {
 	// Convenience function to capitalize first letter of text parameter.
 	capitalize : function (text) {

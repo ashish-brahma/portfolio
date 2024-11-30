@@ -1,23 +1,23 @@
-// Handler object to manage content of home section.
-var homeSectionHandler = {
+// Controller object to manage content of home section.
+var homeSectionController = {
 	// Convenience function to read content.
 	getHomeObj : function () {
-		return contentHandler.content[K.mainContentId][K.homeSecId];
+		return contentController.content[K.mainContentId][K.homeSecId];
 	},
 
 	// Convenience function to read picture source content.
 	getPicSourceObj : function () {
-		return homeSectionHandler.getHomeObj()[K.profilePicIndex][K.imgSourceElement];
+		return homeSectionController.getHomeObj()[K.profilePicIndex][K.imgSourceElement];
 	},
 
 	// Convenience function to read picture image content.
 	getImageObj : function () {
-		return homeSectionHandler.getHomeObj()[K.profilePicIndex][K.imageElement];
+		return homeSectionController.getHomeObj()[K.profilePicIndex][K.imageElement];
 	},
 
 	// Insert responsive sources in #profile-picture.
 	insertPictureSources : function () {
-		const sourceObj = homeSectionHandler.getPicSourceObj();
+		const sourceObj = homeSectionController.getPicSourceObj();
 		const profilePicture = document.getElementById(K.profilePicIndex);
 		for (const srcId of Object.keys(sourceObj)) {
 			var source = profilePicture.appendChild(document.createElement(K.imgSourceElement));
@@ -30,7 +30,7 @@ var homeSectionHandler = {
 	
 	// Insert image content of #profile-picture.
 	insertImage : function () {
-		const imgObj = homeSectionHandler.getImageObj();
+		const imgObj = homeSectionController.getImageObj();
 		const profilePicture = document.getElementById(K.profilePicIndex);
 		profilePicture.appendChild(document.createElement(K.imageElement));
 		profileImage = profilePicture.querySelector(K.imageElement);
@@ -40,13 +40,13 @@ var homeSectionHandler = {
 
 	// Insert cloned templates of #profile-picture.
 	insertProfilePicture : function () {
-		homeSectionHandler.insertPictureSources();
-		homeSectionHandler.insertImage();
+		homeSectionController.insertPictureSources();
+		homeSectionController.insertImage();
 	},
 
 	// Insert content of #about.
 	insertAbout : function () {
-		const aboutObj = homeSectionHandler.getHomeObj()[K.aboutId];
+		const aboutObj = homeSectionController.getHomeObj()[K.aboutId];
 		const aboutBody = document.getElementById(K.aboutId);
 		aboutBody.appendChild(document.createElement(K.paragraphElement));
 		p = aboutBody.querySelector(K.paragraphElement);
@@ -55,21 +55,21 @@ var homeSectionHandler = {
 
 	// Insert cloned templates of #social-links.
 	insertSocialLinks : function () {
-		const socialObj = homeSectionHandler.getHomeObj()[K.socialId];
+		const socialObj = homeSectionController.getHomeObj()[K.socialId];
 
 		// Identify elements for #social-links template insertion.
 		const socialLinks = document.getElementById(K.socialId);
 		const btnTemplate = document.getElementById(K.socialIconId);
 
 		// Insert cloned template in #social-links.
-		templateHandler.setTemplate(socialObj, socialLinks, btnTemplate, K.socialId);
+		templateController.setTemplate(socialObj, socialLinks, btnTemplate, K.socialId);
 	},
 
 	// Insert cloned templates in home section.
 	insertHomeTemplates : function () {
-		homeSectionHandler.insertProfilePicture();
-		homeSectionHandler.insertAbout();
-		homeSectionHandler.insertSocialLinks();
+		homeSectionController.insertProfilePicture();
+		homeSectionController.insertAbout();
+		homeSectionController.insertSocialLinks();
 	},
 
 	// Add new social button.
@@ -77,7 +77,7 @@ var homeSectionHandler = {
 		let btn = clone.querySelector(K.spanElement);
 
 		// Prepare button data.
-		const btnObj = homeSectionHandler.getHomeObj()[K.socialId];
+		const btnObj = homeSectionController.getHomeObj()[K.socialId];
 		const btnId = Object.keys(btnObj)[iterIndex];
 
 		// Add button alt text.

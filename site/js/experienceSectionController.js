@@ -1,29 +1,29 @@
-// Handler object to manage content of experience section.
-var experienceSectionHandler = {
+// Controller object to manage content of experience section.
+var experienceSectionController = {
 	// Convenience function to read content.
 	getExpObj : function () {
-		return contentHandler.content[K.mainContentId][K.experienceSecId];
+		return contentController.content[K.mainContentId][K.experienceSecId];
 	},
 
 	// Insert cloned templates of experience section.
 	insertExperienceTemplates : function () {
-		const expObj = experienceSectionHandler.getExpObj();
+		const expObj = experienceSectionController.getExpObj();
 
 		// Identify elements for #exp-list-item template insertion.
 		const expListFlexbox = document.getElementById(K.expBodyId);
 		const expListItemTemplate = document.getElementById(K.expListItemId);
 		
 		// Insert cloned template in #exp-list-flexbox.
-		templateHandler.setTemplate(expObj, expListFlexbox, 
+		templateController.setTemplate(expObj, expListFlexbox, 
 										   expListItemTemplate, K.expBodyId);
 	},
 
 	// Add new job experience item.
 	cloneExpListItem : function (clone, iterIndex) {
 		// Prepare content for cloning.
-		const expObj = experienceSectionHandler.getExpObj();
+		const expObj = experienceSectionController.getExpObj();
 		const expId = Object.keys(expObj)[iterIndex];
-		const headingFont = contentHandler.fonts[K.semiboldFontIndex];
+		const headingFont = contentController.fonts[K.semiboldFontIndex];
 
 		// Add year.
 		let year = clone.querySelector(K.periodSymbol + K.yearIndex);

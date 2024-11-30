@@ -1,17 +1,17 @@
-// Handler object to manage content of services section.
-var servicesSectionHandler = {
+// Controller object to manage content of services section.
+var servicesSectionController = {
 	// Convenience function to read content.
 	getServicesObj : function () {
-		return contentHandler.content[K.mainContentId][K.servicesSecId];
+		return contentController.content[K.mainContentId][K.servicesSecId];
 	},
 
 	getServicesRowObj : function () {
-		return servicesSectionHandler.getServicesObj()[K.servicesRowId];
+		return servicesSectionController.getServicesObj()[K.servicesRowId];
 	},
 
 	// Insert content of introduction.
 	insertIntro : function () {
-		const introObj = servicesSectionHandler.getServicesObj()[K.introId];
+		const introObj = servicesSectionController.getServicesObj()[K.introId];
 		const intro = document.getElementById(K.introId);
 		intro.appendChild(document.createElement(K.paragraphElement));
 		intro.querySelector(K.paragraphElement).textContent = introObj[K.paragraphElement];
@@ -19,8 +19,8 @@ var servicesSectionHandler = {
 	
 	// Insert content of #download-btn.
 	insertDownloadBtn : function () {
-		const btnObj = servicesSectionHandler.getServicesObj()[K.downloadBtnId];
-		const btnFont = contentHandler.fonts[K.btnLabelIndex];
+		const btnObj = servicesSectionController.getServicesObj()[K.downloadBtnId];
+		const btnFont = contentController.fonts[K.btnLabelIndex];
 		const downloadBtn = document.getElementById(K.downloadBtnId);
 		downloadBtn.href = btnObj[K.hrefIndex];
 		const label = downloadBtn.querySelector(K.periodSymbol + K.btnLabelIndex);
@@ -30,22 +30,22 @@ var servicesSectionHandler = {
 
 	// Add cloned cards in rows of service col.
 	insertServiceCardGrid : function () {
-		const servicesRowObj = servicesSectionHandler.getServicesRowObj();
+		const servicesRowObj = servicesSectionController.getServicesRowObj();
 
 		// Identify elements for #service-card template insertion.
 		const serviceCardsRow = document.getElementById(K.servicesRowId);
 		const serviceCardTemplate = document.getElementById(K.serviceCardId);
 
 		// Insert cloned templates in #service-cards-row.
-		templateHandler.setTemplate(servicesRowObj, serviceCardsRow, 
+		templateController.setTemplate(servicesRowObj, serviceCardsRow, 
 										   serviceCardTemplate, K.servicesRowId);
 	},
 
 	// Insert cloned templates in services section.
 	insertServicesTemplates : function () {
-		servicesSectionHandler.insertIntro();
-		servicesSectionHandler.insertDownloadBtn();
-		servicesSectionHandler.insertServiceCardGrid();
+		servicesSectionController.insertIntro();
+		servicesSectionController.insertDownloadBtn();
+		servicesSectionController.insertServiceCardGrid();
 	},
 
 	// Add new service card.
@@ -54,7 +54,7 @@ var servicesSectionHandler = {
 		let card = clone.querySelector(K.periodSymbol + K.cardIndex);
 
 		// Prepare content for cloning.
-		const servicesRowObj = servicesSectionHandler.getServicesRowObj();
+		const servicesRowObj = servicesSectionController.getServicesRowObj();
 		const serviceId = Object.keys(servicesRowObj)[iterIndex];
 
 		// Add icon class.
@@ -62,7 +62,7 @@ var servicesSectionHandler = {
 		icon.classList.add(servicesRowObj[serviceId][K.iconElement]);
 
 		// Add card title.
-		const font = contentHandler.fonts[K.semiboldFontIndex];
+		const font = contentController.fonts[K.semiboldFontIndex];
 		let cardTitle = card.querySelector(K.periodSymbol + K.cardTitleIndex);
 		cardTitle.classList.add(font);
 		cardTitle.textContent = servicesRowObj[serviceId][K.cardTitleIndex];

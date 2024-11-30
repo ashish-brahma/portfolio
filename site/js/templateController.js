@@ -1,5 +1,5 @@
-// Handler object to insert templates
-var templateHandler = {
+// Controller object to insert templates
+var templateController = {
 	// Boolean to check browser support for HTML template element.
 	isTemplateSupported : "content" in document.createElement("template"),
 
@@ -8,7 +8,7 @@ var templateHandler = {
 		var totalItems = Object.keys(obj).length;
 		for (var i = 0; i < totalItems; i++) {
 			const clone = template.content.cloneNode(true);
-			templateHandler.cloneItems(clone, objId, i, obj);
+			templateController.cloneItems(clone, objId, i, obj);
 			target.appendChild(clone);
 		}
 	},
@@ -16,91 +16,91 @@ var templateHandler = {
 	// Insert template content of #sidebar-nav.
 	injectSidebarNavTemplate : function () {
 		// Insert templates for #lang-dropdown.
-		navHandler.insertLangDropdown();
+		navController.insertLangDropdown();
 		
 		// Insert templates for #offcanvasNavbar.
-		navHandler.insertNavList();
+		navController.insertNavList();
 
 		// Insert templates for #infobar.
-		navHandler.insertInfobar();
+		navController.insertInfobar();
 	},
 
 	// Insert template content of #main-content.
 	injectMainContentTemplate : function () {
-		sectionHandler.insertSections();
+		sectionController.insertSections();
 
 		// Update section indicator.
-		sectionHandler.insertTotalSections();
+		sectionController.insertTotalSections();
 	},
 
-	// Delegate clone insertion to appropritate handler method.
+	// Delegate clone insertion to appropritate Controller method.
 	cloneItems : function (clone, targetId, iterIndex, obj) {
 		switch (targetId) {
 		case K.langDropdownId :
 			// Clone new list item.
-			navHandler.cloneListItem(clone, iterIndex);
+			navController.cloneListItem(clone, iterIndex, obj);
 			
 			// Insert thumbnail image.
-			navHandler.cloneThmbImage(clone, iterIndex);
+			navController.cloneThmbImage(clone, iterIndex, obj);
 			
 			// Add button label.
-			navHandler.cloneBtn(clone, iterIndex);
+			navController.cloneBtn(clone, iterIndex, obj);
 			break;
 
 		case K.navListIndex :
 			// Clone anchor elements of nav buttons.
-			navHandler.cloneAnchor(clone, iterIndex);
+			navController.cloneAnchor(clone, iterIndex);
 			break;
 
 		case K.navBioIndex :
 			// Clone title and description items of infobar.
-			navHandler.cloneBioItemTitle(clone, iterIndex);
-			navHandler.cloneBioItemDescription(clone, iterIndex);
+			navController.cloneBioItemTitle(clone, iterIndex);
+			navController.cloneBioItemDescription(clone, iterIndex);
 			break;
 
 		case K.projFilterMenuId:
 			// Clone elements of #project-filter-menu.
-			portfolioSectionHandler.cloneProjFilterListItem(clone, iterIndex);
+			portfolioSectionController.cloneProjFilterListItem(clone, iterIndex);
 			break;
 
 		case K.projRowId:
 			// Clone cards for all projects.
-			portfolioSectionHandler.cloneProjCard(clone, iterIndex);
+			portfolioSectionController.cloneProjCard(clone, iterIndex);
 			break;
 
 		case K.socialId:
 			// Clone social media buttons.
-			homeSectionHandler.cloneSocialButton(clone, iterIndex);
+			homeSectionController.cloneSocialButton(clone, iterIndex);
 			break;
 
 		case K.servicesRowId:
 			// Clone cards for all services.
-			servicesSectionHandler.cloneServiceCard(clone, iterIndex);
+			servicesSectionController.cloneServiceCard(clone, iterIndex);
 			break;
 
 		case K.expBodyId:
 			// Clone items under experience.
-			experienceSectionHandler.cloneExpListItem(clone, iterIndex);
+			experienceSectionController.cloneExpListItem(clone, iterIndex);
 			break;
 
 		case K.skillsBodyId:
 			// Clone items under skills.
-			skillsSectionHandler.cloneSkillsListItem(clone, iterIndex);
+			skillsSectionController.cloneSkillsListItem(clone, iterIndex);
 			break;
 
 		case K.skillChartIndex:
 			// Clone charts.
-			skillsSectionHandler.cloneChart(clone, iterIndex, obj);
+			skillsSectionController.cloneChart(clone, iterIndex, obj);
 			break;
 		
 		case K.formFieldIndex:
 			// Clone form fields.
-			contactSectionHandler.cloneFormFields(clone, iterIndex);
+			contactSectionController.cloneFormFields(clone, iterIndex);
 			break;
 
 		case K.formSubmitBtnIndex:
 			// Clone submit button of form.
-			contactSectionHandler.cloneSendButton(clone, iterIndex, obj);
+			contactSectionController.cloneSendButton(clone, iterIndex, obj);
 			break;
 
 		default:
