@@ -193,9 +193,9 @@
 						"placeholder" : "Email",
 						"form-text" : {
 							"id" : "emailHelp",
-							"text": "We'll never share your email with anyone else."
+							"text": "Your email will never be shared with anyone else."
 						},
-						"invalid-feedback" : "Please enter a valid email id."
+						"invalid-feedback" : "Please enter an email id."
 					},
 					"input-subject" : {
 						"form-label" : "Subject",

@@ -73,8 +73,8 @@ var contactSectionController = {
 		const formObj = contactSectionController.getFormObj();
 		
 		// Identify elements for #form-field template insertion.
-		const formDiv = document.getElementById(K.formIndex);
-		const form = formDiv.appendChild(document.createElement(K.formElement));
+		const contactForm = document.getElementById(K.formIndex);
+		const form = contactForm.appendChild(document.createElement(K.formElement));
 		const formFieldTemplate = document.getElementById(K.formFieldIndex);
 
 		// Set font.	
@@ -237,12 +237,15 @@ var contactSectionController = {
 
 	// Add new form field.
 	cloneFormFields : function (clone, iterIndex) {
-		// Add new field.
+		// Add new field container div.
 		let field = clone.querySelector(K.divElement);
 
 		// Identify field data.
 		const formObj = contactSectionController.getFormObj();
 		const fieldId = Object.keys(formObj)[iterIndex];
+
+		// Add field id of the container div.
+		field.id = fieldId + K.hyphenSymbol + K.fieldString;
 
 		// Delegate field templation to appropriate Controller method.
 		contactSectionController.insertField(fieldId, field);

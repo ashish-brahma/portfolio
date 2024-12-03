@@ -83,14 +83,14 @@ var viewController = {
 				sectionController.getSectionContent(responses); 
 				templateController.injectMainContentTemplate();
 
-				// Initiate event listeners for all dropdown togglers.
+				// Initiate toggle event listeners for all dropdown togglers.
 				dropdownController.persistToggleActive();
 
-				// Initiate listeners for changes to project filter dropdown selection.
+				// Initiate selection event listeners for project filter dropdown.
 				dropdownController.listenNewSelection(K.projFilterId);
 
-				// Initiate form input event listener.
-				formController.listenFieldInput();
+				// Initiate validation event listeners for all form fields.
+				formController.validateFormFields();
 
 				// Initiate form submission event listener.
 				formController.submitForm(event);
