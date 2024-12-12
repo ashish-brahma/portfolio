@@ -80,7 +80,7 @@ var viewController = {
 				viewController.setFonts();
 
 				// Insert content of all sections using templates.
-				sectionController.getSectionContent(responses); 
+				sectionController.setSectionContent(responses); 
 				templateController.injectMainContentTemplate();
 
 				// Initiate toggle event listeners for all dropdown togglers.

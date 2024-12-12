@@ -19,7 +19,7 @@ var sectionController = {
 	sectionContent: {},
 
 	// Convenience function to collect reponses of section promises for templating.
-	getSectionContent : function (responses) {
+	setSectionContent : function (responses) {
 		sectionController.sectionContent = responses;
 	},
 

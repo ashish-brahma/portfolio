@@ -102,6 +102,7 @@ var contactSectionController = {
 	insertInputItem : function (inputObj, field, id) {
 		const input = field.appendChild(document.createElement(K.inputElement));
 		input.id = id;
+		input.name = stringExt.clean(id);
 		input.type = inputObj[K.inputTypeAttribute];
 		input.classList.add(K.formControlClasses);
 		
@@ -111,6 +112,7 @@ var contactSectionController = {
 		input.ariaLabel = inputObj[K.ariaLabelAttribute];
 		
 		input.placeholder = inputObj[K.placeholderAttribute];
+		input.autocomplete = K.onString;
 		input.required = true;
 	},
 
@@ -170,6 +172,7 @@ var contactSectionController = {
 		const fieldObj = contactSectionController.getFormFieldObj(messageObj);
 		const textarea = field.appendChild(document.createElement(K.textAreaElement));
 		textarea.id = id;
+		textarea.name = stringExt.clean(K.textAreaMessageIndex);
 		textarea.classList.add(K.formControlIndex);
 		textarea.rows = 4;
 		textarea.setAttribute(K.ariaDescribedByAttribute, fieldObj[K.ariaDescribedByAttribute]);
@@ -183,11 +186,11 @@ var contactSectionController = {
 	},
 
 	// Insert send button template.
-	insertSendButton : function (formField) {
+	insertSendButton : function (div) {
 		const sendBtnObj = contactSectionController.getFormSubmitBtnObj();
 
 		// Add send button div classes.
-		formField.classList.add(...sendBtnObj[K.divElement]);
+		div.classList.add(...sendBtnObj[K.divElement]);
 		
 		// Identify send button pair in object.
 		const slicedBtnEntry = new Map([Object.entries(sendBtnObj)[1]]);
@@ -197,7 +200,7 @@ var contactSectionController = {
 		const formSubmitBtnTemplate = document.getElementById(K.formSubmitBtnIndex);
 		
 		// Insert send button in #form-field.
-		templateController.setTemplate(slicedBtnObj, formField, 
+		templateController.setTemplate(slicedBtnObj, div, 
 										   formSubmitBtnTemplate, K.formSubmitBtnIndex);
 	},
 
@@ -207,55 +210,54 @@ var contactSectionController = {
 		contactSectionController.insertFormContent();
 	},
 
-	// Convenience function to delegate field insertion to appropriate Controller method.
-	insertField : function (id, field) {
-		switch (id) {
+	// Convenience function to delegate div insertion to appropriate Controller method.
+	insertDiv : function (index, div) {
+		switch (index) {
 		case K.inputNameIndex:
-			contactSectionController.insertNameField(id, field);
+			contactSectionController.insertNameField(index, div);
 			break;
 
 		case K.inputEmailIndex:
-			contactSectionController.insertEmailField(id, field);
+			contactSectionController.insertEmailField(index, div);
 			break;
 
 		case K.inputSubjectIndex:
-			contactSectionController.insertSubjectField(id, field);
+			contactSectionController.insertSubjectField(index, div);
 			break;
 
 		case K.textAreaMessageIndex:
-			contactSectionController.insertMessageField(id, field);
+			contactSectionController.insertMessageField(index, div);
 			break;
 
 		case K.formSubmitBtnIndex:
-			contactSectionController.insertSendButton(field);
+			contactSectionController.insertSendButton(div);
 			break;
 
 		default: 
-			console.log("Field is undefined.");
+			console.log("Div is undefined.");
 		}
 	},
 
-	// Add new form field.
-	cloneFormFields : function (clone, iterIndex) {
-		// Add new field container div.
-		let field = clone.querySelector(K.divElement);
+	// Add new form child div element.
+	cloneFormDivs : function (clone, iterIndex) {
+		// Add new container div.
+		let div = clone.querySelector(K.divElement);
 
-		// Identify field data.
+		// Identify div data.
 		const formObj = contactSectionController.getFormObj();
-		const fieldId = Object.keys(formObj)[iterIndex];
+		const divIndex = Object.keys(formObj)[iterIndex];
 
-		// Add field id of the container div.
-		field.id = fieldId + K.hyphenSymbol + K.fieldString;
+		// Add div id.
+		div.id = (divIndex === K.formSubmitBtnIndex) ? 
+							divIndex : divIndex + K.hyphenSymbol + K.fieldString;
 
-		// Delegate field templation to appropriate Controller method.
-		contactSectionController.insertField(fieldId, field);
+		// Delegate div templation to appropriate Controller method.
+		contactSectionController.insertDiv(divIndex, div);
 	},
 
 	// Add send button.
 	cloneSendButton : function (clone, iterIndex, obj) {
 		let btn = clone.querySelector(K.hashSymbol + K.sendBtnId);
 		btn.textContent = obj[K.sendBtnId];
-
-		// TODO: Set form attributes for submission.
 	}
 };

@@ -95,7 +95,7 @@ var templateController = {
 		
 		case K.formFieldIndex:
 			// Clone form fields.
-			contactSectionController.cloneFormFields(clone, iterIndex);
+			contactSectionController.cloneFormDivs(clone, iterIndex);
 			break;
 
 		case K.formSubmitBtnIndex:
