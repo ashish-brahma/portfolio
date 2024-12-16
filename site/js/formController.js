@@ -54,144 +54,13 @@ var formController = {
 	// Set up an object to save form data.
 	data : {},
 
-	// Convenience function to break line in html.
-	newline : function (doc, element) {
-		const range = Array.from({length: 2}, (_, i) => i);
-		range.forEach (() => {
-			element.appendChild(doc.createElement(K.brElement));
-		});
-	}, 
-
-	// Convenience function to insert content into table cell.
-	insertCellContent : function (email, cell, id, textArray) {
-		var content = K.emptyString;
-		const data = formController.data;
-		
-		switch (id) {
-		case K.headerClass:
-			// Add title.
-			cell.align = K.centerAlignment;
-			const bold = cell.appendChild(email.createElement(K.boldElement));
-			bold.textContent = textArray;
-
-			// Add new line.
-			formController.newline(email, cell);
-			break;
-		
-		case K.bodyClass:
-			// Add salutation.
-			const sal = textArray[K.salutationIndex];
-			const name = data[K.nameIndex];
-			cell.innerHTML = sal[0] + name + sal[1];
-
-			// Add new line.
-			formController.newline(email, cell);
-
-			// Add greetings.
-			cell.innerHTML += textArray[K.greetingsIndex];
-
-			// Add details.
-			const details = textArray[K.detailsIndex];
-			const subject = data[K.subjectIndex];
-			cell.innerHTML += details[0] + subject + details[1];
-
-			// Add new line.
-			formController.newline(email, cell);
-
-			// TODO: Generate random number.
-			const serviceRequestId = 1234567;
-			cell.innerHTML += details[2] + serviceRequestId;
-
-			// Add new line.
-			formController.newline(email, cell);
-
-			cell.innerHTML += details[3];
-
-			// Add new line.
-			formController.newline(email, cell);
-
-			cell.innerHTML += details[4];
-
-			// Add new line.
-			formController.newline(email, cell);
-
-			// Add signature.
-			const signature = textArray[K.signatureIndex];
-			cell.innerHTML += signature[0];
-
-			// Go to new line.
-			cell.appendChild(email.createElement(K.brElement));
-
-			cell.innerHTML += signature[1];
-
-			break;
-		
-		case K.footerClass:
-			// Add new line.
-			formController.newline(email, cell);
-
-			cell.align = K.centerAlignment;
-
-			// Add horizontal rule.
-			cell.appendChild(email.createElement(K.hrElement));
-			
-			// Add disclaimer.
-			const disclaimer = cell.appendChild(email.createElement(K.smallElement));
-			disclaimer.innerHTML = textArray[K.disclaimerIndex];
-
-			// Add new line.
-			formController.newline(email, cell);
-
-			// Add copyrights.
-			const copyrightsElement = cell.appendChild(email.createElement(K.smallElement));
-			const copyrights = textArray[K.copyrightsIndex];
-			copyrightsElement.innerHTML += copyrights[0] + K.copyrightEntity + copyrights[1];
-
-			break;
-		
-		default:
-			console.log("Could not load email content.");
-		}
-	},
-
-	// Convenience function to insert content into email's html.
-	insertEmailContent : function (email) {
-		const emailObj = contactSectionController.getContactObj()[K.emailIndex];
-		const emailObjSize = Object.keys(emailObj).length;
-
-		const content = email.querySelector(K.periodSymbol + K.contentClass);
-
-		for(var i = 0; i < emailObjSize; i++) {
-			const tr = content.appendChild(email.createElement(K.tableRow));
-			const td = tr.appendChild(email.createElement(K.tableData));
-			
-			// Set data class.
-			contentId = Object.keys(emailObj)[i];
-			td.className = contentId;
-			
-			// Set inner text or html content.
-			const contentArray = emailObj[contentId];
-			formController.insertCellContent(email, td, contentId, contentArray);
-		}
-		// console.log(content);
-	},
-
 	// Insert validated data into html content.
 	prepareData : function (formData) {
 		const dataMap = new Map(Array.from(formData));
 		formController.data = Object.fromEntries(dataMap);
 
 		// Construct email body using html.
-		const snippetURL = K.snippetsLocation + K.emailSnippetId + K.htmlFileExtension;
-		const emailPromise = contentController.fetchContent(snippetURL, false);
-		return emailPromise
-				.then((response) => {
-					// Parse response html and insert content.
-					const email = Document.parseHTMLUnsafe(response);
-					formController.insertEmailContent(email);
-					console.log(email);
-					return email;
-				});
+		return emailComposeController.prepareResponseEmail();
 	},
 
 	// Display confirmation.
@@ -214,7 +83,7 @@ var formController = {
 		// Send populated html to inbox.
 		formController.prepareData(formData)
 			.then((data) => {
-				// TODO: emailer api calls.
+				// TODO: nodemailer api calls.
 
 				formController.showConfirmation();
 			})

@@ -227,8 +227,8 @@
 						"salutation" : ["Dear ",","],
 						"greetings" : "Hope this email finds you well.",
 						"details" : [
-							" Many thanks for your query regarding '", "'.",
-							"Your service request number is : ",
+							" Many thanks for your query regarding ",
+							". Your service request number is : ",
 							"Please be informed that it is being processed and you would hear back soon.",
 							"In the meantime, it would be appreciated if you could provide any relevant information or documents in a reply to this email. Your data would not be shared with any third-party entities."
 						],
@@ -236,7 +236,7 @@
 					},		
 					"footer" : {
 						"disclaimer" : "This email is from Ashish Brahma and is intended for the addressee only. If you are not the intended recipient, please notify the sender and delete this email. The information contained herein may be confidential and privileged. This also applies to any files attached to it. Do not forward without permission.",
-						"copyrights" : ["Copyright", "2024 | Ashish Brahma"]
+						"copyrights" : " 2024 | Ashish Brahma"
 					}
 				} 
 			},
