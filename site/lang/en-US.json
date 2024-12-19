@@ -228,8 +228,8 @@
 						"greetings" : "Hope this email finds you well.",
 						"details" : [
 							" Many thanks for your query regarding ",
-							". Your service request number is : ",
-							"Please be informed that it is being processed and you would hear back soon.",
+							". Your service request ID is : ",
+							"Please be informed that the request is being processed and you would hear back soon.",
 							"In the meantime, it would be appreciated if you could provide any relevant information or documents in a reply to this email. Your data would not be shared with any third-party entities."
 						],
 						"signature" : ["Regards", "Ashish Brahma"]

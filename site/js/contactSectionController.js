@@ -102,7 +102,7 @@ var contactSectionController = {
 	insertInputItem : function (inputObj, field, id) {
 		const input = field.appendChild(document.createElement(K.inputElement));
 		input.id = id;
-		input.name = stringExt.clean(id);
+		input.name = stringExt.secondSubstr(id);
 		input.type = inputObj[K.inputTypeAttribute];
 		input.classList.add(K.formControlClasses);
 		
@@ -172,7 +172,7 @@ var contactSectionController = {
 		const fieldObj = contactSectionController.getFormFieldObj(messageObj);
 		const textarea = field.appendChild(document.createElement(K.textAreaElement));
 		textarea.id = id;
-		textarea.name = stringExt.clean(K.textAreaMessageIndex);
+		textarea.name = stringExt.secondSubstr(K.textAreaMessageIndex);
 		textarea.classList.add(K.formControlIndex);
 		textarea.rows = 4;
 		textarea.setAttribute(K.ariaDescribedByAttribute, fieldObj[K.ariaDescribedByAttribute]);

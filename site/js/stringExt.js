@@ -5,8 +5,13 @@ var stringExt = {
 		return String(text).charAt(0).toUpperCase() + String(text).slice(1);
 	},
 
-	// Get second item from kebab case string.
-	clean : function (text) {
+	// Extract and capitalize first four letters of string.
+	fourCaps : function (text) {
+		return text.substr(0,4).toUpperCase();
+	},
+
+	// Get second sub-string from a kebab case string.
+	secondSubstr : function (text) {
 		return text.split(K.hyphenSymbol)[1];
 	}  
 };

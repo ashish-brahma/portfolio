@@ -51,16 +51,22 @@ var formController = {
 		});
 	},
 
-	// Set up an object to save form data.
-	data : {},
-
 	// Insert validated data into html content.
 	prepareData : function (formData) {
+		// Create data object using mapped entries from form data.
 		const dataMap = new Map(Array.from(formData));
-		formController.data = Object.fromEntries(dataMap);
+		const dataObj = Object.fromEntries(dataMap);
 
-		// Construct email body using html.
-		return emailComposeController.prepareResponseEmail();
+		// Insert generated service request id into email data.
+		emailComposeController
+				.data[K.requestIdIndex] = emailComposeController
+												.setServiceRequestId(dataObj[K.nameIndex]);
+		
+		// Append form data object to email data.
+		Object.assign(emailComposeController.data, dataObj);
+
+		// Construct body of confirmation email using html.
+		return emailComposeController.prepareEmailContent(true);
 	},
 
 	// Display confirmation.
@@ -83,6 +89,7 @@ var formController = {
 		// Send populated html to inbox.
 		formController.prepareData(formData)
 			.then((data) => {
+				emailComposeController.prepareEmailContent(false);
 				// TODO: nodemailer api calls.
 
 				formController.showConfirmation();
