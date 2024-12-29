@@ -1,0 +1,16 @@
+{
+	"source" : {
+		"sm" : { 
+			"media" : "(max-width:767px)",
+			"srcset" : "profile_photo_393"
+		},
+		"md" : { 
+			"media" : "(max-width:1203px)",
+			"srcset" : "profile_photo_768"
+		}
+	},
+	"img" : { 
+		"src" : "profile_photo_1200",
+		"alt" : "Profile Picture"
+	}
+}

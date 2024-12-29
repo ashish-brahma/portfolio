@@ -64,7 +64,7 @@ var viewController = {
 		const totalSections = Object.keys(secObj).length;
 		
 		for (var i = 0; i < totalSections; i++) {
-			var sectionId = Object.values(sectionController.getSecObj())[i];
+			var sectionId = Object.keys(sectionController.getSecObj())[i];
 			var snippetURL =  K.snippetsLocation + sectionId + K.htmlFileExtension;
 			
 			sectionPromises[i] = contentController.fetchContent(snippetURL, false);
@@ -97,12 +97,33 @@ var viewController = {
 			});
 	},
 
+	// Fetch and insert footer content.
+	buildFooter : function () {
+		const snippetURL = K.snippetsLocation + K.footerClass + K.htmlFileExtension;
+		contentController.fetchContent(snippetURL, false)
+			.then((response) => {
+				const navFooter = document
+									.getElementById(K.sidebarNavId)
+									.querySelector(K.periodSymbol + K.containerClass)
+									.appendChild(document.createElement(K.footerClass));
+				navFooter.className = K.footerBaseClasses + K.navFooterClasses;
+				navFooter.innerHTML = response;
+				
+				const mainFooter = document
+									.getElementById(K.mainContentId)
+									.appendChild(document.createElement(K.footerClass));
+				mainFooter.className = K.footerBaseClasses + K.mainFooterClasses;
+				mainFooter.innerHTML = response;
+			});
+	},
+
 	// Build entire body content of index.html file.
 	buildBody : function () {
 		// Ensure that browser supports templating before building views.
 		if (templateController.isTemplateSupported) {
 			viewController.buildNavbar();
 			viewController.buildMainContent();
+			viewController.buildFooter();
 		} else {
 		// In case browser does not support template element, do something else.
 			console.log("Templating not supported. Aborting...");

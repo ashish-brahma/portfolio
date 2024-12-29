@@ -9,12 +9,12 @@ var contentController = {
 	getContentURL : function () {
 		const lang = contentController.getLang();
 		document.documentElement.setAttribute(K.langAttribute, lang);
-		return K.langContentLocation + lang + K.jsonFileExtension;
+		return K.contentLocation + lang + K.jsonFileExtension;
 	},
 
 	// Convenience function to access content json file of #lang-dropdown.
 	getLangDropdownURL : function () {
-		return K.langContentLocation + K.langDropdownId + K.jsonFileExtension;
+		return K.contentLocation + K.langDropdownId + K.jsonFileExtension;
 	},
 
 	// Set up an object to load font pack.
@@ -36,7 +36,7 @@ var contentController = {
 			const data = isJsonResponse ? await response.json() : response.text();
 			return data;
 		} catch (error) {
-			console.error(`Could not load content: ${error}`)
+			console.error(`Could not load content: ${error}`);
 		}
 	},
 

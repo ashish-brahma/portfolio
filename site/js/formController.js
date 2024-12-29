@@ -51,56 +51,40 @@ var formController = {
 		});
 	},
 
-	// Insert validated data into html content.
-	prepareData : function (formData) {
-		// Create data object using mapped entries from form data.
-		const dataMap = new Map(Array.from(formData));
-		const dataObj = Object.fromEntries(dataMap);
-
-		// Insert generated service request id into email data.
-		emailComposeController
-				.data[K.requestIdIndex] = emailComposeController
-												.setServiceRequestId(dataObj[K.nameIndex]);
-		
-		// Append form data object to email data.
-		Object.assign(emailComposeController.data, dataObj);
-
-		// Construct body of confirmation email using html.
-		return emailComposeController.prepareEmailContent(true);
-	},
-
 	// Display confirmation.
 	showConfirmation : function () {
 		// TODO: Popover modal containing delivery status information.
 	},
 
 	// Display error.
-	showError : function () {
+	showError : function (error) {
 		// TODO: Popover modal containing error status information.
 	},
 
-	// Send processed data as an email to inbox.
+	// Send confirmation response and service request emails.
 	sendData : async function () {
-		// Prepare data to be sent in email body.
 		const form = document.querySelector(K.periodSymbol + K.formWasValidatedClass);
 		const submitter = document.getElementById(K.sendBtnId);
 		const formData = new FormData(form, submitter);
 
-		// Send populated html to inbox.
-		formController.prepareData(formData)
-			.then((data) => {
-				emailComposeController.prepareEmailContent(false);
-				// TODO: nodemailer api calls.
+		try {
+			// Create request object.
+			const request = await fetch(K.requestIndex + K.jsonFileExtension);
+			const reqObj = await request.json();
+			Object.assign(reqObj, {"body": formData});
 
-				formController.showConfirmation();
-			})
-			.catch((error) => {
-				console.error(`Could not send data: ${error}`);
-				formController.showError();
-			});
+			// TODO: Replace placeholder url upon configuration.
+			const response = await fetch("http://examplehost.com", reqObj);
+
+			// console.log(await response.json());
+		    formController.showConfirmation();
+		} catch(error) {
+			console.error(error.message);
+			formController.showError(error.message);
+		}
 	},
 	
-	// Submit form and display confirmation.
+	// Submit form data to send email request.
 	submitForm : function (event) {
 		const form = document.querySelector(K.periodSymbol + K.formNeedsValidationClass);
 		form.addEventListener(K.submitEvent, (event) => {
@@ -116,7 +100,7 @@ var formController = {
 	    	form.classList.remove(K.formNeedsValidationClass);
 	    	form.classList.add(K.formWasValidatedClass);
 	    	
-	    	// Send email.
+	    	// Send data.
 	    	formController.sendData();
 		}, false);
 	}

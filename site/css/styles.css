@@ -1,3 +1,7 @@
+:root {
+	--bs-body-font-size: 16px;
+}
+
 /* NAVBAR */
 
 #sidebar, nav {
@@ -27,7 +31,7 @@
 
 @media all and (min-width: 1200px) {
 	#sidebar-nav {
-		width: auto;
+		width: 21rem;
     height: 100%;
     padding-right: 1.75rem;
     align-content: flex-start;
@@ -165,6 +169,17 @@
 	font-size: 14px;
 }
 
+/* FOOTER */
+@media all and (min-width: 1200px) {
+	footer {
+		padding-left: 3.6rem;
+	}
+}
+
+footer a {
+	margin-left: 0rem;
+}
+
 
 /* MAIN CONTENT */
 
@@ -235,6 +250,7 @@
 p {
 	line-height: 28px;
 	margin-bottom: 8px;
+	padding: 0.75rem 0.75rem 0.75rem 0;
 }
 
 
@@ -304,11 +320,14 @@ h1 {
 
 /* SERVICES AND PORTFOLIO */
 
-#download-btn, #project-btn {
+.btn {
 	margin: 8px 12px 8px 12px;
-	padding: 24px 48px 24px 48px;
 	border: 2px solid #FC8E26;
 	border-radius: 50px;
+}
+
+#download-btn {
+	padding: 24px 48px 24px 48px;
 }
 
 #project-btn {
@@ -331,7 +350,7 @@ h1 {
 	color: #D97A21;
 }
 
-.card .bi-box-arrow-up-right {
+.bi-box-arrow-up-right {
 	color: #F5DEC7;
 	font-size: 10px;
 }
@@ -374,7 +393,7 @@ h1 {
 	}
 }
 
-#portfolio .btn-label {
+.btn-label {
 	display: flex;
 	gap: 4px;
 }
@@ -586,6 +605,10 @@ form #send-btn .btn-label {
 	color: #2F1B07 !important;
 }
 
+.bi-heart-fill {
+	color: #D97A21;
+}
+
 #lang-dropdown .dropdown-menu .active {
 	color: #2F1B07 !important;
 	background-color: transparent !important;
@@ -614,7 +637,7 @@ form #send-btn .btn-label {
 	color: #D97A21;
 }
 
-#download-btn:hover, #project-btn:hover {
+a.btn:hover {
 	background-color: #D97A21;
 	border: 2px solid #FC8E26;
 }
@@ -782,6 +805,24 @@ form #send-btn:hover {
     "wdth" 100;
 }
 
+.noto-sans-devanagari-medium {
+  font-family: "Noto Sans Devanagari", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.noto-sans-devanagari-semibold {
+  font-family: "Noto Sans Devanagari", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
 .noto-sans-devanagari-bold {
   font-family: "Noto Sans Devanagari", sans-serif;
   font-optical-sizing: auto;
@@ -800,10 +841,58 @@ form #send-btn:hover {
     "wdth" 100;
 }
 
+.anek-odia-medium {
+  font-family: "Anek Odia", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.anek-odia-semibold {
+  font-family: "Anek Odia", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.anek-odia-bold {
+  font-family: "Anek Odia", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
 .germania-one-regular {
   font-family: "Germania One", system-ui;
   font-optical-sizing: auto;
   font-weight: 400;
+  font-style: normal;
+}
+
+.germania-one-medium {
+  font-family: "Germania One", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.germania-one-semibold {
+  font-family: "Germania One", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.germania-one-bold {
+  font-family: "Germania One", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 700;
   font-style: normal;
 }
 

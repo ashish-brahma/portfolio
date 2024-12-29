@@ -96,9 +96,9 @@ var navController = {
 	cloneAnchor : function (clone, iterIndex) {
 		let anchor = clone.querySelector(K.anchorElement);
 		const navListObj = navController.getNavListObj();
-		const sectionId = Object.values(navListObj)[iterIndex];
+		const sectionId = Object.keys(navListObj)[iterIndex];
 		anchor.href = K.hashSymbol + sectionId;
-		anchor.textContent = stringExt.capitalize(sectionId);
+		anchor.textContent = stringExt.capitalize(navListObj[sectionId][1]);
 	},
 
 	// Add new bio item title.

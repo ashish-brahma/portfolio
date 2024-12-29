@@ -1,13 +1,13 @@
 {
-	"hi-IN": {
-		"label" : "हिंदी",
-		"font" : "noto-sans-devanagari-regular",
+	"or-IN" : {
+		"label" : "ଓଡ଼ିଆ",
+		"font" : "anek-odia-regular",
 		"country-code" : "in",
 		"alt" : "Indian Flag"
 	},
- 	"or-IN" : {
-		"label" : "ଓଡ଼ିଆ",
-		"font" : "anek-odia-regular",
+	"hi-IN": {
+		"label" : "हिंदी",
+		"font" : "noto-sans-devanagari-regular",
 		"country-code" : "in",
 		"alt" : "Indian Flag"
 	}, 

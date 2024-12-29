@@ -59,13 +59,6 @@ var emailComposeController = {
         return formattedElement;
     },
 
-    // Generate new service request Id.
-    setServiceRequestId : function (name) {
-        const array = new Uint16Array(1);
-        self.crypto.getRandomValues(array);
-        return stringExt.fourCaps(name) + array[0];
-    }, 
-
     // Insert response content into table cell.
     insertResponseCellContent : function (cell, id, textArray) {
         const data = emailComposeController.data;

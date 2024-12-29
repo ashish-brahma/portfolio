@@ -65,12 +65,13 @@ var portfolioSectionController = {
 
 	// Insert button label in #project-btn.
 	insertButtonLabels : function () {
+		const pfObj = portfolioSectionController.getPortfolioObj();
 		const projRow = document.getElementById(K.projRowId);
 		const projButtons = projRow.querySelectorAll(K.periodSymbol + K.btnLabelIndex);
 		const btnFont = contentController.fonts[K.btnLabelIndex];
 		projButtons.forEach(
 			function (node) {
-				node.textContent = K.projButtonLabel;
+				node.textContent = pfObj[K.projButtonLabelIndex];
 				node.classList.add(btnFont);
 				const icon = node.appendChild(document.createElement(K.iconElement));
 				icon.className = K.projButtonIconClassName;
@@ -132,7 +133,7 @@ var portfolioSectionController = {
 		
 		// Add button classes.
 		const activeFilter = portfolioSectionController.getActiveProjFilter();
-		if (liId === activeFilter) {
+		if (pfObj[liId] === activeFilter) {
 			btn.classList.add(K.activeClass);
 		} else btn.classList.add(K.projListColorClass);
 		

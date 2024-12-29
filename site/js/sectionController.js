@@ -10,7 +10,7 @@ var sectionController = {
 		const secObj = sectionController.getSecObj();
 		const lastIndex = Object.keys(secObj).length - 1;
 		const zeroString = navController.getNavObj()[K.zeroStringIndex];
-		const totalSections = Object.keys(secObj)[lastIndex];
+		const totalSections = Object.values(secObj)[lastIndex][0];
 		viewController.insertHtml(K.totalSectionsId,
 				(lastIndex < 10) ? (zeroString + totalSections) : totalSections);
 	},
@@ -60,7 +60,8 @@ var sectionController = {
 			break;
 
 		default:
-			heading.textContent = stringExt.capitalize(id);
+			const navListObj = navController.getNavListObj();
+			heading.textContent = stringExt.capitalize(navListObj[id][1]);
 		}
 	},
 
@@ -110,7 +111,7 @@ var sectionController = {
 		for (var i = 0; i < totalSections; i++ ) {
 			const section = mainContent.appendChild(document.createElement(K.divElement));
 			
-			section.id = Object.values(sectionController.getSecObj())[i];
+			section.id = Object.keys(sectionController.getSecObj())[i];
 
 			section.className = K.defaultSecClasses + classes;
 			
@@ -147,8 +148,8 @@ var sectionController = {
 								.replaceAll(K.hashSymbol, K.emptyString);
 
 			// Set current section's number using sectionId.
-			const index = Object.values(secObj).indexOf(sectionId);
-			const sectionNum = Object.keys(secObj)[index];
+			const index = Object.keys(secObj).indexOf(sectionId);
+			const sectionNum = Object.values(secObj)[index][0];
 			const zeroString = navObj[K.zeroStringIndex];
 			
 			// Update section indicator.

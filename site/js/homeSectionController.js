@@ -5,14 +5,17 @@ var homeSectionController = {
 		return contentController.content[K.mainContentId][K.homeSecId];
 	},
 
+	// Set up an object to store profile picture.
+	profilePicture : {},
+
 	// Convenience function to read picture source content.
 	getPicSourceObj : function () {
-		return homeSectionController.getHomeObj()[K.profilePicIndex][K.imgSourceElement];
+		return homeSectionController.profilePicture[K.imgSourceElement];
 	},
-
+	
 	// Convenience function to read picture image content.
 	getImageObj : function () {
-		return homeSectionController.getHomeObj()[K.profilePicIndex][K.imageElement];
+		return homeSectionController.profilePicture[K.imageElement];
 	},
 
 	// Insert responsive sources in #profile-picture.
@@ -40,8 +43,18 @@ var homeSectionController = {
 
 	// Insert cloned templates of #profile-picture.
 	insertProfilePicture : function () {
-		homeSectionController.insertPictureSources();
-		homeSectionController.insertImage();
+		const imgUrl = K.contentLocation + K.profilePicIndex + K.jsonFileExtension;
+
+		// Start fetching content from image url.
+		contentController.fetchContent(imgUrl, true)
+			.then((profilePictureObj) => {
+				// Read profile picture content.
+				homeSectionController.profilePicture = profilePictureObj;
+
+				// Insert content.
+				homeSectionController.insertPictureSources();
+				homeSectionController.insertImage();
+			});
 	},
 
 	// Insert content of #about.

@@ -53,9 +53,9 @@ var contactSectionController = {
 		const contactBody = document.querySelector(K.periodSymbol + K.contactBodyClass);
 
 		// Insert call to action.
-		const font = contentController.fonts[K.semiboldFontIndex];
+		const ctaFont = contentController.fonts[K.semiboldFontIndex];
 		const cta = contactBody.querySelector(K.periodSymbol + K.contactBodyCTAIndex);
-		cta.classList.add(font);
+		cta.classList.add(ctaFont);
 		cta.textContent = contactObj[K.contactBodyCTAIndex];
 		
 		// Insert all paragraphs of body.
@@ -66,6 +66,18 @@ var contactSectionController = {
 			const p = bodyText.appendChild(document.createElement(K.paragraphElement));
 			p.textContent = para;
 		}
+
+		// Insert note to warn users.
+		const note = bodyText.appendChild(document.createElement(K.smallElement));
+		
+		const icon = note.appendChild(document.createElement(K.iconElement));
+		icon.className = contactObj[K.contactBodyNoteIndex][0];
+		
+		note.innerHTML += contactObj[K.contactBodyNoteIndex][1];
+		
+		const noteFont = contentController.fonts[K.btnLabelIndex];
+		note.classList.add(noteFont);
+		note.style.color = K.warningColor;
 	},
 
 	// Insert cloned templates of contact form.
