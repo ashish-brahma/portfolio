@@ -4,7 +4,7 @@ Welcome to my portfolio website!
 
 *Backend development is underway.*
 
-**UPDATE (NOV 2024)**: Content now loads in English(en-us) language dynamically. Support for other languages is WIP.
+**UPDATE (DEC 2024)**: Multilingual support added with note to keep users from submitting data through form until it is operational.
 
 ## What works
 - Section Indicator
