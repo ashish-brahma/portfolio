@@ -102,18 +102,30 @@ var viewController = {
 		const snippetURL = K.snippetsLocation + K.footerClass + K.htmlFileExtension;
 		contentController.fetchContent(snippetURL, false)
 			.then((response) => {
-				const navFooter = document
-									.getElementById(K.sidebarNavId)
-									.querySelector(K.periodSymbol + K.containerClass)
-									.appendChild(document.createElement(K.footerClass));
-				navFooter.className = K.footerBaseClasses + K.navFooterClasses;
-				navFooter.innerHTML = response;
-				
 				const mainFooter = document
 									.getElementById(K.mainContentId)
 									.appendChild(document.createElement(K.footerClass));
 				mainFooter.className = K.footerBaseClasses + K.mainFooterClasses;
-				mainFooter.innerHTML = response;
+				
+				// Use footer class name in lieu of footer element.
+				const footers = document.querySelectorAll(K.footerClass);
+				footers.forEach ((node) => { node.innerHTML = response; });
+			});
+	},
+
+	// Fetch and insert infobar content.
+	buildInfobar : function () {
+		const infobarURL = K.snippetsLocation + K.infobarClass + K.htmlFileExtension;
+
+		contentController.fetchContent(infobarURL, false)
+			.then ((response) => {
+				const bars = document.querySelectorAll(K.periodSymbol + K.infobarClass);
+				bars.forEach ((node) => { 
+					node.innerHTML = response;
+					
+					// Insert templates for .infobar.
+					navController.insertInfobar(node); 
+				});
 			});
 	},
 
@@ -124,6 +136,7 @@ var viewController = {
 			viewController.buildNavbar();
 			viewController.buildMainContent();
 			viewController.buildFooter();
+			viewController.buildInfobar();
 		} else {
 		// In case browser does not support template element, do something else.
 			console.log("Templating not supported. Aborting...");

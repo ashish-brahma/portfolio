@@ -20,9 +20,6 @@ var templateController = {
 		
 		// Insert templates for #offcanvasNavbar.
 		navController.insertNavList();
-
-		// Insert templates for #infobar.
-		navController.insertInfobar();
 	},
 
 	// Insert template content of #main-content.

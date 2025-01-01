@@ -40,7 +40,7 @@ var navController = {
 	// Insert cloned templates in #nav-list.
 	insertNavList : function () {
 		const navListObj = navController.getNavListObj();
-
+		
 		// Identify elements for #nav-list template insertion.
 		const navList = document.getElementById(K.navListIndex);
 		var navItemTemplate = document.getElementById(K.navItemId);
@@ -51,12 +51,12 @@ var navController = {
 	},
 
 	// Insert cloned templates in #bio-list.
-	insertInfobar : function () {
+	insertInfobar : function (node) {
 		const infobarObj = navController.getInfobarObj();
 
 		// Identify elements for #bio-list template insertion.
-		const bioList = document.getElementById(K.navBioIndex);
-		var bioItemTemplate = document.getElementById(K.bioItemId);
+		const bioList = node.querySelector(K.hashSymbol + K.navBioIndex);
+		var bioItemTemplate = node.querySelector(K.hashSymbol + K.bioItemId);
 		
 		// Insert clone templates in #bio-list.
 		templateController.setTemplate(infobarObj, bioList,
