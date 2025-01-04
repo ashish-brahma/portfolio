@@ -340,7 +340,7 @@ h1 {
 	}
 }
 
-.btn {
+.btn:not(#lang-dropdown button, .icon-link) {
 	margin: 8px 12px 8px 12px;
 	border: 2px solid #FC8E26;
 	border-radius: 50px;
