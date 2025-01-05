@@ -340,13 +340,13 @@ h1 {
 	}
 }
 
-.btn:not(#lang-dropdown button, .icon-link) {
+/* SERVICES AND PORTFOLIO */
+
+#download-btn, #project-btn, #source-code a {
 	margin: 8px 12px 8px 12px;
 	border: 2px solid #FC8E26;
 	border-radius: 50px;
 }
-
-/* SERVICES AND PORTFOLIO */
 
 #download-btn {
 	padding: 24px 48px 24px 48px;
