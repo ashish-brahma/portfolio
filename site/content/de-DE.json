@@ -82,11 +82,11 @@
 				"project-cards-row" : {
 					"kartstopper": {
 						"card" : ["mobile-dev","all"],
-						"card-img-top" : "KS_LinkedInLogo_V2",
+						"card-img-top" : "KS_LinkedInLogo_V4",
 						"alt" : "Project1 Bild",
 						"card-title" : "KartStopper",
 						"card-text" : "KartStopper ist eine Komplettlösung für Käufer, die vor dem Einkauf für den täglichen Bedarf fundierte Entscheidungen treffen möchten. Es verbessert das Ausgabeverhalten der Menschen.",
-						"href" : "https://www.linkedin.com/company/kartstopper"
+						"href" : "https://ashish-brahma.github.io/kartstoppersite"
 					},
 					"smart-home-surveillance-system" : {
 						"card" : ["ai-ml","all"],
