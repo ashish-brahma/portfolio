@@ -71,9 +71,9 @@ var contactSectionController = {
 		const note = bodyText.appendChild(document.createElement(K.smallElement));
 		
 		const icon = note.appendChild(document.createElement(K.iconElement));
-		icon.className = contactObj[K.contactBodyNoteIndex][0];
+		icon.className = K.contactBodyNoteIcon;
 		
-		note.innerHTML += contactObj[K.contactBodyNoteIndex][1];
+		note.innerHTML += K.spaceString + contactObj[K.contactBodyNoteIndex];
 		
 		const noteFont = contentController.fonts[K.btnLabelIndex];
 		note.classList.add(noteFont);

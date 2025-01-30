@@ -162,7 +162,7 @@
 					"It may take some time for me to respond depending on the volume of requests received as we speak.",
 					"Thanks for your understanding."
 				],
-				"body-note" : ["bi bi-info-circle"," Kindly note that the form is under developement. Please do not submit any data. Regret the inconvenience caused."],
+				"body-note" : "Kindly note that the form is under developement. Please do not submit any data. Regret the inconvenience caused.",
 				"contact-form" : {
 					"input-name" : {
 						"form-label" : "Name",

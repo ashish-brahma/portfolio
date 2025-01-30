@@ -162,7 +162,7 @@
 					"Abhängig von der Menge der Anfragen, die wir gerade erhalten, kann es einige Zeit dauern, bis ich antworte.",
 					"Vielen Dank für Ihr Verständnis."
 				],
-				"body-note" : ["bi bi-info-circle"," Bitte beachten Sie, dass sich das Formular in der Entwicklung befindet. Bitte übermitteln Sie keine Daten. Bedauern Sie die entstandenen Unannehmlichkeiten."],
+				"body-note" : "Bitte beachten Sie, dass sich das Formular in der Entwicklung befindet. Bitte übermitteln Sie keine Daten. Bedauern Sie die entstandenen Unannehmlichkeiten.",
 				"contact-form" : {
 					"input-name" : {
 						"form-label" : "Name",

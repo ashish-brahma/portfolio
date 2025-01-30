@@ -133,6 +133,7 @@ const K = {
 	contactBodyCTAIndex: "body-cta",
 	contactBodyTextIndex: "body-text",
 	contactBodyNoteIndex: "body-note",
+	contactBodyNoteIcon: "bi bi-exclamation-circle",
 	warningColor: "#FF3701",
 	formIndex: "contact-form",
 	formElement: "form",
