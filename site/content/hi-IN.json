@@ -82,7 +82,7 @@
 				"project-cards-row" : {
 					"kartstopper": {
 						"card" : ["mobile-dev","all"],
-						"card-img-top" : "KS_LinkedInLogo_V4",
+						"card-img-top" : "KS_LinkedInLogo",
 						"alt" : "प्रोजेक्ट १ छवि",
 						"card-title" : "कार्टस्टॉपर",
 						"card-text" : "कार्टस्टॉपर उन खरीदारों के लिए एक विस्तृत साधन है जो अपनी दैनिक ज़रूरतों की खरीदारी से पहले सूचित विकल्प बनाना चाहते हैं। यह लोगों की खर्च करने की आदतों में सुधार करता है।",

@@ -342,7 +342,7 @@ h1 {
 
 /* SERVICES AND PORTFOLIO */
 
-#download-btn, #project-btn, #source-code a {
+#download-btn, .project-btn, #source-code a {
 	margin: 8px 12px 8px 12px;
 	border: 2px solid #FC8E26;
 	border-radius: 50px;
@@ -352,19 +352,13 @@ h1 {
 	padding: 24px 48px 24px 48px;
 }
 
-#project-btn {
+.project-btn {
 	padding: 8px 16px 8px 16px;
 }
 
 #project-filter button {
 	background-color: transparent;
 	border: none;
-}
-
-.card {
-	max-width: 100vw;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 .card .service-icon {
@@ -381,38 +375,13 @@ h1 {
 	font-size: 48px;
 }
 
+#portfolio .card {
+	height: 40rem;
+	max-width: 30rem;
+}
+
 .card img {
-	height: auto;
-}
-
-@media all and (min-width: 768px) {
-	.card {
-		max-width: 50vw;
-	}
-	.card img {
-		height: 32vh;
-	}
-}
-
-@media all and (min-width: 1200px) {
-	.card img {
-		height: 42vh;
-	}
-}
-
-@media all and (min-width: 1440px) {
-	.card img {
-		height: 48vh;
-	}
-}
-
-@media all and (min-width: 1680px) {
-	.card {
-		max-width: 36vw;
-	}
-	.card img {
-		height: 56vh;
-	}
+	height: 24rem;
 }
 
 .btn-label {

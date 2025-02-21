@@ -109,7 +109,7 @@ var portfolioSectionController = {
 		cardText.textContent = projRowObj[projId][K.cardTextIndex];
 
 		// Add project button. Insert labels later.
-		let btn = card.querySelector(K.hashSymbol + K.projButtonId);
+		let btn = card.querySelector(K.periodSymbol + K.projButtonId);
 		btn.href = projRowObj[projId][K.hrefIndex];
 	},
 
