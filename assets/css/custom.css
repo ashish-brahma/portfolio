@@ -51,6 +51,28 @@ a:hover, a:focus, a:active {
 	color: #FC8E26;
 }
 
+.float-container a {
+    color: #E39B59;
+    background-color: #D6D6D6;
+}
+
+.float-container a:hover,
+.float-container a:focus,
+.float-container a:active {
+	color: #FC8E26;
+}
+
+body.colorscheme-dark .float-container a {
+    color: #E39B59;
+    background-color: #404040;
+}
+
+body.colorscheme-dark .float-container a:hover,
+body.colorscheme-dark .float-container a:focus,
+body.colorscheme-dark .float-container a:active {
+	color: #FC8E26;
+}
+
 body.colorscheme-dark a {
 	color: #E39B59;
 }
