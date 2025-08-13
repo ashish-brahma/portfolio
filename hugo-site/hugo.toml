@@ -1,0 +1,72 @@
+baseurl = "http://ashish-brahma.io/portfolio"
+title = "Ashish Brahma"
+theme = "hugo-coder"
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
+[pagination]
+pagerSize = 20
+
+[markup.highlight]
+style = "github-dark"
+
+[params]
+  author = "Ashish Brahma"
+  info = "Apple Developer"
+  description = "Ashish Brahma's personal website"
+  keywords = "blog,developer,personal"
+  avatarurl = "images/avatar.svg"
+
+  faviconSVG = "favicon.svg"
+
+  since = 2025
+
+  enableTwemoji = true
+
+  colorScheme = "auto"
+  hidecolorschemetoggle = false
+
+  customCSS = ["css/custom.css"]
+  # customSCSS = ["scss/custom.scss"]
+  # customJS = ["js/custom.js"]
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  author = "authors"
+
+# Social links
+[[params.social]]
+  name = "LinkedIn"
+  icon = "fa-brands fa-linkedin fa-2x"
+  weight = 1
+  url = "https://linkedin.com/in/brahma-ashish"
+[[params.social]]
+  name = "Github"
+  icon = "fa-brands fa-github fa-2x"
+  weight = 2
+  url = "https://github.com/ashish-brahma/"
+[[params.social]]
+  name = "Twitter"
+  icon = "fa-brands fa-x-twitter fa-2x"
+  weight = 3
+  url = "https://x.com/b_ashish_3535"
+
+# Menu links
+[[menu.main]]
+  name = "Blog"
+  weight = 1
+  url  = "posts/"
+ [[menu.main]]
+  name = "Projects"
+  weight = 2
+  url  = "posts/"
+[[menu.main]]
+  name = "About"
+  weight = 3
+  url = "about/"

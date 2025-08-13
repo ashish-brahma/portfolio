@@ -1,3 +1,3 @@
 # Portfolio
 
-This is the first version of my portfolio website.
+This is my personal website describing my area of work and experience.
