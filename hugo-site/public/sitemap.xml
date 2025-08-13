@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/portfolio/</loc>
+    <loc>http://ashish-brahma.io/portfolio/</loc>
   </url><url>
-    <loc>http://localhost:1313/portfolio/authors/</loc>
+    <loc>http://ashish-brahma.io/portfolio/authors/</loc>
   </url><url>
-    <loc>http://localhost:1313/portfolio/categories/</loc>
+    <loc>http://ashish-brahma.io/portfolio/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/portfolio/series/</loc>
+    <loc>http://ashish-brahma.io/portfolio/series/</loc>
   </url><url>
-    <loc>http://localhost:1313/portfolio/tags/</loc>
+    <loc>http://ashish-brahma.io/portfolio/tags/</loc>
   </url>
 </urlset>
