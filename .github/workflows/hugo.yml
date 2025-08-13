@@ -62,8 +62,7 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: |
-            ./hugo-site/
-            ${{ runner.temp }}/hugo_cache
+            ${{ runner.temp }}/hugo-site/hugo_cache
           key: hugo-${{ github.run_id }}
           restore-keys:
             hugo-
@@ -75,14 +74,13 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
-            --cacheDir "./hugo-site/${{ runner.temp }}/hugo_cache"
+            --cacheDir "${{ runner.temp }}/hugo-site/hugo_cache"
       - name: Cache Save
         id: cache-save
         uses: actions/cache/save@v4
         with:
           path: |
-            ./hugo-site/
-            ${{ runner.temp }}/hugo_cache
+            ${{ runner.temp }}/hugo-site/hugo_cache
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
