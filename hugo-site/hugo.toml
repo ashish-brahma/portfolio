@@ -1,4 +1,4 @@
-baseurl = "http://ashish-brahma.io/portfolio"
+baseurl = "ashish-brahma@github.io"
 title = "Ashish Brahma"
 theme = "hugo-coder"
 languagecode = "en"
