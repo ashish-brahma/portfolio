@@ -2,10 +2,10 @@
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the hugo-site branch
+  # Runs on pushes targeting the main branch
   push:
     branches: 
-      -hugo-site
+      -main
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -38,7 +38,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: './hugo-site'
+          path: './site'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
