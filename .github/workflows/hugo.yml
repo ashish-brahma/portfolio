@@ -4,7 +4,8 @@ name: Deploy Hugo site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: 
+      -main
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -85,7 +86,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-           path: ./hugo-site/public
+           path: ./public
 
   # Deployment job
   deploy:
