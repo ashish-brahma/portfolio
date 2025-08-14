@@ -1,6 +1,6 @@
 +++
 date = '2025-08-14T01:31:41+05:30'
-draft = true
+draft = false
 title = 'About'
 description = "Ashish is an Apple Developer with a focus on iOS Platform."
 aliases = ["about-me", "contact"]
