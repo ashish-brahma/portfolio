@@ -5,7 +5,7 @@ body {
 
 body.colorscheme-dark {
 	color: #B0631A;
-	background-color: #2F1B07;
+	background-color: #080502;
 }
 
 .navigation a, .navigation span {
@@ -52,7 +52,7 @@ a:hover, a:focus, a:active {
 }
 
 .float-container a {
-    color: #572702;
+    color: #080502;
     background-color: #E0E0E0;
 }
 
