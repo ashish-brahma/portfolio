@@ -1,47 +1,71 @@
+/* body start */
 body {
 	color: #7E715E;
 	background-color: #FFFFFA;
 }
-
 body.colorscheme-dark {
 	color: #B37130;
 	background-color: #120900;
 }
+/* body end */
 
-.navigation a, .navigation span {
+
+/* navigation start */
+.navigation a, .navigation span, .navigation i {
 	color: #A85A22;
 }
-
-.navigation a:hover, .navigation span:hover {
+.navigation a:hover,
+.navigation a:focus,
+.navigation a:active,
+.navigation span:hover,
+.navigation span:focus,
+.navigation span:active, 
+.navigation i:hover,
+.navigation i:focus,
+.navigation i:active {
 	color: #FC8E26;
 }
 
 body.colorscheme-dark .navigation a, 
-body.colorscheme-dark .navigation span {
+body.colorscheme-dark .navigation span,
+body.colorscheme-dark .navigation i {
     color: #E39B59;
 }
-
 body.colorscheme-dark .navigation a:hover,
 body.colorscheme-dark .navigation a:focus,
 body.colorscheme-dark .navigation a:active,
 body.colorscheme-dark .navigation span:hover,
 body.colorscheme-dark .navigation span:focus,
-body.colorscheme-dark .navigation span:active {
+body.colorscheme-dark .navigation span:active,
+body.colorscheme-dark .navigation i:hover,
+body.colorscheme-dark .navigation i:focus,
+body.colorscheme-dark .navigation i:active {
     color: #FC8E26;
 }
 
+@media only screen and (max-width: 576px) {
+	.navigation .navigation-list {
+		background-color: #FFF8E0;
+	}
+	body.colorscheme-dark .navigation .navigation-list {
+		background-color: #2B1500;
+	}
+}
+/* navigation end */
+
+
+/* headings start */
 h1 {
 	color: #613613;
 }
-
 h2, h3, h4, h5, h6 {
 	color: #857358;
 }
 
+
 body.colorscheme-dark h1 {
 	color: #FF8322;
 }
-
 body.colorscheme-dark h2,
 body.colorscheme-dark h3,
 body.colorscheme-dark h4,
@@ -49,20 +73,33 @@ body.colorscheme-dark h5,
 body.colorscheme-dark h6 {
 	color: #B37132;
 }
+/* headings end */
 
+
+/* links start */
 a {
 	color: #E39B59;
 }
-
 a:hover, a:focus, a:active {
 	color: #FC8E26;
 }
 
+body.colorscheme-dark a {
+	color: #E39B59;
+}
+body.colorscheme-dark a:hover,
+body.colorscheme-dark a:focus,
+body.colorscheme-dark a:active {
+	color: #FC8E26;
+}
+/* links end */
+
+
+/* dark mode toggle start */
 .float-container a {
     color: #140C05;
     background-color: #E0E0E0;
 }
-
 .float-container a:hover,
 .float-container a:focus,
 .float-container a:active {
@@ -73,43 +110,36 @@ body.colorscheme-dark .float-container a {
     color: #FC8E26;
     background-color: #404040;
 }
-
 body.colorscheme-dark .float-container a:hover,
 body.colorscheme-dark .float-container a:focus,
 body.colorscheme-dark .float-container a:active {
 	color: #E39B59;
 }
+/* dark mode toggle end */
 
-body.colorscheme-dark a {
-	color: #E39B59;
-}
 
-body.colorscheme-dark a:hover,
-body.colorscheme-dark a:focus,
-body.colorscheme-dark a:active {
-	color: #FC8E26;
-}
-
+/* footer start */
 .footer a {
 	color: #E39B59;
 }
-
 .footer a:hover {
 	color: #FC8E26;
-}
-
-.fa-brands {
-	color: #E39B59;
-}
-
-.fa-brands:hover {
-	color: #D97A21;
 }
 
 body.colorscheme-dark .footer a {
 	color: #E39B59;
 }
-
 body.colorscheme-dark .footer a:hover {
 	color: #FC8E26;
 }
+/* footer end */
+
+
+/* social link icons start */
+.fa-brands {
+	color: #E39B59;
+}
+.fa-brands:hover {
+	color: #D97A21;
+}
+/* social link icons end */
