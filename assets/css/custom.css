@@ -43,7 +43,7 @@ body.colorscheme-dark .navigation i:active {
     color: #FC8E26;
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
 	.navigation .navigation-list {
 		background-color: #FFF8E0;
 	}
