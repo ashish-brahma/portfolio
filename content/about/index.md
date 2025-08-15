@@ -34,7 +34,7 @@ Currently, I am building **KartStopper**, a productivity app to craft the perfec
 ### Contact
 ---
 
-Please feel free to reach me out via email for App Development projects or any other queries in general.
+Please feel free to reach me out via email for your app development needs or any other subject of interest.
 
 Email: [ashish.brahma@outlook.com](mailto:ashish.brahma@outlook.com)  
 Download: [Resume](Resume-AshishBrahma-iOSDeveloper-Jan2025.pdf)&nbsp;(PDF)
