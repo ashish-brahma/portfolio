@@ -77,19 +77,25 @@ body.colorscheme-dark h6 {
 
 
 /* links start */
-a {
+a, .list ul li .title {
 	color: #E39B59;
 }
-a:hover, a:focus, a:active {
+a:hover, a:focus, a:active,
+.list ul li .title:hover,
+.list ul li .title:focus,
+.list ul li .title:active {
 	color: #FC8E26;
 }
 
-body.colorscheme-dark a {
+body.colorscheme-dark a, body.colorscheme-dark .content .list ul li .title {
 	color: #E39B59;
 }
 body.colorscheme-dark a:hover,
 body.colorscheme-dark a:focus,
-body.colorscheme-dark a:active {
+body.colorscheme-dark a:active,
+body.colorscheme-dark .content .list ul li .title:hover,
+body.colorscheme-dark .content .list ul li .title:focus,
+body.colorscheme-dark .content .list ul li .title:active {
 	color: #FC8E26;
 }
 /* links end */
