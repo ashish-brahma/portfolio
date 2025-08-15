@@ -27,7 +27,7 @@ defaultcontentlanguage = "en"
   keywords = "blog,developer,personal"
   avatarurl = "images/ashish-2022.jpg"
 
-  faviconSVG = "favicon.svg"
+  faviconSVG = "images/favicon.svg"
 
   since = 2025
 
