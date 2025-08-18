@@ -21,6 +21,7 @@ defaultcontentlanguage = "en"
   quality = 90
 
 [params]
+  HeadTitle = "Ashish Brahma - Personal Website"
   author = "Ashish Brahma"
   info = "Apple Developer"
   description = "Ashish Brahma's personal website"
