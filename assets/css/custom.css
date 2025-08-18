@@ -7,6 +7,10 @@ body.colorscheme-dark {
 	color: #B37130;
 	background-color: #120900;
 }
+
+.content article p {
+	hyphens: none;
+}
 /* body end */
 
 
