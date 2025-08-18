@@ -5,24 +5,24 @@ title = 'About'
 description = "Ashish is an Apple Developer with a focus on iOS Platform."
 aliases = ["about-me", "contact"]
 author = 'Ashish Brahma'
-+++
-
-## Hello 👋 
++++ 
 
 <div align="center">
-	{{< img src="jal-mahal-jaipur-2023.jpg" fit="400x400" alt="Jal Mahal in Jaipur" >}}
-	{{< img src="nahargarh-fort-jaipur-2023.jpg" fit="400x400" alt="Jal Mahal in Jaipur" >}}
-	<br><caption><small><i>Jaipur 2023</i></small></caption>
+	{{< img src="jal-mahal-jaipur-2023.jpg" fit="4032x3024" alt="Jal Mahal in Jaipur" >}}
+	<br><caption><small><i>Jal Mahal, Jaipur (2023)</i></small></caption>
 </div>
 
-I am an independent Apple Developer with a focus on iOS platform. Currently, I am building **KartStopper**, a productivity app to craft the perfect shopping plan.
+## Hello 👋
 
-I have a Bachelor's degree in Mechatronics Engineering from SRM Institute of Science and Technology, Chennai. 
+I am an independent Apple Developer with a focus on iOS platform. Currently, I am building **KartStopper**, a productivity app to craft the perfect shopping plan. 
 
-My tech skills include but not limited to-   
-`Swift6` `MongoDB(Atlas)` `Firebase` `Python` `MySQL` `HTML` `CSS` `Javascript` `Figma`
+Previously, I have worked as a full-time Business Analyst for a brief period in 2021-22 with experience spanning across Real Estate, Logistics, Media, Energy, Retail and Credit sectors. I have a Bachelor's degree in Mechatronics Engineering from SRM Institute of Science and Technology, Chennai.
 
-When I'm not coding, I love to work in my garden or pick an interesting book to read.
+I have an affinity towards all things neat and serene. When I'm not coding, I love to work in my garden or pick an interesting book to read.
+
+###### Skills
+
+`Swift6` &nbsp; `MongoDB(Atlas)`  &nbsp; `Firebase` &nbsp; `Python` &nbsp; `MySQL`  &nbsp; `HTML`  &nbsp; `CSS`  &nbsp; `Javascript`  &nbsp; `Figma`
 
 ---
 <small>
