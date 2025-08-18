@@ -7,35 +7,32 @@ aliases = ["about-me", "contact"]
 author = 'Ashish Brahma'
 +++
 
-
 ## Hello 👋 
 
-I am an independent Apple Developer with a focus on iOS platform.
+<div align="center">
+	{{< img src="jal-mahal-jaipur-2023.jpg" fit="400x400" alt="Jal Mahal in Jaipur" >}}
+	{{< img src="nahargarh-fort-jaipur-2023.jpg" fit="400x400" alt="Jal Mahal in Jaipur" >}}
+	<br><caption><small><i>Jaipur 2023</i></small></caption>
+</div>
 
-Currently, I am building **KartStopper**, a productivity app to craft the perfect shopping plan.
+I am an independent Apple Developer with a focus on iOS platform. Currently, I am building **KartStopper**, a productivity app to craft the perfect shopping plan.
 
-### Skills 
+I have a Bachelor's degree in Mechatronics Engineering from SRM Institute of Science and Technology, Chennai. 
+
+My tech skills include but not limited to-   
+`Swift6` `MongoDB(Atlas)` `Firebase` `Python` `MySQL` `HTML` `CSS` `Javascript` `Figma`
+
+When I'm not coding, I love to work in my garden or pick an interesting book to read.
+
 ---
-
-**Core**&nbsp;`Swift6` `SwiftUI` `UIKit`
-
-**Design Patterns**&nbsp;`MVC` `MVVM` `Observation` `Delegation`
-
-**Networking**&nbsp;`URLSession` `Google Firebase`
-
-**Concurrency**&nbsp;`Task` `@MainActor` `GCD Dispatch Queue` `async/await`
-
-**Databases**&nbsp;`SwiftData` `CoreData` `MongoDB Atlas(Realm)` `MySQL`
-
-**DevOps**&nbsp;`Swift Package Manager` `CocoaPods` `Swift Testing` `XCTest` `Git`
-
-**Augmentation**&nbsp;`CoreML` `ARKit` `Python3` `Twitter API` `Twilio API`
-
-### Contact
----
-
-Please feel free to reach me out via email for your app development needs or any other subject of interest.
-
-Email: [ashish.brahma@outlook.com](mailto:ashish.brahma@outlook.com)  
-Download: [Resume](Resume-AshishBrahma-iOSDeveloper-Jan2025.pdf)&nbsp;(PDF)
-
+<small>
+Please feel free to reach me out via email for your app development needs or any other subject of interest. <br>
+<span>   
+<i class="fa-regular fa-envelope"></i>&nbsp;
+<a href="mailto:ashish.brahma@outlook.com">ashish.brahma@outlook.com</a>
+</span> <br>
+<span>
+<i class="fa-solid fa-file-arrow-down"></i>&nbsp;
+<a href="Resume-AshishBrahma-iOSDeveloper-Jan2025.pdf">Resume</a>&nbsp;(PDF)
+</span>
+</small>

@@ -10,5 +10,6 @@ author = 'Ashish Brahma'
 [KartStopper](https://github.com/ashish-brahma/KartStopper) is a one-stop solution for buyers looking to make informed choices before shopping their daily needs. It improves spending habits of people.
 
 <div align="center">
-{{< img src="kslogo.png" alt="App icon image with an orange background containing a blood red pause button surrounded by a cart symbol, initials K and S." >}}
-</div>
+{{< img src="kslogo.png" fit="256x256" alt="App icon image with an orange background containing a blood red pause button surrounded by a cart symbol, initials K and S." >}}
+</div> 
+

@@ -142,10 +142,11 @@ body.colorscheme-dark .footer a:hover {
 
 
 /* social link icons start */
-.fa-brands {
+.about .fa-regular, .about .fa-solid, .about .fa-brands {
 	color: #E39B59;
 }
-.fa-brands:hover {
+.about .fa-regular:hover, .about .fa-solid:hover, .about .fa-brands:hover {
 	color: #D97A21;
 }
 /* social link icons end */
+
