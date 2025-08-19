@@ -1,5 +1,6 @@
 /* body start */
 body {
+	font-family: -apple-system-ui-serif, ui-serif, 'Georgia', serif;
 	color: #7E715E;
 	background-color: #FFFFFA;
 }
@@ -12,6 +13,33 @@ body.colorscheme-dark {
 	hyphens: none;
 }
 /* body end */
+
+/* headings start */
+.centered .about h1 {
+	font-family: Garamond, sans-serif;
+}
+h1, h2 {
+	font-family: -apple-system, BlinkMacSystemFont, HelveticaNeue-Bold, HelveticaNeueW02-75Bold, Arial, sans-serif;
+	color: #613613;
+}
+h3, h4, h5, h6 {
+	font-family: 'Times New Roman', Times, serif;
+}
+h2, h3, h4, h5, h6 {
+	color: #857358;
+}
+
+body.colorscheme-dark h1 {
+	color: #FF8322;
+}
+body.colorscheme-dark h2,
+body.colorscheme-dark h3,
+body.colorscheme-dark h4,
+body.colorscheme-dark h5,
+body.colorscheme-dark h6 {
+	color: #B37132;
+}
+/* headings end */
 
 
 /* navigation start */
@@ -56,29 +84,6 @@ body.colorscheme-dark .navigation i:active {
 	}
 }
 /* navigation end */
-
-
-/* headings start */
-h1 {
-	color: #613613;
-}
-h2, h3, h4, h5, h6 {
-	color: #857358;
-}
-
-
-body.colorscheme-dark h1 {
-	color: #FF8322;
-}
-body.colorscheme-dark h2,
-body.colorscheme-dark h3,
-body.colorscheme-dark h4,
-body.colorscheme-dark h5,
-body.colorscheme-dark h6 {
-	color: #B37132;
-}
-/* headings end */
-
 
 /* links start */
 a, .list ul li .title {
