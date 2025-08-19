@@ -22,17 +22,14 @@ I have an affinity towards all things neat and serene. When I'm not coding, I lo
 
 ###### Skills
 
-`Swift6` &nbsp; `MongoDB(Atlas)`  &nbsp; `Firebase` &nbsp; `Python` &nbsp; `MySQL`  &nbsp; `HTML`  &nbsp; `CSS`  &nbsp; `Javascript`  &nbsp; `Figma`
+`Swift6` &nbsp; `SwiftUI` &nbsp; `MongoDB Atlas`  &nbsp; `Google Firebase` &nbsp; `Python3` &nbsp; `MySQL` &nbsp;    
+`HTML5`  &nbsp; `CSS3`  &nbsp; `Javascript`  &nbsp; `Figma`
 
----
-<small>
-Please feel free to reach me out via email for your app development needs or any other subject of interest. <br>
-<span>   
-<i class="fa-regular fa-envelope"></i>&nbsp;
-<a href="mailto:ashish.brahma@outlook.com">ashish.brahma@outlook.com</a>
-</span> <br>
-<span>
+
+###### Contact
+
+Please feel free to reach me out via email for your app development needs or any other subject of interest.
+ 
+<i class="fa-regular fa-envelope"></i>&nbsp;<a href="mailto:ashish.brahma@outlook.com">ashish.brahma@outlook.com</a><br>
 <i class="fa-solid fa-file-arrow-down"></i>&nbsp;
-<a href="Resume-AshishBrahma-iOSDeveloper-Jan2025.pdf">Resume</a>&nbsp;(PDF)
-</span>
-</small>
+<a href="Resume-AshishBrahma-iOSDeveloper-Jan2025.pdf" target="_blank">Resume</a>&nbsp;(PDF)
