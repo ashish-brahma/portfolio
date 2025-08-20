@@ -8,8 +8,11 @@ author = 'Ashish Brahma'
 +++ 
 
 <div align="center">
-	{{< img src="jal-mahal-jaipur-2023.jpg" fit="4032x3024" alt="Jal Mahal in Jaipur" >}}
-	<br><caption><small><i>Jal Mahal, Jaipur (2023)</i></small></caption>
+	{{< figure
+	  src="jal-mahal-jaipur-2023.jpg"
+	  alt="Jal Mahal in Jaipur"
+	  caption="Jal Mahal, Jaipur (2023)"
+	>}}
 </div>
 
 ## Hello 👋
