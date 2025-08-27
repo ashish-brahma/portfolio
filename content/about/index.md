@@ -9,9 +9,11 @@ author = 'Ashish Brahma'
 
 <div align="center">
 	{{< figure
-	  src="jal-mahal-jaipur-2023.jpg"
-	  alt="Jal Mahal in Jaipur"
-	  caption="Jal Mahal, Jaipur (2023)"
+	  src="nahargarh-fort-jaipur-2023.jpg"
+	  alt="Nahargarh Fort in Jaipur"
+	  caption="Nahargarh Fort, Jaipur (2023)"
+	  height=500
+	  class="ma0 w-75"
 	>}}
 </div>
 
