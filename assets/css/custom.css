@@ -18,7 +18,7 @@ body.colorscheme-dark {
 .centered .about h1 {
 	font-family: Garamond, sans-serif;
 }
-h1, h2 {
+h1, h2, .tags {
 	font-family: -apple-system, BlinkMacSystemFont, HelveticaNeue-Bold, HelveticaNeueW02-75Bold, Arial, sans-serif;
 	color: #613613;
 }
@@ -40,7 +40,6 @@ body.colorscheme-dark h6 {
 	color: #B37132;
 }
 /* headings end */
-
 
 /* navigation start */
 .navigation a, .navigation span, .navigation i {
@@ -84,6 +83,7 @@ body.colorscheme-dark .navigation i:active {
 	}
 }
 /* navigation end */
+
 
 /* links start */
 a, .list ul li .title {
