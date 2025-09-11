@@ -18,7 +18,7 @@ body.colorscheme-dark {
 .centered .about h1 {
 	font-family: Garamond, sans-serif;
 }
-h1, h2, .tags {
+h1, h2 {
 	font-family: -apple-system, BlinkMacSystemFont, HelveticaNeue-Bold, HelveticaNeueW02-75Bold, Arial, sans-serif;
 	color: #613613;
 }
@@ -40,6 +40,16 @@ body.colorscheme-dark h6 {
 	color: #B37132;
 }
 /* headings end */
+
+/* post-meta start */
+.post-meta {
+    font-size: 14px;
+    line-height: 1.6em;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+/* post-meta start */
 
 /* navigation start */
 .navigation a, .navigation span, .navigation i {
@@ -132,6 +142,15 @@ body.colorscheme-dark .float-container a:active {
 }
 /* dark mode toggle end */
 
+/* footnotes start */
+.footnotes {
+	font-size: 12px;
+    line-height: 1.3333733333;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+/* footnotes end */
 
 /* footer start */
 .footer a {
