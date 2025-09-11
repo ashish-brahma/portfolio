@@ -1,3 +1,0 @@
-{{ $image := .Page.Resources.Get (.Get "src") }}
-{{ $image := $image.Fit (.Get "fit") }}
-<img src="{{ $image.RelPermalink }}" alt="{{ $.Get "alt" }}">
