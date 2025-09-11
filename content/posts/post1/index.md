@@ -4,6 +4,7 @@ date = 2025-09-09T20:43:29+05:30
 title = "Hello, World"
 description = "First post"
 slug = ""
+url = "hello-world"
 authors = ["Ashish"]
 tags = ["welcome", "first post", "kickstart", "iPhone17"]
 categories = []
