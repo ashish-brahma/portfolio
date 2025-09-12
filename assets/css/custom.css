@@ -6,7 +6,7 @@ body {
 }
 body.colorscheme-dark {
 	color: #B37130;
-	background-color: #120900;
+	background-color: #26180E;
 }
 
 .content article p {
@@ -70,7 +70,7 @@ body.colorscheme-dark h6 {
 body.colorscheme-dark .navigation a, 
 body.colorscheme-dark .navigation span,
 body.colorscheme-dark .navigation i {
-    color: #E39B59;
+    color: #E0782D;
 }
 body.colorscheme-dark .navigation a:hover,
 body.colorscheme-dark .navigation a:focus,
@@ -107,7 +107,7 @@ a:hover, a:focus, a:active,
 }
 
 body.colorscheme-dark a, body.colorscheme-dark .content .list ul li .title {
-	color: #E39B59;
+	color: #FF6E17;
 }
 body.colorscheme-dark a:hover,
 body.colorscheme-dark a:focus,
