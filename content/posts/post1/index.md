@@ -27,7 +27,10 @@ Today, **iPhone 17** has been unveiled to the public. Having presented the **iPh
 	class="ma0 w-75"
 >}}
 
-Interestingly, **AirPods Pro 3** now come with Live Translation feature to help people who speak different languages communicate with each other in their native tongue. They sport *clinical grade* [^1]  hearing-aids same as last year along with a new heart rate sensor. Despite recent [lawsuits](https://www.theverge.com/24009254/apple-watch-itc-ban-patent-dispute) surrounding **Apple Watch Series 9** and **Ultra 2**, the tech giant has been able to make a comeback with a redesigned Blood Oxygen monitoring sensor in compliance with a local US Court ruling.
-[^1]:Pending FDA approval at the time of this writing
+Interestingly, **AirPods Pro 3** now come with *Live Translation* feature to help people who speak different languages communicate with each other in their native tongue. They sport *clinical grade* [^1]  hearing-aids same as last year along with a new heart rate sensor. Continuing along the flow was the introduction of *Hypertension Notifications* on **Apple Watch Series 11**, which can alert users if signs of chronic high blood pressure — or hypertension — are detected.[^2]
+[^1]:Pending FDA approval at the time of this writing 
+[^2]:With availability on **Apple Watch Series 9** and later, and **Apple Watch Ultra 2** and later. 
+
+Despite recent [lawsuits](https://www.theverge.com/24009254/apple-watch-itc-ban-patent-dispute) surrounding **Apple Watch Series 9** and **Ultra 2**, the tech giant has been trying to make a comeback with a redesigned [Blood Oxygen feature](https://www.apple.com/newsroom/2025/08/an-update-on-blood-oxygen-for-apple-watch-in-the-us/) in compliance with a recent US Customs ruling. This will in effect send the sensor data (SpO2 levels measured by pulse oximeter) on **Apple Watch Series 9** and **Ultra 2** models to a paired iPhone where it will be stored in the Health app for monitoring.
 
 With these refreshments, **Apple** hopes to turn around its perception of introducing cosmetic upgrades each year. They made sure to emphasize their stance throughout the launch event. The average consumer on the other hand would definitely take note of the decoy pulled off out of thin air.😉
