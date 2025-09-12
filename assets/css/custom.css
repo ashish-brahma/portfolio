@@ -96,6 +96,10 @@ body.colorscheme-dark .navigation i:active {
 
 
 /* links start */
+.post-content a {
+	text-decoration-line: underline;
+	text-decoration-style: dotted;
+}
 a, .list ul li .title {
 	color: #E39B59;
 }
@@ -161,7 +165,7 @@ body.colorscheme-dark .float-container a:active {
 }
 
 body.colorscheme-dark .footer a {
-	color: #E39B59;
+	color: #FF6E17;
 }
 body.colorscheme-dark .footer a:hover {
 	color: #FC8E26;
