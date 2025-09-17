@@ -23,7 +23,7 @@ I am a hobbyist Apple Developer with a focus on iOS platform. Currently, I am bu
 
 Previously, I have worked as a full-time Business Analyst for a brief period in 2021-22 with experience spanning across Real Estate, Logistics, Media, Energy, Retail and Credit sectors. I have a Bachelor's degree in Mechatronics Engineering from SRM Institute of Science and Technology, Chennai.
 
-I have an affinity towards all things neat and serene. When I'm not coding, I love to work in my garden or pick an interesting book to read.
+I have an affinity towards all things neat and serene. When not coding, I love to work in my garden or pick an interesting book to read.
 
 ###### Skills
 
