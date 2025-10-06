@@ -35,7 +35,7 @@ Artificial Intelligence has [not yet lived up to its promise](https://futurism.c
 
 Investors in US are making huge bets on AI based on the hype floating around. The phenomenon shares its characteristics with the **dot com bubble** of the early 2000s when every startup would attach a '.com' after its name to get a higher valuation. Eventually only a very few players survived who came to be known as the **Big Tech**.
 
-{{< tweet user="jasonlk" id="1946239737368592629" >}}
+{{< x user="jasonlk" id="1946239737368592629" >}}
 
 ## Startup India
 
