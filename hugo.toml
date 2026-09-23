@@ -41,6 +41,10 @@ defaultcontentlanguage = "en"
   # customSCSS = ["scss/custom.scss"]
   # customJS = ["js/custom.js"]
 
+[frontmatter]
+  date = ['date']
+  lastmod = ['lastmod']
+
 [taxonomies]
   category = "categories"
   series = "series"

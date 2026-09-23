@@ -1,15 +1,12 @@
 +++ 
 draft = false
 date = 2025-10-02T19:58:49+05:30
+lastmod = 2026-09-23T14:12:33+05:30
 title = "A Tale Of Two Countries"
 description = "Reshaping the economy"
-slug = ""
 url = "a-tale-of-two-countries"
 authors = ["Ashish"]
 tags = ["economy", "artificial intelligence", "India", "United States", "H1B"]
-categories = []
-externalLink = ""
-series = []
 +++
 
 ## Brain Drain And ... Freeze!
@@ -27,7 +24,7 @@ A steady influx of college-educated Indian workers to US has never bode well wit
 > 
 > \- Lal Bahadur Shastri, Second Prime Minister of India
 
-Since the announcement, corporate America is full of trepidation over the President's *"no free lunch"* diktat. The clarifications made by the White House did bring some relief to existing **H1B** holders as they learnt that they have been exempted from its scope. However, it is the US startups which are among the worst hit as they would no longer be able to afford hiring workers abroad. Perhaps, the best talent has already settled itself at a more conducive ecosystem. India on the other hand has very little to benefit from the move as its best talent would manage to find another attractive destination to venture. The key factor for their return to motherland appears to be rise in hate crimes against Indian diasphora driven by the resentment among the jobless youth abroad.
+Since the announcement, corporate America is full of trepidation over the President's *"no free lunch"* diktat. The clarifications made by the White House did bring some relief to existing **H1B** holders as they learnt that they have been exempted from its scope. However, it is the US startups which are among the worst hit as they would no longer be able to afford hiring workers abroad. Perhaps, the best talent has already settled itself at a more conducive ecosystem. India on the other hand has very little to benefit from the move as its best talent would manage to find another attractive destination to venture. The key factor for their return to motherland appears to be rise in hate crimes against Indian diasphora.
 
 ## Is AI hallucinating or the companies which believe it can replace workers?
 
