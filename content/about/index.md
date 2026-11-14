@@ -7,6 +7,12 @@ aliases = ["about-me", "contact"]
 author = 'Ashish Brahma'
 +++ 
 
+## Hello 👋
+
+I am a hobbyist Apple Developer with a focus on iOS platform. Currently, I am building **KartStopper**, a productivity app to craft the perfect shopping plan. 
+
+Previously, I have worked as a full-time Business Analyst for a brief period in 2021-22 with experience spanning across Real Estate, Logistics, Media, Energy, Retail and Credit sectors. I have a Bachelor's degree in Mechatronics Engineering from SRM Institute of Science and Technology, Chennai.
+
 <div align="center">
 	{{< figure
 	  src="nahargarh-fort-jaipur-2023.jpg"
@@ -16,12 +22,6 @@ author = 'Ashish Brahma'
 	  class="ma0 w-75"
 	>}}
 </div>
-
-## Hello 👋
-
-I am a hobbyist Apple Developer with a focus on iOS platform. Currently, I am building **KartStopper**, a productivity app to craft the perfect shopping plan. 
-
-Previously, I have worked as a full-time Business Analyst for a brief period in 2021-22 with experience spanning across Real Estate, Logistics, Media, Energy, Retail and Credit sectors. I have a Bachelor's degree in Mechatronics Engineering from SRM Institute of Science and Technology, Chennai.
 
 I have an affinity towards all things neat and serene. When not coding, I love to work in my garden or pick an interesting book to read.
 
@@ -37,4 +37,4 @@ Please feel free to reach me out via email for your app development needs or any
  
 <i class="fa-regular fa-envelope"></i>&nbsp;<a href="mailto:ashish.brahma@outlook.com">ashish.brahma@outlook.com</a><br>
 <i class="fa-solid fa-file-arrow-down"></i>&nbsp;
-<a href="AppDeveloper-AshishBrahma-Nov2025.pdf" target="_blank">Resume</a>&nbsp;(PDF)
+<a href="AppleDeveloper-AshishBrahma-Nov2026.pdf" target="_blank">Resume</a>&nbsp;(PDF)
