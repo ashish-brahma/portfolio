@@ -14,7 +14,7 @@ series = ["iOS Development"]
 
 ## Download my app!
 
-Well its been a year since [KartStopper](https://kartstopper.netlify.app/) was announced in my [first post](../hello-world) and here we are in a post **iPhone Duo** [^copyright] era. I am glad to announce that it has been published on the **App Store** [^copyright]. You may [download](https://apps.apple.com/us/app/kartstopper/id6813073115?itscg=30200&itsct=apps_box_link&mttnsubad=6813073115) the iOS [^copyright] app right away.
+Well its been a year since [KartStopper](https://kartstopper.netlify.app/) was announced in my [first post](../hello-world) and here we are in a post **iPhone Duo**[^copyright] era. I am glad to announce that it has been published on the **App Store**[^copyright]. You may [download](https://apps.apple.com/us/app/kartstopper/id6813073115?itscg=30200&itsct=apps_box_link&mttnsubad=6813073115) the iOS[^copyright] app right away.
 [^copyright]:
 	Apple, iPhone and iPhone Duo are registered trademarks of Apple Inc., registered in the U.S. and other countries and regions.
 	iOS is a trademark or registered trademark of Cisco in the U.S. and other countries and is used under license. 

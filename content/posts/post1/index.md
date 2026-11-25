@@ -7,7 +7,7 @@ description = "First post"
 slug = ""
 url = "hello-world"
 authors = ["Ashish"]
-tags = ["welcome", "first post", "kickstart", "iPhone17"]
+tags = ["welcome", "first post", "kickstart", "Apple", "Smartphone launch"]
 categories = []
 externalLink = ""
 series = []
@@ -15,14 +15,11 @@ series = []
 
 ## Welcome to my blog!
 
-This is my first ever blog. I have been learning `SwiftUI` [^copyright] for about a year now. If you've seen my [projects]({{< ref "/projects" >}}), you would know that I'm aiming to publish an open-source app very soon. 
+This is my first ever blog. I have been learning `SwiftUI`[^copyright] for about a year now. If you've seen my [projects]({{< ref "/projects" >}}), you would know that I'm aiming to publish an open-source app very soon. 
 
-Since its introduction at **WWDC** earlier this year, *Liquid Glass* design material has left me dissapointed and reluctant to switch. It is reminiscent of **Cydia** tweaks applied to jailbroken devices during **iOS 6** [^copyright] days. I would refrain from experimenting with this new design as my app is focused on productivity and finance. The last thing I would want is users having problems with illegible text.
+Since its introduction at **WWDC** earlier this year, *Liquid Glass* design material has left me dissapointed and reluctant to switch. It is reminiscent of **Cydia** tweaks applied to jailbroken devices during **iOS 6**[^copyright] days. I would refrain from experimenting with this new design as my app is focused on productivity and finance. The last thing I would want is users having problems with illegible text.
 
-Today, **iPhone 17** [^copyright] has been unveiled to the public. Having presented the **iPhone 17** [^copyright] lineup, it appears that **Apple** [^copyright] deliberately wants users to choose the costlier **iPhone 17 Pro** [^copyright] over the **Air** [^copyright] variant. It took me by surprise that the **iPhone Air** [^copyright], being priced the same as last year's **iPhone 16 Pro** [^copyright], features only a single camera! It has all the telltale signs of why one should avoid buying it. The red flags start right from its uncanny resemblence to the **Google Pixel 10** [^copyright] series and a battery capacity lower than the base variant of **iPhone 17** [^copyright] series.
-[^copyright]:
-	Apple, the Apple logo, iPhone, iPad, Apple Watch, AirPods and SwiftUI are registered trademarks of Apple Inc., registered in the U.S. and other countries and regions.
-	Google and Pixel are registered trademarks of Google LLC, registered in the U.S and other countries and regions.
+Today, **iPhone 17**[^copyright] has been unveiled to the public. Having presented the **iPhone 17**[^copyright] lineup, it appears that **Apple**[^copyright] deliberately wants users to choose the costlier **iPhone 17 Pro**[^copyright] over the **Air**[^copyright] variant. It took me by surprise that the **iPhone Air**[^copyright], being priced the same as last year's **iPhone 16 Pro**[^copyright], features only a single camera! It has all the telltale signs of why one should avoid buying it. The red flags start right from its uncanny resemblence to the **Google Pixel 10**[^copyright] series and a battery capacity lower than the base variant of **iPhone 17**[^copyright] series.
 
 {{< figure 
 	src="Apple-iPhone-17-Pro-camera-close-up-250909.jpg"
@@ -31,10 +28,13 @@ Today, **iPhone 17** [^copyright] has been unveiled to the public. Having presen
 	class="ma0 w-75"
 >}}
 
-Interestingly, **AirPods Pro 3** [^copyright] now come with *Live Translation* feature to help people who speak different languages communicate with each other in their native tongue. They sport *clinical grade* [^clinical] hearing-aids same as last year along with a new heart rate sensor. Continuing along the flow was the introduction of *Hypertension Notifications* on **Apple Watch Series 11** [^copyright], which can alert users if signs of chronic high blood pressure — or hypertension — are detected [^availability].
+Interestingly, **AirPods Pro 3**[^copyright] now come with *Live Translation* feature to help people who speak different languages communicate with each other in their native tongue. They sport *clinical grade*[^clinical] hearing-aids same as last year along with a new heart rate sensor. Continuing along the flow was the introduction of *Hypertension Notifications* on **Apple Watch Series 11**[^copyright], which can alert users if signs of chronic high blood pressure — or hypertension — are detected[^availability].
 [^clinical]:Pending FDA approval at the time of this writing 
 [^availability]:With availability on **Apple Watch Series 9** and later, and **Apple Watch Ultra 2** and later. 
 
-Despite recent [lawsuits](https://www.theverge.com/24009254/apple-watch-itc-ban-patent-dispute) surrounding **Apple Watch Series 9** [^copyright] and **Ultra 2** [^copyright], the tech giant has been trying to make a comeback with a redesigned [Blood Oxygen feature](https://www.apple.com/newsroom/2025/08/an-update-on-blood-oxygen-for-apple-watch-in-the-us/) in compliance with a recent US Customs ruling. This will in effect send the sensor data (SpO2 levels measured by pulse oximeter) on **Apple Watch Series 9** [^copyright] and **Ultra 2** [^copyright] models to a paired iPhone [^copyright] where it will be stored in the Health app for monitoring.
+Despite recent [lawsuits](https://www.theverge.com/24009254/apple-watch-itc-ban-patent-dispute) surrounding **Apple Watch Series 9**[^copyright] and **Ultra 2**[^copyright], the tech giant has been trying to make a comeback with a redesigned [Blood Oxygen feature](https://www.apple.com/newsroom/2025/08/an-update-on-blood-oxygen-for-apple-watch-in-the-us/) in compliance with a recent US Customs ruling. This will in effect send the sensor data (SpO2 levels measured by pulse oximeter) on **Apple Watch Series 9**[^copyright] and **Ultra 2**[^copyright] models to a paired iPhone[^copyright] where it will be stored in the Health app for monitoring.
 
-With these refreshments, **Apple** [^copyright] hopes to turn around its perception of introducing cosmetic upgrades each year. They made sure to emphasize their stance throughout the launch event. The average consumer on the other hand would definitely take note of the decoy pulled off out of thin air.😉
+With these refreshments, **Apple**[^copyright] hopes to turn around its perception of introducing cosmetic upgrades each year. They made sure to emphasize their stance throughout the launch event. The average consumer on the other hand would definitely take note of the decoy pulled off out of thin air.😉
+[^copyright]:
+	Apple, the Apple logo, iPhone, iPad, Apple Watch, AirPods and SwiftUI are registered trademarks of Apple Inc., registered in the U.S. and other countries and regions.
+	Google and Pixel are registered trademarks of Google LLC, registered in the U.S and other countries and regions.
