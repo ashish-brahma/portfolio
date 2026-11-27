@@ -31,7 +31,7 @@ A foldable device presenting tabular data and graphs next to each other effortle
 ## Mac with a touch of magic!
 As a developer, the **MacBook Pro with PROLED XDR**[^copyright] display is the ultimate device to get my hands on. It is just the device I have been waiting to launch. The good riddance from the notch paving way for the dynamic island makes for an exciting camera upgrade. Yes, I might not feel tired of touching my Mac screen when I have an app to test across simulators of varying form factors, in case you are wondering about the usage scenarios.
 [^copyright]:
-	Apple, iPhone and Macbook are registered trademarks of Apple Inc., registered in the U.S. and other countries and regions.
+	Apple, iPhone and MacBook are registered trademarks of Apple Inc., registered in the U.S. and other countries and regions.
 	iOS is a trademark or registered trademark of Cisco in the U.S. and other countries and is used under license. 
 	App Store is a service mark of Apple Inc., registered in the U.S. and other countries. 
 	
